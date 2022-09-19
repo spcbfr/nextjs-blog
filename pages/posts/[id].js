@@ -3,7 +3,8 @@ import Head from "next/head"
 import { getAllPostIds, getPostData } from "../../lib/posts"
 import Date from "../../components/date"
 import utilStyles from "../../styles/utils.module.css"
-
+import { useMemo } from "react"
+import {getMDXComponent} from 'mdx-bundler/client'
 export async function getStaticPaths() {
     const paths = getAllPostIds()
     return {
@@ -14,23 +15,24 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
     
-    const data = await getPostData(params.id)
+    const {code,frontmatter} = await getPostData(params.id)
     return {
-        props: {data}
+        props: {code,frontmatter}
     }
 }
-export default function Post({data}) {
+export default function Post({code, frontmatter}) {
+    const Component = useMemo(() => getMDXComponent(code), [code]);
     return (
     <Layout>
       <Head>
-        <title>{data.title + " | Youssef Bouzekri's Blog"}</title>
+        <title>{frontmatter.title + " | Youssef Bouzekri's Blog"}</title>
       </Head>
     <article>
-        <h1 className={utilStyles.headingXl}>{data.title}</h1>
+        <h1 className={utilStyles.headingXl}>{frontmatter.title}</h1>
         <div className={utilStyles.lightText}>
-          <Date dateString={data.date} />
+          <Date dateString={frontmatter.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+        <Component/>
       </article>
     </Layout>
     )
