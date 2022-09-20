@@ -16,6 +16,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({allPostsData}) {
+  const siteTitle = "Youssef's Blog"
   return (
     <Layout home>
       <Head>
