@@ -28,6 +28,7 @@ export default function Post({ code, frontmatter }) {
       <Head>
         <title>{frontmatter.title + " | Youssef Bouzekri's Blog"}</title>
       </Head>
+      <Navbar />
       <article className="mt-32 ">
         <h1 className=" text-3xl font-black text-sunrise">
           {frontmatter.title}
