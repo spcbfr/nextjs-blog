@@ -1,3 +1,10 @@
 {
-    "rpc.enabled": true
+  "rpc.enabled": true,
+  "spellright.language": [],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
+  "spellright.parserByClass": {
+    "mdx": {
+      "parser": "markdown"
+    }
+  }
 }
