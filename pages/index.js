@@ -17,19 +17,18 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   const siteTitle = "Youssef's Blog";
   return (
-    <div className=" flex flex-col h-full">
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Layout>
-        <NameCard />
-        <section className="text-4xl leading-relaxed my-10 mb-5">
-          Welcome to my{" "}
-          <span className="font-blaka text-miami">Digital Garden</span> I love
-          using computers, and I am sharing my love through this blog.
-        </section>
-        <section className="mb-10 gap-x-3 flex">
-          {/* 
+      <NameCard />
+      <section className="text-4xl leading-relaxed my-10 mb-5">
+        Welcome to my{" "}
+        <span className="font-blaka text-miami">Digital Garden</span> I love
+        using computers, and I am sharing my love through this blog.
+      </section>
+      <section className="mb-10 gap-x-3 flex">
+        {/* 
           <Link href="/posts">
             <a className="px-5 py-3 font-medium bg-miami text-midnnight rounded-md ease-in hover:scale-110 transition ">
               Reach out
@@ -37,21 +36,20 @@ export default function Home({ allPostsData }) {
           </Link>
           */}
 
-          <a
-            className="px-5 py-3 font-medium border-miami border-2 text-miami rounded-md  ease-in hover:scale-110 transition"
-            href="https://twitter.com/spacebuffer"
-            target={"_blank"}
-          >
-            Twitter
-          </a>
-        </section>
-        <h2 className="text-xl mt-3 mb-3 font-bold tracking-[0.2em] text-bermuda uppercase">
-          Recently Published
-        </h2>
-        <ul>
-          <PostCard postsData={allPostsData} />
-        </ul>
-      </Layout>
-    </div>
+        <a
+          className="px-5 py-3 font-medium border-miami border-2 text-miami rounded-md  ease-in hover:scale-110 transition"
+          href="https://twitter.com/spacebuffer"
+          target={"_blank"}
+        >
+          Twitter
+        </a>
+      </section>
+      <h2 className="text-xl mt-3 mb-3 font-bold tracking-[0.2em] text-bermuda uppercase">
+        Recently Published
+      </h2>
+      <ul>
+        <PostCard postsData={allPostsData} />
+      </ul>
+    </Layout>
   );
 }
