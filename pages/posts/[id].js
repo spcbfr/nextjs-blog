@@ -32,6 +32,14 @@ export default function Post({ code, frontmatter }) {
           property="og:image"
           content="https://youssefbouzekri.vercel.app/me.png"
         />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="youssefbouzekri.vercel.app" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.description} />
+        <meta
+          name="twitter:image"
+          content="https://youssefbouzekri.vercel.app/me.png"
+        />
       </Head>
       <Navbar />
       <article className="mt-32 ">
