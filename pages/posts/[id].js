@@ -26,7 +26,7 @@ export default function Post({ code, frontmatter }) {
       <Head>
         <title>{frontmatter.title + " | Youssef Bouzekri's Blog"}</title>
         <meta property="og:title" content={frontmatter.title} />
-        <meta property="og:description" content={frontmatter.title} />
+        <meta property="og:description" content={frontmatter.description} />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
@@ -41,7 +41,7 @@ export default function Post({ code, frontmatter }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@spacebuffer" />
         <meta name="twitter:title" content={frontmatter.title} />
-        <meta name="twitter:description" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.description} />
         <meta
           name="twitter:image"
           content="https://youssefbouzekri.vercel.app/me.png"
