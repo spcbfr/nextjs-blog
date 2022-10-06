@@ -34,8 +34,15 @@ export default function Post({ code, frontmatter }) {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="youssefbouzekri.vercel.app" />
-        <meta name="twitter:title" content={frontmatter.title} />
-        <meta name="twitter:description" content={frontmatter.description} />
+        <meta
+          property="twitter:url"
+          content="https://youssefbouzekri.vercel.app/posts/perfectionism"
+        />
+        <meta name="twitter:title" content="Don't seek perfection" />
+        <meta
+          name="twitter:description"
+          content="Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all.."
+        />
         <meta
           name="twitter:image"
           content="https://youssefbouzekri.vercel.app/me.png"
