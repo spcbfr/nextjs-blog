@@ -25,28 +25,39 @@ export default function Post({ code, frontmatter }) {
     <Layout>
       <Head>
         <title>{frontmatter.title + " | Youssef Bouzekri's Blog"}</title>
-        <meta property="og:title" content={frontmatter.title} />
-        <meta property="og:url" content="https://youssefbouzekri.vercel.app" />
-        <meta property="og:description" content={frontmatter.description} />
+        <meta
+          property="og:title"
+          content="Understanding useMemo and useCallback"
+        />
+        <meta
+          property="og:description"
+          content="What's the deal with these two hooks?! Lots of devs find them confusing, for a whole host of reasons. In this tutorial, we'll dig deep and understand what they do, why they're useful, and how to get the most out of them."
+        />
+        <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://youssefbouzekri.vercel.app/me.png"
+          content="https://www.joshwcomeau.com/images/og-usememo-and-usecallback.png"
         />
+        <meta
+          property="og:image:alt"
+          content="Banner for site, showing page title in a playful way"
+        />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="675" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@nytimes" />
-        <meta name="twitter:creator" content="@SarahMaslinNir" />
+        <meta name="twitter:creator" content="@joshwcomeau" />
         <meta
           name="twitter:title"
-          content="Parade of Fans for Houston’s Funeral"
+          content="Understanding useMemo and useCallback"
         />
         <meta
           name="twitter:description"
-          content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here."
+          content="What's the deal with these two hooks?! Lots of devs find them confusing, for a whole host of reasons. In this tutorial, we'll dig deep and understand what they do, why they're useful, and how to get the most out of them."
         />
         <meta
           name="twitter:image"
-          content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg"
-        />
+          content="https://www.joshwcomeau.com/images/og-usememo-and-usecallback.png"
+        ></meta>
       </Head>
       <Navbar />
       <article className="mt-32 ">
