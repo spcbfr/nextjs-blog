@@ -14,7 +14,7 @@ module.exports = {
       },
 
       colors: {
-        midnnight: "#011627",
+        midnight: "#011627",
         scott: "#545379",
         sunrise: "#D8ECFD",
         bermuda: "#FDFEB0",
@@ -45,5 +45,5 @@ module.exports = {
       }),
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };

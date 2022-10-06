@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProfilePic from "/public/me.png";
+import { TwitterLogo } from "phosphor-react";
 
 export default function Navbar() {
   return (
@@ -15,12 +16,13 @@ export default function Navbar() {
           />
         </Link>
       </div>
-      <a
-        className="font-semibold"
-        target={"_blank"}
-        href="https://twitter.com/spacebuffer"
-      >
-        Twitter
+      <a href="https://twitter.com/spacebuffer">
+        <TwitterLogo
+          className=" transition-transform hover:rotate-12 focus:-translate-y-6 ease-in-out"
+          weight={"duotone"}
+          color="rgb(5 240 224)"
+          size={36}
+        />
       </a>
     </nav>
   );
