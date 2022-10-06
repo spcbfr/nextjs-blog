@@ -27,6 +27,7 @@ export default function Post({ code, frontmatter }) {
         <title>{frontmatter.title + " | Youssef Bouzekri's Blog"}</title>
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:url" content="https://youssefbouzekri.vercel.app" />
+        <meta property="og:description" content={frontmatter.description} />
         <meta
           property="og:image"
           content="https://youssefbouzekri.vercel.app/me.png"
