@@ -25,18 +25,12 @@ export default function Post({ code, frontmatter }) {
     <Layout>
       <Head>
         <title>{frontmatter.title + " | Youssef Bouzekri's Blog"}</title>
-        <meta
-          property="og:title"
-          content="Understanding useMemo and useCallback"
-        />
-        <meta
-          property="og:description"
-          content="What's the deal with these two hooks?! Lots of devs find them confusing, for a whole host of reasons. In this tutorial, we'll dig deep and understand what they do, why they're useful, and how to get the most out of them."
-        />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:description" content={frontmatter.title} />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://www.joshwcomeau.com/images/og-usememo-and-usecallback.png"
+          content="https://youssefbouzekri.vercel.app/me.png"
         />
         <meta
           property="og:image:alt"
@@ -45,18 +39,12 @@ export default function Post({ code, frontmatter }) {
         <meta property="og:image:width" content="1280" />
         <meta property="og:image:height" content="675" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@joshwcomeau" />
-        <meta
-          name="twitter:title"
-          content="Understanding useMemo and useCallback"
-        />
-        <meta
-          name="twitter:description"
-          content="What's the deal with these two hooks?! Lots of devs find them confusing, for a whole host of reasons. In this tutorial, we'll dig deep and understand what they do, why they're useful, and how to get the most out of them."
-        />
+        <meta name="twitter:creator" content="@spacebuffer" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.title} />
         <meta
           name="twitter:image"
-          content="https://www.joshwcomeau.com/images/og-usememo-and-usecallback.png"
+          content="https://youssefbouzekri.vercel.app/me.png"
         ></meta>
       </Head>
       <Navbar />
