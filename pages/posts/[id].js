@@ -33,19 +33,19 @@ export default function Post({ code, frontmatter }) {
           content="https://youssefbouzekri.vercel.app/me.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="youssefbouzekri.vercel.app" />
+        <meta name="twitter:site" content="@nytimes" />
+        <meta name="twitter:creator" content="@SarahMaslinNir" />
         <meta
-          property="twitter:url"
-          content="https://youssefbouzekri.vercel.app/posts/perfectionism"
+          name="twitter:title"
+          content="Parade of Fans for Houston’s Funeral"
         />
-        <meta name="twitter:title" content="Don't seek perfection" />
         <meta
           name="twitter:description"
-          content="Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all.."
+          content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here."
         />
         <meta
           name="twitter:image"
-          content="https://youssefbouzekri.vercel.app/me.png"
+          content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg"
         />
       </Head>
       <Navbar />
