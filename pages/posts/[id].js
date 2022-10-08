@@ -1,10 +1,12 @@
 import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
+import ProfilePic from "/public/me.png";
 import Date from "../../components/date";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 import Layout from "../../components/layout";
 import Link from "next/link";
+import Image from "next/image";
 export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
@@ -47,40 +49,19 @@ export default function Post({ code, frontmatter }) {
           content="https://youssefbouzekri.vercel.app/me.png"
         ></meta>
       </Head>
-      <article className="mt-32 ">
-        <div className="absolute top-[7.5rem] left-[28rem] ">
-          <Link href="/">
-            <a className="border-2 inline-block p-3 rounded-full shadow-inner">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 256 256"
-                className="stroke-black"
-              >
-                <rect width="256" stroke="none" height="256" fill="none"></rect>
-                <line
-                  x1="216"
-                  y1="128"
-                  x2="40"
-                  y2="128"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="16"
-                ></line>
-                <polyline
-                  points="112 56 40 128 112 200"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="16"
-                ></polyline>
-              </svg>
-            </a>
-          </Link>
-        </div>
-        <h1 className=" text-5xl font-black font-display text-black">
+
+      <article className="sm:mt-32 mt-12 ">
+        <Link href="/">
+          <a>
+            <Image
+              src={ProfilePic}
+              width={70}
+              height={70}
+              className="rounded-full"
+            />
+          </a>
+        </Link>
+        <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display text-black">
           {frontmatter.title}
         </h1>
         <div className="text-md text-zinc-700 mt-2">
@@ -89,7 +70,7 @@ export default function Post({ code, frontmatter }) {
             <Date dateString={frontmatter.date} />
           </span>
         </div>
-        <main className="mt-3 prose max-w-none prose-indigo ">
+        <main className="mt-3 lg:prose-xl sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-indigo sm:max-w-none">
           <Component />
         </main>
       </article>

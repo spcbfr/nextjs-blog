@@ -11,10 +11,10 @@ export default function NameCard() {
           className="rounded-full "
         />
         <section className="ml-6 mt-2">
-          <h2 className="text-3xl font-black text-black font-display">
+          <h2 className="sm:text-3xl text-2xl font-black text-black font-display">
             Youssef Bouzekri
           </h2>
-          <h5 className="text-lg">Computer Science Student</h5>
+          <h5 className="sm:text-lg">Computer Science Student</h5>
         </section>
       </div>
     </section>

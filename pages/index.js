@@ -21,7 +21,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <NameCard />
-      <section className="text-xl leading-relaxed my-10 mb-5">
+      <section className="sm:text-xl leading-relaxed my-10 mb-5">
         Welcome to my Digital Garden, I love using computers, and I am sharing
         my love through this blog. Other than computers, I watch quite a few
         movies and series, and will review some them on here
