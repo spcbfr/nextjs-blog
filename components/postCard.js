@@ -3,14 +3,14 @@ import Date from "../components/date";
 export default function PostCard({ postsData }) {
   return (
     <>
-      {postsData.map(({ id, date, title, slogan }) => (
-        <li className="pb-5" key={id}>
+      {postsData.map(({ id, date, title }) => (
+        <li className="pb-5 flex justify-between" key={id}>
           <Link href={`/posts/${id}`}>
-            <a className="text-3xl text-sunrise font-bold">{title}</a>
+            <a className="text-3xl text-black font-bold">{title}</a>
           </Link>
           <br />
           <p className=" text-scott font-semibold">
-            <Date dateString={date} /> <span>• {slogan}</span>
+            <Date dateString={date} />
           </p>
         </li>
       ))}

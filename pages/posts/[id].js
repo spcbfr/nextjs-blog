@@ -2,9 +2,9 @@ import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import { useMemo } from "react";
-import Navbar from "../../components/navbar";
 import { getMDXComponent } from "mdx-bundler/client";
 import Layout from "../../components/layout";
+import Link from "next/link";
 export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
@@ -47,18 +47,49 @@ export default function Post({ code, frontmatter }) {
           content="https://youssefbouzekri.vercel.app/me.png"
         ></meta>
       </Head>
-      <Navbar />
       <article className="mt-32 ">
-        <h1 className=" text-5xl font-black font-display text-bermuda">
+        <div className="absolute top-[7.5rem] left-[28rem] ">
+          <Link href="/">
+            <a className="border-2 inline-block p-3 rounded-full shadow-inner">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 256 256"
+                className="stroke-black"
+              >
+                <rect width="256" stroke="none" height="256" fill="none"></rect>
+                <line
+                  x1="216"
+                  y1="128"
+                  x2="40"
+                  y2="128"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></line>
+                <polyline
+                  points="112 56 40 128 112 200"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="16"
+                ></polyline>
+              </svg>
+            </a>
+          </Link>
+        </div>
+        <h1 className=" text-5xl font-black font-display text-black">
           {frontmatter.title}
         </h1>
-        <div className="text-md text-scott mt-2">
+        <div className="text-md text-zinc-700 mt-2">
           Published on{" "}
           <span className="font-bold">
             <Date dateString={frontmatter.date} />
           </span>
         </div>
-        <main className="mt-3 prose max-w-none prose-table:border prose-h1:mt-10  prose-th:px-3 prose-hr:border-scott prose-thead:bg-slate-500 prose-tr:border-b prose-tr:border-slate-700 prose-table:border-slate-600 prose-th:text-midnight prose-th:pt-1 prose-td:px-3 prose-custom ">
+        <main className="mt-3 prose max-w-none prose-indigo ">
           <Component />
         </main>
       </article>

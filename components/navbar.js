@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProfilePic from "/public/me.png";
-import { TwitterLogo } from "phosphor-react";
 
 export default function Navbar() {
   return (
