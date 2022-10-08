@@ -49,7 +49,7 @@ export default function Post({ code, frontmatter }) {
       </Head>
       <Navbar />
       <article className="mt-32 ">
-        <h1 className=" text-5xl font-black text-bermuda">
+        <h1 className=" text-5xl font-black font-display text-bermuda">
           {frontmatter.title}
         </h1>
         <div className="text-md text-scott mt-2">
@@ -58,7 +58,7 @@ export default function Post({ code, frontmatter }) {
             <Date dateString={frontmatter.date} />
           </span>
         </div>
-        <main className="mt-3 prose max-w-none prose-table:border  prose-th:px-3 prose-hr:border-scott prose-thead:bg-slate-500 prose-tr:border-b prose-tr:border-slate-700 prose-table:border-slate-600 prose-th:text-midnight prose-th:pt-1 prose-td:px-3 prose-custom ">
+        <main className="mt-3 prose max-w-none prose-table:border prose-h1:mt-10  prose-th:px-3 prose-hr:border-scott prose-thead:bg-slate-500 prose-tr:border-b prose-tr:border-slate-700 prose-table:border-slate-600 prose-th:text-midnight prose-th:pt-1 prose-td:px-3 prose-custom ">
           <Component />
         </main>
       </article>

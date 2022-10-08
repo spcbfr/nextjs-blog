@@ -14,7 +14,9 @@ export default function NameCard() {
           className="rounded-full"
         />
         <section className="ml-6 mt-2">
-          <h2 className="text-3xl font-black text-miami">Youssef Bouzekri</h2>
+          <h2 className="text-3xl font-black text-miami font-display">
+            Youssef Bouzekri
+          </h2>
           <h5 className="text-lg">Computer Science Student</h5>
         </section>
       </div>

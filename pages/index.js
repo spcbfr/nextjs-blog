@@ -22,12 +22,12 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <NameCard />
-      <section className="text-4xl leading-relaxed my-10 mb-5">
+      <section className="text-4xl leading-relaxed my-10 mb-10">
         Welcome to my{" "}
         <span className="font-blaka text-miami">Digital Garden</span> I love
         using computers, and I am sharing my love through this blog.
       </section>
-      <h2 className="text-xl mt-3 mb-3 font-bold tracking-[0.2em] text-bermuda uppercase">
+      <h2 className="text-xl mt-3 mb-6 font-display font-bold tracking-[0.2em] text-bermuda uppercase">
         Recently Published
       </h2>
       <ul>
