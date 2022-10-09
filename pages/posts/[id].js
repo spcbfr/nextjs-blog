@@ -51,16 +51,18 @@ export default function Post({ code, frontmatter }) {
       </Head>
 
       <article className="sm:mt-32 mt-12 ">
-        <Link href="/">
-          <a>
-            <Image
-              src={ProfilePic}
-              width={70}
-              height={70}
-              className="rounded-full"
-            />
-          </a>
-        </Link>
+        <div className="print:mx-auto print:w-fit">
+          <Link href="/">
+            <a>
+              <Image
+                src={ProfilePic}
+                width={70}
+                height={70}
+                className="rounded-full"
+              />
+            </a>
+          </Link>
+        </div>
         <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display text-black">
           {frontmatter.title}
         </h1>
@@ -70,7 +72,7 @@ export default function Post({ code, frontmatter }) {
             <Date dateString={frontmatter.date} />
           </span>
         </div>
-        <main className="mt-3 lg:prose-xl sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-indigo sm:max-w-none">
+        <main className="mt-3 lg:prose-xl prose-hr:print:hidden prose-a:underline prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-indigo sm:max-w-none">
           <Component />
         </main>
       </article>
