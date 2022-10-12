@@ -16,12 +16,29 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { code, frontmatter } = await getPostData(params.id);
+  const {
+    code,
+    frontmatter,
+    prevPostData,
+    nextPostData,
+    prevPostIndex,
+    nextPostIndex,
+  } = await getPostData(params.id);
   return {
-    props: { code, frontmatter },
+    props: {
+      code,
+      frontmatter,
+      prevPostData,
+      nextPostData,
+    },
   };
 }
-export default function Post({ code, frontmatter }) {
+export default function Post({
+  code,
+  frontmatter,
+  prevPostData,
+  nextPostData,
+}) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
   return (
     <Layout>
@@ -49,7 +66,6 @@ export default function Post({ code, frontmatter }) {
           content="https://youssefbouzekri.vercel.app/me.png"
         ></meta>
       </Head>
-
       <article className="sm:mt-32 mt-12 ">
         <div className="print:mx-auto print:w-fit">
           <Link href="/">
@@ -76,6 +92,41 @@ export default function Post({ code, frontmatter }) {
           <Component />
         </main>
       </article>
+      <h2 className="text-2xl font-bold mx-auto w-fit mb-4 text-zinc-600">
+        Read More
+      </h2>
+      <div className="flex gap-4 justify-center">
+        {prevPostData ? (
+          <Link href={prevPostData.id}>
+            <a className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg  text-zinc-700">
+              <div className="font-semibold uppercase text-zinc-500 text-sm">
+                Previous Post
+              </div>
+              <div>
+                <h2>
+                  {prevPostData.title.length <= 40
+                    ? prevPostData.title
+                    : prevPostData.title.substring(0, 40) + "..."}
+                </h2>
+              </div>
+            </a>
+          </Link>
+        ) : null}
+        {nextPostData ? (
+          <Link href={nextPostData.id}>
+            <a className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg text-zinc-700">
+              <div className="font-semibold uppercase text-sm text-zinc-500">
+                Next Post
+              </div>
+              <h2>
+                {nextPostData.title.length <= 40
+                  ? nextPostData.title
+                  : nextPostData.title.substring(0, 40) + "..."}
+              </h2>
+            </a>
+          </Link>
+        ) : null}
+      </div>
     </Layout>
   );
 }
