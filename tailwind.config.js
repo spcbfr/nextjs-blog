@@ -11,6 +11,7 @@ module.exports = {
         sans: ["Poppins"],
         arabic: ["Aref Ruqaa Ink"],
         blaka: ["Blaka "],
+        display: ["Space Grotesk"],
       },
 
       colors: {

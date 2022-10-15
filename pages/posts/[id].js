@@ -66,7 +66,7 @@ export default function Post({
           content="https://youssefbouzekri.vercel.app/me.png"
         ></meta>
       </Head>
-      <article className="sm:mt-32 mt-12 ">
+      <article className="sm:mt-32 mt-12 sm:mx-12 md:mx-0 ">
         <div className="print:mx-auto print:w-fit">
           <Link href="/">
             <a>
@@ -88,17 +88,14 @@ export default function Post({
             <Date dateString={frontmatter.date} />
           </span>
         </div>
-        <main className="mt-3 lg:prose-xl prose-hr:print:hidden prose-a:underline prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-indigo sm:max-w-none">
+        <main className="mt-3  lg:prose-xl prose-hr:print:hidden prose-a:underline prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-indigo sm:max-w-none">
           <Component />
         </main>
       </article>
-      <h2 className="text-2xl font-bold mx-auto w-fit mb-4 text-zinc-600">
-        Read More
-      </h2>
       <div className="flex gap-4 justify-center">
         {prevPostData ? (
           <Link href={prevPostData.id}>
-            <a className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg  text-zinc-700">
+            <a className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg ease-linear  text-zinc-700">
               <div className="font-semibold uppercase text-zinc-500 text-sm">
                 Previous Post
               </div>
@@ -114,7 +111,7 @@ export default function Post({
         ) : null}
         {nextPostData ? (
           <Link href={nextPostData.id}>
-            <a className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg text-zinc-700">
+            <a className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg ease-linear text-zinc-700">
               <div className="font-semibold uppercase text-sm text-zinc-500">
                 Next Post
               </div>
