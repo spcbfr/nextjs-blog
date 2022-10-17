@@ -32,7 +32,7 @@ const goodDate =
   toMonthName(arrayofgooddate[1]) +
   " " +
   arrayofgooddate[0] +
-  " 05:00:00 UTC";
+  " 05:00:00 EST";
 const handler = nc();
 /**
  * Respond with an rss.xml
