@@ -2,6 +2,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "generate:rss": "node lib/rss.mjs",
+    "prebuild": "npm run generate:rss",
     "build": "next build",
     "start": "next start"
   },
@@ -11,6 +13,7 @@
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^9.0.1",
     "next": "latest",
+    "next-connect": "^0.13.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "remark": "^14.0.2",
