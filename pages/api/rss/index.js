@@ -19,7 +19,7 @@ function toMonthName(monthNumber) {
 
 const fullDate = new Date(
   arrayofgooddate[0],
-  arrayofgooddate[1],
+  arrayofgooddate[1] + 1,
   arrayofgooddate[2]
 );
 var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
