@@ -1,9 +1,9 @@
 import nc from "next-connect";
 import feed from "./feed.json";
 const metadata = {
-  title: "JonBellah.com",
-  description: "About my site!",
-  link: "https://jonbellah.com",
+  title: "Youssef Bouzekri",
+  description: "Youssef's personal Blog",
+  link: "https://youssefbouzekri.vercel.app",
 };
 const handler = nc();
 /**
