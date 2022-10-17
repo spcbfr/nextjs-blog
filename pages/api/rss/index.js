@@ -32,7 +32,7 @@ const goodDate =
   toMonthName(arrayofgooddate[1]) +
   " " +
   arrayofgooddate[0] +
-  " 00:00:00 UTC";
+  " 05:00:00 UTC";
 const handler = nc();
 /**
  * Respond with an rss.xml
@@ -67,9 +67,10 @@ handler.get(async (req, res) => {
       <title>${metadata.title}</title>
       <description>${metadata.description}</description>
       <link>${metadata.link}</link>
+
+      <atom:link href="https://youssefbouzekri.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
       <lastBuildDate>${goodDate}</lastBuildDate>
       ${postItems}
-      <atom:link href="http://youssefbouzekri.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
       </channel>
       </rss>`;
     // set response content header to xml
