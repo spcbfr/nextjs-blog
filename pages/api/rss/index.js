@@ -1,3 +1,4 @@
+import { getMonth } from "date-fns";
 import nc from "next-connect";
 import feed from "./feed.json";
 const metadata = {
@@ -5,6 +6,23 @@ const metadata = {
   description: "Youssef's personal Blog",
   link: "https://youssefbouzekri.vercel.app",
 };
+const arrayofgooddate = feed[0].data.date.split("-");
+
+function toMonthName(monthNumber) {
+  const date = new Date();
+  date.setMonth(monthNumber - 1);
+
+  return date.toLocaleString("en-US", {
+    month: "short",
+  });
+}
+const goodDate =
+  arrayofgooddate[2] +
+  " " +
+  toMonthName(arrayofgooddate[1]) +
+  " " +
+  arrayofgooddate[0] +
+  " 00:00:00 UTC";
 const handler = nc();
 /**
  * Respond with an rss.xml
@@ -16,19 +34,19 @@ handler.get(async (req, res) => {
   try {
     const postItems = feed
       .map((page) => {
-        const url = `${
-          process.env.NEXT_PUBLIC_ROOT_URL
-        }/posts/${page.filePath.replace(".mdx", "")}`;
+        const url = `https://youssefbouzekri.vercel.app/posts/${page.filePath.replace(
+          ".mdx",
+          ""
+        )}`;
         return `<item>
           <title>${page.data.title}</title>
           <link>${url}</link>
           <guid>${url}</guid>
           <pubDate>${page.data.date}</pubDate>
           ${
-            page.data.excerpt &&
-            `<description>${page.data.excerpt}</description>`
+            page.data.slogan && `<description>${page.data.slogan}</description>`
           }
-          <content:encoded>${page.content}</content:encoded>
+          <content:encoded>Go read my blog on the website, I am not currently showing the content of any blogpost because some of them contain things that RSS readers can't render but this might change very soon </content:encoded>
         </item>`;
       })
       .join("");
@@ -39,7 +57,7 @@ handler.get(async (req, res) => {
       <title>${metadata.title}</title>
       <description>${metadata.description}</description>
       <link>${metadata.link}</link>
-      <lastBuildDate>${feed[0].data.date}</lastBuildDate>
+      <lastBuildDate>${goodDate}</lastBuildDate>
       ${postItems}
       </channel>
       </rss>`;
