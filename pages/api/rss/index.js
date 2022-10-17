@@ -26,7 +26,7 @@ var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const dayofweek = days[fullDate.getDay()];
 const goodDate =
   dayofweek +
-  " " +
+  ", " +
   arrayofgooddate[2] +
   " " +
   toMonthName(arrayofgooddate[1]) +
@@ -69,6 +69,7 @@ handler.get(async (req, res) => {
       <link>${metadata.link}</link>
       <lastBuildDate>${goodDate}</lastBuildDate>
       ${postItems}
+      <atom:link href="http://youssefbouzekri.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
       </channel>
       </rss>`;
     // set response content header to xml
