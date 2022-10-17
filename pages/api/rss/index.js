@@ -16,7 +16,17 @@ function toMonthName(monthNumber) {
     month: "short",
   });
 }
+
+const fullDate = new Date(
+  arrayofgooddate[0],
+  arrayofgooddate[1],
+  arrayofgooddate[2]
+);
+var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const dayofweek = days[fullDate.getDay()];
 const goodDate =
+  dayofweek +
+  " " +
   arrayofgooddate[2] +
   " " +
   toMonthName(arrayofgooddate[1]) +
