@@ -69,7 +69,7 @@ handler.get(async (req, res) => {
       <link>${metadata.link}</link>
 
       <atom:link href="https://youssefbouzekri.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
-      <lastBuildDate>${goodDate}</lastBuildDate>
+      <pubDate>${goodDate}</pubDate>
       ${postItems}
       </channel>
       </rss>`;
