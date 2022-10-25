@@ -1,21 +1,21 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "generate:rss": "node lib/rss.mjs",
-    "prebuild": "npm run generate:rss",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "analytics": "github:vercel/analytics",
     "date-fns": "^2.29.3",
     "esbuild": "^0.14.54",
+    "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^9.0.1",
-    "next": "latest",
+    "next": "^13.0.0",
     "next-connect": "^0.13.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.1"
@@ -24,7 +24,8 @@
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.7",
     "autoprefixer": "^10.4.11",
+    "eslint-config-next": "^12.3.2-canary.43",
     "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.2.0"
   }
 }

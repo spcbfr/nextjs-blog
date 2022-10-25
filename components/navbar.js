@@ -5,26 +5,21 @@ import ProfilePic from "/public/me.png";
 export default function Navbar() {
   return (
     <nav className="sm:px-12 lg:px-48 py-4 items-center bg-slate-50 flex justify-between">
-      <Link href="/">
-        <a className="flex items-center gap-3">
-          <Image
-            src={ProfilePic}
-            className="rounded-full"
-            height={50}
-            width={50}
-          />
-          <h1 className="font-display sm:text-2xl text-xl font-bold">
-            Youssef Bouzekri
-          </h1>
-        </a>
+      <Link href="/" className="flex items-center gap-3">
+        <Image
+          src={ProfilePic}
+          className="rounded-full"
+          height={50}
+          width={50}
+        />
+        <h1 className="font-display sm:text-2xl text-xl font-bold">
+          Youssef Bouzekri
+        </h1>
       </Link>
       <ul className="font-semibold flex gap-5 text-[0.9rem] sm:text-lg">
-        <Link href="/uses">
-          <a>
-            <li>Uses</li>
-          </a>
-        </Link>
-
+        <li>
+          <Link href="/uses">Uses</Link>
+        </li>
         <a
           href="https://ko-fi.com/spacebuffer"
           className="flex items-center gap-2"
@@ -44,25 +39,25 @@ export default function Navbar() {
               d="M48,144a64,64,0,0,1,64,64"
               fill="none"
               stroke="#77767b"
-              stroke-linecap="round"
+              strokeLineCap="round"
               stroke-linejoin="round"
-              stroke-width="16"
+              strokeWidth="16"
             ></path>
             <path
               d="M48,96A112,112,0,0,1,160,208"
               fill="none"
               stroke="#77767b"
-              stroke-linecap="round"
+              strokeLineCap="round"
               stroke-linejoin="round"
-              stroke-width="16"
+              strokeWidth="16"
             ></path>
             <path
               d="M48,48A159.1,159.1,0,0,1,161.1,94.9,159.1,159.1,0,0,1,208,208"
               fill="none"
               stroke="#77767b"
-              stroke-linecap="round"
+              strokeLineCap="round"
               stroke-linejoin="round"
-              stroke-width="16"
+              strokeWidth="16"
             ></path>
             <circle cx="52" cy="204" r="12"></circle>
           </svg>

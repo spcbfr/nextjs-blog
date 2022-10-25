@@ -4,8 +4,10 @@ import Layout from "../components/layout";
 import NameCard from "../components/nameCard";
 import PostCard from "../components/postCard";
 import Navbar from "../components/navbar";
+import { generateRssFeed } from "../lib/rss";
 
 export async function getStaticProps() {
+  await generateRssFeed();
   const allPostsData = getSortedPostsData();
   return {
     props: {

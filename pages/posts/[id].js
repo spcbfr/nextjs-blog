@@ -16,14 +16,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const {
-    code,
-    frontmatter,
-    prevPostData,
-    nextPostData,
-    prevPostIndex,
-    nextPostIndex,
-  } = await getPostData(params.id);
+  const { code, frontmatter, prevPostData, nextPostData } = await getPostData(
+    params.id
+  );
   return {
     props: {
       code,
@@ -69,14 +64,12 @@ export default function Post({
       <article className="sm:mt-32 mt-12 sm:mx-12 md:mx-0 ">
         <div className="print:mx-auto print:w-fit">
           <Link href="/">
-            <a>
-              <Image
-                src={ProfilePic}
-                width={70}
-                height={70}
-                className="rounded-full"
-              />
-            </a>
+            <Image
+              src={ProfilePic}
+              width={70}
+              height={70}
+              className="rounded-full"
+            />
           </Link>
         </div>
         <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display text-black">
@@ -94,33 +87,35 @@ export default function Post({
       </article>
       <div className="flex gap-4 justify-center">
         {prevPostData ? (
-          <Link href={prevPostData.id}>
-            <a className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg ease-linear  text-zinc-700">
-              <div className="font-semibold uppercase text-zinc-500 text-sm">
-                Previous Post
-              </div>
-              <div>
-                <h2>
-                  {prevPostData.title.length <= 40
-                    ? prevPostData.title
-                    : prevPostData.title.substring(0, 40) + "..."}
-                </h2>
-              </div>
-            </a>
+          <Link
+            href={prevPostData.id}
+            className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg ease-linear  text-zinc-700"
+          >
+            <div className="font-semibold uppercase text-zinc-500 text-sm">
+              Previous Post
+            </div>
+            <div>
+              <h2>
+                {prevPostData.title.length <= 40
+                  ? prevPostData.title
+                  : prevPostData.title.substring(0, 40) + "..."}
+              </h2>
+            </div>
           </Link>
         ) : null}
         {nextPostData ? (
-          <Link href={nextPostData.id}>
-            <a className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg ease-linear text-zinc-700">
-              <div className="font-semibold uppercase text-sm text-zinc-500">
-                Next Post
-              </div>
-              <h2>
-                {nextPostData.title.length <= 40
-                  ? nextPostData.title
-                  : nextPostData.title.substring(0, 40) + "..."}
-              </h2>
-            </a>
+          <Link
+            href={nextPostData.id}
+            className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg ease-linear text-zinc-700"
+          >
+            <div className="font-semibold uppercase text-sm text-zinc-500">
+              Next Post
+            </div>
+            <h2>
+              {nextPostData.title.length <= 40
+                ? nextPostData.title
+                : nextPostData.title.substring(0, 40) + "..."}
+            </h2>
           </Link>
         ) : null}
       </div>

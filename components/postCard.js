@@ -5,8 +5,11 @@ export default function PostCard({ postsData }) {
     <>
       {postsData.map(({ id, date, title }) => (
         <li className="pb-5 flex justify-between" key={id}>
-          <Link href={`/posts/${id}`}>
-            <a className="sm:text-3xl text-xl text-black font-bold">{title}</a>
+          <Link
+            href={`/posts/${id}`}
+            className="sm:text-3xl text-xl text-black font-bold"
+          >
+            {title}
           </Link>
           <br />
           <p className=" text-zinc-500 font-semibold">
