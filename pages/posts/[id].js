@@ -40,25 +40,29 @@ export default function Post({
       <Head>
         <title>{frontmatter.title + " | Youssef Bouzekri's Blog"}</title>
         <meta property="og:title" content={frontmatter.title} />
-        <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:type" content="website" />
+        <meta property="og:description" content={frontmatter.excerpt} />
+        <meta property="og:type" content="article" />
         <meta
           property="og:image"
-          content="https://youssefbouzekri.vercel.app/me.png"
+          content={
+            "https://youssefbouzekri.vercel.app/api/og=" + frontmatter.title
+          }
         />
         <meta
           property="og:image:alt"
           content="Banner for site, showing page title in a playful way"
         />
-        <meta property="og:image:width" content="1280" />
-        <meta property="og:image:height" content="675" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@spacebuffer" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta
           name="twitter:image"
-          content="https://youssefbouzekri.vercel.app/me.png"
+          content={
+            "https://youssefbouzekri.vercel.app/api/og=" + frontmatter.title
+          }
         ></meta>
       </Head>
       <article className="sm:mt-32 mt-12 sm:mx-12 md:mx-0 ">
@@ -83,6 +87,15 @@ export default function Post({
         </div>
         <main className="mt-3  lg:prose-xl prose-hr:print:hidden prose-a:underline prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-indigo sm:max-w-none">
           <Component />
+          <p>
+            if you've enjoyed this article
+            <a
+              href="https://ko-fi.com/spacebuffer"
+              className="!text-indigo-600 !no-underline ml-1"
+            >
+              consider buying me a coffee!
+            </a>
+          </p>
         </main>
       </article>
       <div className="flex gap-4 justify-center">

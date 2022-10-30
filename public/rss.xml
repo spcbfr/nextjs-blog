@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Youssef Bouzekri's Blog</title>
+        <link>https://youssefbouzekri.vercel.app</link>
+        <description>A Developer that blogs</description>
+        <lastBuildDate>Sun, 30 Oct 2022 16:32:53 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for Node.js</generator>
+        <copyright>All rights reserved 2022, Youssef Bouzekri</copyright>
+        <item>
+            <title><![CDATA[[CDATA[My first blog post]]]]></title>
+            <link>https://youssefbouzekri.vercel.app/blog/first-post</link>
+            <guid>https://youssefbouzekri.vercel.app/blog/first-post</guid>
+            <pubDate>Tue, 20 Sep 2022 23:00:00 GMT</pubDate>
+            <description><![CDATA[![CDATA[The very first blog post, probably will delete it once I have a few other ones on the site]]]]></description>
+            <content:encoded><![CDATA[<p>The very first blog post, probably will delete it once I have a few other ones on the site</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/blog/first-post">Keep Reading</a></strong>]]></content:encoded>
+            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
+        </item>
+        <item>
+            <title><![CDATA[[CDATA[Don't seek perfection]]]]></title>
+            <link>https://youssefbouzekri.vercel.app/blog/perfectionism</link>
+            <guid>https://youssefbouzekri.vercel.app/blog/perfectionism</guid>
+            <pubDate>Thu, 06 Oct 2022 23:00:00 GMT</pubDate>
+            <description><![CDATA[![CDATA[Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..]]]]></description>
+            <content:encoded><![CDATA[<p>Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/blog/perfectionism">Keep Reading</a></strong>]]></content:encoded>
+            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
+        </item>
+        <item>
+            <title><![CDATA[[CDATA[The Content Creation Dilemma]]]]></title>
+            <link>https://youssefbouzekri.vercel.app/blog/the-content-creation-dilemma</link>
+            <guid>https://youssefbouzekri.vercel.app/blog/the-content-creation-dilemma</guid>
+            <pubDate>Sun, 09 Oct 2022 23:00:00 GMT</pubDate>
+            <description><![CDATA[![CDATA[Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected]]]]></description>
+            <content:encoded><![CDATA[<p>Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/blog/the-content-creation-dilemma">Keep Reading</a></strong>]]></content:encoded>
+            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
+        </item>
+    </channel>
+</rss>

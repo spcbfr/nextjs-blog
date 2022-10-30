@@ -26,10 +26,13 @@ export default function Home({ allPostsData }) {
         </Head>
         <div className="mt-28">
           <NameCard />
-          <section className="sm:text-2xl mt-3  font-display leading-relaxed mb-5">
-            Welcome to my Digital Garden, I love using computers, and I am
-            sharing my love through this blog. Other than computers, I watch
-            quite a few movies and series, and will review some of them on here
+          <section className="sm:text-xl mt-3  mb-5">
+            <p className="leading-relaxed">
+              Welcome to my Digital Garden, I love using computers, and I am
+              sharing my love through this blog. Other than computers, I watch
+              quite a few movies and series, and will review some of them on
+              here
+            </p>
           </section>
         </div>
         <section className="flex gap-5 mb-10">
