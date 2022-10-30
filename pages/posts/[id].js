@@ -87,7 +87,7 @@ export default function Post({
             <Date dateString={frontmatter.date} />
           </span>
         </div>
-        <main className="mt-3  lg:prose-xl prose-hr:print:hidden prose-a:underline prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-indigo sm:max-w-none">
+        <main className="mt-3 [&>p]:!mb-5 [&>ul>li]:list-disc [&>hr]:!my-9 [&>p>a]:underline [&>ul>li>a]:underline  [&>h2]:text-4xl [&>ol>li]:list-decimal m-1 lg:prose-xl prose-hr:print:hidden prose-a:underline prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-indigo sm:max-w-none">
           <Component />
           <p>
             if you've enjoyed this article

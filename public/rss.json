@@ -10,36 +10,36 @@
     },
     "items": [
         {
-            "id": "https://youssefbouzekri.vercel.app/blog/first-post",
-            "content_html": "<p>The very first blog post, probably will delete it once I have a few other ones on the site</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/blog/first-post\">Keep Reading</a></strong>",
-            "url": "https://youssefbouzekri.vercel.app/blog/first-post",
-            "title": "[CDATA[My first blog post]]",
-            "summary": "![CDATA[The very first blog post, probably will delete it once I have a few other ones on the site]]",
-            "date_modified": "2022-09-20T23:00:00.000Z",
+            "id": "https://youssefbouzekri.vercel.app/posts/first-post",
+            "content_html": "<p>The very first blog post, probably will delete it once I have a few other ones on the site</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/first-post\">Keep Reading</a></strong>",
+            "url": "https://youssefbouzekri.vercel.app/posts/first-post",
+            "title": "My first blog post",
+            "summary": "The very first blog post, probably will delete it once I have a few other ones on the site",
+            "date_modified": "2022-09-19T23:00:00.000Z",
             "author": {
                 "name": "Youssef Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
         },
         {
-            "id": "https://youssefbouzekri.vercel.app/blog/perfectionism",
-            "content_html": "<p>Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/blog/perfectionism\">Keep Reading</a></strong>",
-            "url": "https://youssefbouzekri.vercel.app/blog/perfectionism",
-            "title": "[CDATA[Don't seek perfection]]",
-            "summary": "![CDATA[Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..]]",
-            "date_modified": "2022-10-06T23:00:00.000Z",
+            "id": "https://youssefbouzekri.vercel.app/posts/perfectionism",
+            "content_html": "<p>Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/perfectionism\">Keep Reading</a></strong>",
+            "url": "https://youssefbouzekri.vercel.app/posts/perfectionism",
+            "title": "Don't seek perfection",
+            "summary": "Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..",
+            "date_modified": "2022-10-05T23:00:00.000Z",
             "author": {
                 "name": "Youssef Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
         },
         {
-            "id": "https://youssefbouzekri.vercel.app/blog/the-content-creation-dilemma",
-            "content_html": "<p>Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/blog/the-content-creation-dilemma\">Keep Reading</a></strong>",
-            "url": "https://youssefbouzekri.vercel.app/blog/the-content-creation-dilemma",
-            "title": "[CDATA[The Content Creation Dilemma]]",
-            "summary": "![CDATA[Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected]]",
-            "date_modified": "2022-10-09T23:00:00.000Z",
+            "id": "https://youssefbouzekri.vercel.app/posts/the-content-creation-dilemma",
+            "content_html": "<p>Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/the-content-creation-dilemma\">Keep Reading</a></strong>",
+            "url": "https://youssefbouzekri.vercel.app/posts/the-content-creation-dilemma",
+            "title": "The Content Creation Dilemma",
+            "summary": "Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected",
+            "date_modified": "2022-10-08T23:00:00.000Z",
             "author": {
                 "name": "Youssef Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
