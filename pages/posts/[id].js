@@ -57,8 +57,8 @@ export default function Post({
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@spacebuffer" />
-        <meta name="twitter:title" content={frontmatter.title} />
-        <meta name="twitter:description" content={frontmatter.description} />
+        <meta name="twitter:title" content="@spacebuffer" />
+        <meta name="twitter:description" content={frontmatter.excerpt} />
         <meta
           name="twitter:image"
           content={
