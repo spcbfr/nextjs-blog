@@ -45,7 +45,8 @@ export default function Post({
         <meta
           property="og:image"
           content={
-            "https://youssefbouzekri.vercel.app/api/og=" + frontmatter.title
+            "https://youssefbouzekri.vercel.app/api/og?title=" +
+            frontmatter.title
           }
         />
         <meta
@@ -61,7 +62,8 @@ export default function Post({
         <meta
           name="twitter:image"
           content={
-            "https://youssefbouzekri.vercel.app/api/og=" + frontmatter.title
+            "https://youssefbouzekri.vercel.app/api/og?title=" +
+            frontmatter.title
           }
         ></meta>
       </Head>
