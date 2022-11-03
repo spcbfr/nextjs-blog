@@ -23,6 +23,8 @@ export default function Home({ allPostsData }) {
       <Layout>
         <Head>
           <title>{siteTitle}</title>
+
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <div className="mt-28">
           <NameCard />

@@ -4,7 +4,7 @@
         <title>Youssef Bouzekri's Blog</title>
         <link>https://youssefbouzekri.vercel.app</link>
         <description>A Developer that blogs</description>
-        <lastBuildDate>Sun, 30 Oct 2022 21:25:40 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 03 Nov 2022 16:04:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <copyright>All rights reserved 2022, Youssef Bouzekri</copyright>
@@ -33,6 +33,15 @@
             <pubDate>Sat, 08 Oct 2022 23:00:00 GMT</pubDate>
             <description><![CDATA[Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected]]></description>
             <content:encoded><![CDATA[<p>Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/the-content-creation-dilemma">Keep Reading</a></strong>]]></content:encoded>
+            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
+        </item>
+        <item>
+            <title><![CDATA[System76's Thelio Review]]></title>
+            <link>https://youssefbouzekri.vercel.app/posts/thelio-review</link>
+            <guid>https://youssefbouzekri.vercel.app/posts/thelio-review</guid>
+            <pubDate>Wed, 02 Nov 2022 23:00:00 GMT</pubDate>
+            <description><![CDATA[2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful]]></description>
+            <content:encoded><![CDATA[<p>2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/thelio-review">Keep Reading</a></strong>]]></content:encoded>
             <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
         </item>
     </channel>

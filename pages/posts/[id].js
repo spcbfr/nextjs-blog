@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { getAllPostIds, getPostData } from "../../lib/posts";
-import ProfilePic from "/public/me.png";
+import ProfilePic from "/public/me.webp";
 import Date from "../../components/date";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
@@ -40,6 +40,7 @@ export default function Post({
       <Head>
         <title>{frontmatter.title + " | Youssef Bouzekri's Blog"}</title>
         <meta property="og:title" content={frontmatter.title} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:description" content={frontmatter.excerpt} />
         <meta property="og:type" content="article" />
         <meta

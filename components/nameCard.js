@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profilePic from "/public/me.png";
+import profilePic from "/public/me.webp";
 export default function NameCard() {
   return (
     <section className="flex items-center justify-between mt-10">

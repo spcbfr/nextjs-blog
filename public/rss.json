@@ -44,6 +44,18 @@
                 "name": "Youssef Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
+        },
+        {
+            "id": "https://youssefbouzekri.vercel.app/posts/thelio-review",
+            "content_html": "<p>2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/thelio-review\">Keep Reading</a></strong>",
+            "url": "https://youssefbouzekri.vercel.app/posts/thelio-review",
+            "title": "System76's Thelio Review",
+            "summary": "2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful",
+            "date_modified": "2022-11-02T23:00:00.000Z",
+            "author": {
+                "name": "Youssef Bouzekri",
+                "url": "https://fosstodon.org/web/@spacebuffer"
+            }
         }
     ]
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ProfilePic from "/public/me.png";
+import ProfilePic from "/public/me.webp";
 
 export default function Navbar() {
   return (
