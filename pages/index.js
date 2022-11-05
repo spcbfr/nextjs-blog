@@ -43,7 +43,7 @@ export default function Home({ allPostsData }) {
               xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="36"
-              className="stroke-zinc-700 transition ease-linear fill-zinc-700 hover:stroke-black hover:fill-black"
+              className="stroke-zinc-700 transition ease-linear fill-zinc-700 dark:hover:stroke-zinc-600 dark:fill-zinc-300 hover:stroke-black  hover:fill-black"
               viewBox="0 0 256 256"
             >
               <rect width="256" height="256" stroke="none" fill="none"></rect>
@@ -66,7 +66,7 @@ export default function Home({ allPostsData }) {
               viewBox="0 0 256 256"
               height="36"
               width="36"
-              className="stroke-zinc-700 transition ease-linear fill-zinc-700 hover:stroke-black hover:fill-black"
+              className="stroke-zinc-700 transition ease-linear fill-zinc-700  dark:hover:stroke-zinc-600 dark:fill-zinc-300 hover:stroke-black hover:fill-black"
             >
               <rect width="256" height="256" stroke="none" fill="none"></rect>
               <path
@@ -108,41 +108,6 @@ export default function Home({ allPostsData }) {
                 strokeLinejoin="round"
                 strokeWidth="16"
               ></path>
-            </svg>
-          </a>
-          <a href="https://instagram.com/spacebuffer" target={"_blank"}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="36"
-              height="36"
-              className="stroke-zinc-700 transition ease-linear fill-zinc-700 hover:stroke-black hover:fill-black"
-              viewBox="0 0 256 256"
-            >
-              <rect width="256" height="256" stroke="none" fill="none"></rect>
-              <path
-                d="M172,36H84A48,48,0,0,0,36,84v88a48,48,0,0,0,48,48h88a48,48,0,0,0,48-48V84A48,48,0,0,0,172,36ZM128,168a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z"
-                opacity="0.2"
-              ></path>
-              <circle
-                cx="128"
-                cy="128"
-                r="40"
-                fill="none"
-                strokeMiterlimit="10"
-                strokeWidth="16"
-              ></circle>
-              <rect
-                x="36"
-                y="36"
-                width="184"
-                height="184"
-                rx="48"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="16"
-              ></rect>
-              <circle cx="180" cy="76" r="12"></circle>
             </svg>
           </a>
         </section>

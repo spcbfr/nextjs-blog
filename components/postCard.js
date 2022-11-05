@@ -7,7 +7,7 @@ export default function PostCard({ postsData }) {
         <li className="pb-5 font-display flex justify-between" key={id}>
           <Link
             href={`/posts/${id}`}
-            className="sm:text-3xl text-xl text-black font-bold"
+            className="sm:text-3xl text-xl text-black dark:text-zinc-200 font-bold"
           >
             {title}
           </Link>

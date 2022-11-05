@@ -79,22 +79,22 @@ export default function Post({
             />
           </Link>
         </div>
-        <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display text-black">
+        <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display dark:text-white text-black">
           {frontmatter.title}
         </h1>
-        <div className="text-md text-zinc-700 mt-2">
+        <div className="text-md text-zinc-700 dark:text-zinc-100 mt-2">
           Published on{" "}
           <span className="font-bold">
             <Date dateString={frontmatter.date} />
           </span>
         </div>
-        <main className="mt-3 [&>p]:!mb-5 [&>ul>li]:list-disc [&>hr]:!my-9 [&>p>a]:underline [&>ul>li>a]:underline  [&>h2]:text-4xl [&>ol>li]:list-decimal m-1 lg:prose-xl prose-hr:print:hidden prose-a:underline prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-indigo sm:max-w-none">
+        <main className="mt-3 [&>p]:!mb-5 [&>ul>li]:list-disc [&>hr]:!my-9 [&>p>a]:underline [&>ul>li>a]:underline  [&>h2]:text-4xl [&>ol>li]:list-decimal m-1 lg:prose-xl prose-hr:print:hidden prose-figure:rounded-xl prose-figure:overflow-hidden prose-figcaption:bg-zinc-800 prose-figcaption:!text-zinc-200 prose-figcaption:!text-sm prose-figcaption:!p-2 [&>figure>figcaption>p]:!m-0 prose-figcaption:!mt-0 prose-a:underline prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-indigo dark:prose-invert sm:max-w-none">
           <Component />
           <p>
             if you've enjoyed this article
             <a
               href="https://ko-fi.com/spacebuffer"
-              className="!text-indigo-600 !no-underline ml-1"
+              className="!text-indigo-600 dark:!text-indigo-500 !no-underline ml-1"
             >
               consider buying me a coffee!
             </a>
@@ -105,7 +105,7 @@ export default function Post({
         {prevPostData ? (
           <Link
             href={prevPostData.id}
-            className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg ease-linear  text-zinc-700"
+            className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] dark:bg-zinc-800 dark:text-zinc-200 transition flex-col items-baseline flex p-3 rounded-lg ease-linear  text-zinc-700"
           >
             <div className="font-semibold uppercase text-zinc-500 text-sm">
               Previous Post
@@ -122,7 +122,7 @@ export default function Post({
         {nextPostData ? (
           <Link
             href={nextPostData.id}
-            className="bg-zinc-100 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg ease-linear text-zinc-700"
+            className="bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-200 gap-2 hover:bg-[#EAEAEC] transition flex-col items-baseline flex p-3 rounded-lg ease-linear text-zinc-700"
           >
             <div className="font-semibold uppercase text-sm text-zinc-500">
               Next Post
