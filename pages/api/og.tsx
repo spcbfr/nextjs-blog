@@ -20,14 +20,14 @@ export default async function handler(req: any) {
 
     return new ImageResponse(
       (
-        <div tw="bg-slate-100 flex w-full  flex-col h-full justify-center items-center">
-          <h2 style={{ fontSize: 35 }} tw="text-slate-800">
+        <div tw="bg-stone-900 flex w-full  flex-col h-full justify-center items-center">
+          <h2 style={{ fontSize: 35 }} tw="text-stone-400">
             a Blog Post by Youssef Bouzekri
           </h2>
 
           <h1
             style={{ fontSize: 60, fontFamily: "Space Grotesk" }}
-            tw="text-slate-600"
+            tw="text-stone-100"
           >
             {title}
           </h1>

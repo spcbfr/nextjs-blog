@@ -53,7 +53,7 @@ export default function PostListPage({
             key={post.slug}
           >
             <Link href={`/posts/${post.slug}`}>
-              <a className="sm:text-3xl text-xl text-black dark:text-zinc-200 font-bold">
+              <a className="sm:text-3xl text-xl text-zinc-300  font-bold">
                 {post.title}
               </a>
             </Link>

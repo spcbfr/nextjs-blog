@@ -78,22 +78,22 @@ export default function SinglePostPage({
             </a>
           </Link>
         </div>
-        <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display dark:text-white text-black">
+        <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display text-zinc-100">
           {post.title}
         </h1>
-        <div className="text-md text-zinc-700 dark:text-zinc-100 mt-2">
+        <div className="text-md text-zinc-100 mt-2">
           Published on{" "}
           <span className="font-bold">
             <Date dateString={post.date} />
           </span>
         </div>
-        <main className="mt-2 lg:prose-xl  prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-headings:!text-zinc-200 prose-indigo !prose-invert sm:max-w-none">
+        <main className="mt-2 lg:prose-x prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-headings:!text-zinc-200 prose-indigo !prose-invert sm:max-w-none">
           <MDXContent components={{ Img }} />
           <p>
             if you&apos;ve enjoyed this article
             <a
               href="https://ko-fi.com/spacebuffer"
-              className="!text-indigo-600 dark:!text-indigo-500 !no-underline ml-1"
+              className="!text-indigo-600 !no-underline ml-1"
             >
               consider buying me a coffee!
             </a>
