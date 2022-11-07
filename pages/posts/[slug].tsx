@@ -87,7 +87,7 @@ export default function SinglePostPage({
             <Date dateString={post.date} />
           </span>
         </div>
-        <main className="mt-2 lg:prose-x prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-headings:!text-zinc-200 prose-indigo !prose-invert sm:max-w-none">
+        <main className="mt-2 lg:prose-lg prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-headings:!text-zinc-200 prose-indigo !prose-invert sm:max-w-none">
           <MDXContent components={{ Img }} />
           <p>
             if you&apos;ve enjoyed this article
