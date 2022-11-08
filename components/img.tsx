@@ -12,7 +12,6 @@ export default function Img(props: Props) {
         <Image
           src={props.src}
           className="rounded-lg"
-          layout="responsive"
           alt={props.alt}
           height={500}
           width={800}
