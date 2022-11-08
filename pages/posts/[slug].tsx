@@ -67,15 +67,15 @@ export default function SinglePostPage({
       <article className="sm:mt-32 mt-12 sm:mx-12 md:mx-0 ">
         <div className="print:mx-auto print:w-fit">
           <Link href="/">
-            <a>
-              <Image
-                src={ProfilePic}
-                width={70}
-                height={70}
-                alt="My profile Picture"
-                className="rounded-full"
-              />
-            </a>
+
+            <Image
+              src={ProfilePic}
+              width={70}
+              height={70}
+              alt="My profile Picture"
+              className="rounded-full"
+            />
+
           </Link>
         </div>
         <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display text-zinc-100">

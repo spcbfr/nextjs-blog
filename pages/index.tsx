@@ -52,10 +52,12 @@ export default function PostListPage({
             className="pb-5 font-display flex justify-between"
             key={post.slug}
           >
-            <Link href={`/posts/${post.slug}`}>
-              <a className="sm:text-3xl text-xl text-zinc-300  font-bold">
-                {post.title}
-              </a>
+            <Link
+              href={`/posts/${post.slug}`}
+              className="sm:text-3xl text-xl text-zinc-300  font-bold">
+
+              {post.title}
+
             </Link>
             <br />
             <p className=" text-zinc-500 font-semibold font-sans">
