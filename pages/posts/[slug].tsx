@@ -67,7 +67,6 @@ export default function SinglePostPage({
       <article className="sm:mt-32 mt-12 sm:mx-12 md:mx-0 ">
         <div className="print:mx-auto print:w-fit">
           <Link href="/">
-
             <Image
               src={ProfilePic}
               width={70}
@@ -75,7 +74,6 @@ export default function SinglePostPage({
               alt="My profile Picture"
               className="rounded-full"
             />
-
           </Link>
         </div>
         <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display text-zinc-100">
@@ -87,7 +85,7 @@ export default function SinglePostPage({
             <Date dateString={post.date} />
           </span>
         </div>
-        <main className="mt-2 lg:prose-lg prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-headings:!text-zinc-200 prose-indigo !prose-invert sm:max-w-none">
+        <main className="mt-7 lg:prose-lg prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-headings:!text-zinc-200 prose-indigo !prose-invert sm:max-w-none">
           <MDXContent components={{ Img }} />
           <p>
             if you&apos;ve enjoyed this article
