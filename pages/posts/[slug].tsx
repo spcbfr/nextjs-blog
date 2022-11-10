@@ -79,13 +79,34 @@ export default function SinglePostPage({
         <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display text-zinc-100">
           {post.title}
         </h1>
+
+        {/* 
         <div className="text-md text-zinc-100 mt-2">
           Published on{" "}
           <span className="font-bold">
             <Date dateString={post.date} />
           </span>
         </div>
-        <main className="mt-7 lg:prose-lg prose-a:!decoration-indigo-500 prose-a:!decoration-2  sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-headings:!text-zinc-200 prose-indigo !prose-invert sm:max-w-none">
+        */}
+        {post.toc == true ? (
+          <div className="absolute left-56 space-y-2 text-zinc-300 font-display">
+            <div className="uppercase text-sm text-zinc-500">On this page</div>
+            {post.headings.map((heading: any) => {
+              return (
+                <div key={heading.slug}>
+                  <a
+                    href={`#${heading.slug}`}
+                    data-level={heading.level}
+                    className="text-base data-[level=three]:pl-4 data-[level=four]:pl-8"
+                  >
+                    {heading.text}
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        ) : null}
+        <main className="mt-5 lg:prose-lg prose-a:!decoration-indigo-500 prose-a:!decoration-2 prose-headings:pt-10 prose-headings:-mt-10 sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-headings:!text-zinc-200 prose-indigo !prose-invert sm:max-w-none">
           <MDXContent components={{ Img }} />
           <p>
             if you&apos;ve enjoyed this article
