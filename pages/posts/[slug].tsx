@@ -89,7 +89,7 @@ export default function SinglePostPage({
         </div>
         */}
         {post.toc == true ? (
-          <div className="absolute left-56 space-y-2 text-zinc-300 font-display">
+          <div className="absolute left-56 space-y-2  font-display">
             <div className="uppercase text-sm text-zinc-500">On this page</div>
             {post.headings.map((heading: any) => {
               return (
@@ -97,7 +97,7 @@ export default function SinglePostPage({
                   <a
                     href={`#${heading.slug}`}
                     data-level={heading.level}
-                    className="text-base data-[level=three]:pl-4 data-[level=four]:pl-8"
+                    className="text-zinc-400 hover:text-zinc-300 hover:underline underline-offset-3 decoration-zinc-500 transition-all data-[level=three]:pl-4 data-[level=four]:pl-8"
                   >
                     {heading.text}
                   </a>
