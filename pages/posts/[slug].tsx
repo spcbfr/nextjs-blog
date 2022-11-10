@@ -89,7 +89,7 @@ export default function SinglePostPage({
         </div>
         */}
         {post.toc == true ? (
-          <div className="absolute left-56 space-y-2  font-display">
+          <div className="absolute  space-y-2 xl:block xl:left-12 2xl:left-48 hidden font-display">
             <div className="uppercase text-sm text-zinc-500">On this page</div>
             {post.headings.map((heading: any) => {
               return (
