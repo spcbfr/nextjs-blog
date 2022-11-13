@@ -11,82 +11,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Poppins"],
+        sans: ['var(--font-karla)'],
         display: ["Space Grotesk"],
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            pre: {
-              backgroundColor: false,
-              marginTop: false,
-              marginBottom: false,
-              marginLeft: false,
-              marginRight: false,
-              paddingLeft: false,
-              paddingRight: false,
-            },
-            code: {
-              paddingLeft: false,
-              paddingRight: false,
-              paddingTop: false,
-              paddingBottom: false,
-              marginTop: false,
-              marginBottom: false,
-              marginLeft: false,
-              backgroundColor: false,
-            },
-          },
-        },
-
-        sm: {
-          css: {
-            pre: {
-              backgroundColor: false,
-              marginTop: false,
-              marginBottom: false,
-              marginLeft: false,
-              marginRight: false,
-              paddingLeft: false,
-              paddingRight: false,
-            },
-            code: {
-              paddingLeft: false,
-              paddingRight: false,
-              paddingTop: false,
-              paddingBottom: false,
-              marginTop: false,
-              marginBottom: false,
-              marginLeft: false,
-              backgroundColor: false,
-            },
-          },
-        },
-        lg: {
-          css: {
-            pre: {
-              backgroundColor: false,
-              marginTop: false,
-              marginBottom: false,
-              marginLeft: false,
-              marginRight: false,
-              paddingLeft: false,
-              paddingRight: false,
-            },
-            code: {
-              paddingLeft: false,
-              paddingRight: false,
-              paddingTop: false,
-              paddingBottom: false,
-              marginTop: false,
-              marginBottom: false,
-              marginLeft: false,
-              backgroundColor: false,
-            },
-          },
-        },
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
 };

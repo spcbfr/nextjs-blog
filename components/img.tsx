@@ -16,7 +16,7 @@ export default function Img(props: Props) {
           height={500}
           width={800}
         />
-        <figcaption className=" my-2 text-sm text-zinc-500">
+        <figcaption className=" my-2  font-sans text-zinc-500">
           {props.caption}
         </figcaption>
       </figure>

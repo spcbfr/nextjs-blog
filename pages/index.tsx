@@ -22,8 +22,8 @@ export default function PostListPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
-      <div className="mt-28">
-        <section className="flex items-center justify-between mt-10">
+      <div>
+        <section className="flex items-center justify-between">
           <div className="flex">
             <Image
               src={profilePic}
@@ -33,34 +33,33 @@ export default function PostListPage({
               className="rounded-full "
             />
             <section className="ml-6 mt-2">
-              <h2 className="sm:text-3xl text-2xl font-black text-zinc-200 font-display">
+              <h2 className="font-display text-2xl font-black text-zinc-200 sm:text-3xl">
                 Youssef Bouzekri
               </h2>
-              <h5 className="sm:text-lg text-zinc-300">
+              <h5 className="text-zinc-300 sm:text-lg font-sans">
                 Developer | Content Creator
               </h5>
             </section>
           </div>
         </section>
-        <section className="sm:text-xl mt-3  mb-5">
+        <section className="mt-3 mb-5  sm:text-xl">
           <p className="leading-relaxed"></p>
         </section>
       </div>
       <ul>
         {posts.map((post) => (
           <li
-            className="pb-5 font-display flex justify-between"
+            className="flex justify-between pb-5 font-display"
             key={post.slug}
           >
             <Link
               href={`/posts/${post.slug}`}
-              className="sm:text-3xl text-xl text-zinc-300  font-bold">
-
+              className="text-xl font-bold text-zinc-300  sm:text-3xl"
+            >
               {post.title}
-
             </Link>
             <br />
-            <p className=" text-zinc-500 font-semibold font-sans">
+            <p className=" font-sans font-semibold text-zinc-500">
               <DisplayDate dateString={post.date} />
             </p>
           </li>

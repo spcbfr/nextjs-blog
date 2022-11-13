@@ -1,4 +1,5 @@
 import Layout from "components/layout";
+import { components } from "components/MDXBaseComponents";
 import { allPosts, type Post } from "contentlayer/generated";
 import { type GetStaticProps, type InferGetStaticPropsType } from "next";
 import Head from "next/head";
@@ -35,6 +36,7 @@ export default function SinglePostPage({
 
   return (
     <Layout>
+
       <Head>
         <title>{post.title + " | Youssef Bouzekri's Blog"}</title>
         <meta property="og:title" content={post.title} />
@@ -64,40 +66,34 @@ export default function SinglePostPage({
           }
         ></meta>
       </Head>
-      <article className="sm:mt-32 mt-12 sm:mx-12 md:mx-0 ">
+
+      <div className="col-end-5">
         <div className="print:mx-auto print:w-fit">
           <Link href="/">
             <Image
               src={ProfilePic}
-              width={70}
-              height={70}
-              alt="My profile Picture"
+              width={80}
+              height={80}
+              alt=""
               className="rounded-full"
             />
           </Link>
         </div>
-        <h1 className=" sm:text-5xl mt-5 text-4xl font-black font-display text-zinc-100">
+        <h1 className="mt-5 font-display text-4xl font-black text-zinc-100 sm:text-5xl ">
           {post.title}
         </h1>
+      </div>
 
-        {/* 
-        <div className="text-md text-zinc-100 mt-2">
-          Published on{" "}
-          <span className="font-bold">
-            <Date dateString={post.date} />
-          </span>
-        </div>
-        */}
-        {post.toc == true ? (
-          <div className="absolute  space-y-2 xl:block xl:left-12 2xl:left-48 hidden font-display">
-            <div className="uppercase text-sm text-zinc-500">On this page</div>
+      {post.toc == true ? (
+          <div className="sticky top-6 xl:!col-start-2 xl:row-span-2 xl:row-start-3 hidden space-y-2 font-display xl:block">
+            <div className="text-sm uppercase text-zinc-500">On this page</div>
             {post.headings.map((heading: any) => {
               return (
                 <div key={heading.slug}>
                   <a
                     href={`#${heading.slug}`}
                     data-level={heading.level}
-                    className="text-zinc-400 hover:text-zinc-300 hover:underline underline-offset-3 decoration-zinc-500 transition-all data-[level=three]:pl-4 data-[level=four]:pl-8"
+                    className="underline-offset-3 text-zinc-400 decoration-zinc-500 transition-all hover:text-zinc-300 hover:underline data-[level=two]:pl-4 data-[level=three]:pl-8"
                   >
                     {heading.text}
                   </a>
@@ -105,20 +101,18 @@ export default function SinglePostPage({
               );
             })}
           </div>
-        ) : null}
-        <main className="mt-5 lg:prose-lg prose-a:!decoration-indigo-500 prose-a:!decoration-2 prose-headings:pt-10 prose-headings:-mt-10 sm:prose prose-ul:list-disc prose-sm marker:prose-ul:text-zinc-400 prose-headings:font-display prose-headings:!text-zinc-200 prose-indigo !prose-invert sm:max-w-none">
-          <MDXContent components={{ Img }} />
-          <p>
-            if you&apos;ve enjoyed this article
-            <a
-              href="https://ko-fi.com/spacebuffer"
-              className="!text-indigo-600 !no-underline ml-1"
-            >
-              consider buying me a coffee!
-            </a>
-          </p>
-        </main>
-      </article>
+          ) : null}
+
+      <MDXContent components={{ Img, ...components }} />
+      <p className="font-sans text-lg ">
+        if you&apos;ve enjoyed this article
+        <a
+          href="https://ko-fi.com/spacebuffer"
+          className="ml-1 text-yellow-500 font-bold  !no-underline"
+        >
+          consider buying me a coffee!
+        </a>
+      </p>
     </Layout>
   );
 }

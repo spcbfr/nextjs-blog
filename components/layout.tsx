@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import Footer from "./footer";
 interface Props {
   children?: ReactNode;
   // any props that come into the component
@@ -7,33 +6,8 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <>
-      {/* 
-      <svg
-        className="pointer-events-none fixed isolate z-50 opacity-70 mix-blend-soft-light"
-        width="100%"
-        height="100%"
-      >
-        <filter id="pedroduarteisalegend">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.90"
-            numOctaves="4"
-            stitchTiles="stitch"
-          ></feTurbulence>
-        </filter>
-        <rect
-          width="100%"
-          height="100%"
-          filter="url(#pedroduarteisalegend)"
-        ></rect>
-      </svg>
-
-      */}
-      <main className=" bg-zinc-900 px-7 selection:bg-indigo-800 text-zinc-100 selection:text-zinc-50 flex flex-col sm:px-0  min-h-screen ">
-        <section className="md:max-w-3xl sm:max-w-2xl sm:mx-auto flex-grow w-full">
-          {children}
-        </section>
-        <Footer />
+      <main className="relative z-10 mb-5 mt-12 grid grid-cols-[1fr,min(640px,100%),1fr] gap-y-5 gap-x-10 px-7 sm:mt-32 sm:px-0 xl:grid-cols-[1fr,minmax(auto,240px),min(640px,100%),minmax(auto,240px),1fr] [&>*]:col-start-2 xl:[&>*]:col-start-3 ">
+        {children}
       </main>
     </>
   );
