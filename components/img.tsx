@@ -8,7 +8,7 @@ interface Props {
 export default function Img(props: Props) {
   return (
     <>
-      <figure className="not-prose">
+      <figure>
         <Image
           src={props.src}
           className="rounded-lg"
@@ -16,7 +16,7 @@ export default function Img(props: Props) {
           height={500}
           width={800}
         />
-        <figcaption className=" my-2  font-sans text-zinc-500">
+        <figcaption className="my-2 font-sans text-zinc-500">
           {props.caption}
         </figcaption>
       </figure>

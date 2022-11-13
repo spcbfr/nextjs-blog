@@ -27,42 +27,39 @@ export default function PostListPage({
         <title>Youssef Bouzekri&apos;s Blog</title>
       </Head>
       <div>
-        <section className="flex items-center justify-between">
-          <div className="flex">
-            <Image
-              src={profilePic}
-              width="80"
-              height={80}
-              alt="A profile picture displaying a frog in a forest looking into the distance"
-              className="rounded-full "
-            />
-            <section className="">
-              <h2 className="font-display text-2xl font-black text-zinc-200 sm:text-3xl">
-                Youssef Bouzekri
-              </h2>
-              <h5 className="text-zinc-300 sm:text-lg font-sans">
-                Developer | Content Creator
-              </h5>
-            </section>
-          </div>
+        <section className="flex gap-x-4 ">
+          <Image
+            src={profilePic}
+            width="80"
+            height={80}
+            alt=""
+            className="rounded-full "
+          />
+          <section>
+            <h2 className="font-display text-2xl font-black text-zinc-200 sm:text-3xl">
+              Youssef Bouzekri
+            </h2>
+            <h5 className="text-zinc-300 sm:text-lg font-sans">
+              Developer | Content Creator
+            </h5>
+          </section>
         </section>
       </div>
       <ul>
         {posts.map((post) => (
           <li
-            className="flex justify-between pb-5 font-display"
+            className="flex items-baseline justify-between pb-5 font-display"
             key={post.slug}
           >
             <Link
               href={`/posts/${post.slug}`}
-              className="text-xl font-bold text-zinc-300  sm:text-3xl"
+              className="text-xl font-bold text-zinc-300 sm:text-3xl"
             >
               {post.title}
             </Link>
-            <br />
-            <p className=" font-sans font-semibold text-zinc-500">
+            <div className=" font-sans  font-semibold text-zinc-500">
               <DisplayDate dateString={post.date} />
-            </p>
+            </div>
           </li>
         ))}
       </ul>

@@ -1,6 +1,6 @@
 export const components = {
-  h1: (props: any) => <h2 className="relative w-fit font-display font-bold xl:text-3xl text-2xl" {...props} />,
-  h2: (props: any) => <h3 className="relative font-sans font-bold xl:text-xl uppercase xl:normal-case  " {...props} />,
+  h1: (props: any) => <h2 className="relative pt-10 -mt-10 w-fit font-display font-bold xl:text-3xl text-2xl" {...props} />,
+  h2: (props: any) => <h3 className="relative  pt-10 -mt-10 font-sans font-bold xl:text-xl uppercase xl:normal-case  " {...props} />,
   hr: (props: any) => <hr className="mx-20 my-4 border-zinc-600" {...props} />,
   ul: (props: any) => (
     <ul
@@ -12,7 +12,7 @@ export const components = {
     <ol className="list-decimal font-sans text-lg space-y-3 pl-10" {...props} />
   ),
   a: (props: any) => (
-    <a className=" text-yellow-500 underline decoration-zinc-800 decoration-2 underline-offset-2 font-semibold" {...props}/>
+    <a className=" text-yellow-500 underline decoration-zinc-700 hover:decoration-zinc-600 transition-all decoration-2 underline-offset-2 font-semibold" {...props}/>
   ),
   Table: (props: any) => (
     <table className="font-sans table-auto [&>thead]:border-b-2 [&>thead]:border-b-yellow-500 [&>thead>tr>th]:p-2 [&>thead]:bg-zinc-700 border-2 border-zinc-500 [&>tbody>tr>td]:p-2 [&>tbody>tr>td]:bg-zinc-800 [&>thead]:rounded-t-lg rounded-lg border-separate " {...props}/>
