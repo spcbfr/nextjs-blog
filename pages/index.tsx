@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import profilePic from "/public/me.webp";
 import DisplayDate from "components/date";
+import Head from "next/head";
 import { generateRssFeed } from "lib/rss";
 
 export const getStaticProps: GetStaticProps<{
@@ -22,6 +23,9 @@ export default function PostListPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
+      <Head>
+        <title>Youssef Bouzekri&apos;s Blog</title>
+      </Head>
       <div>
         <section className="flex items-center justify-between">
           <div className="flex">
@@ -32,7 +36,7 @@ export default function PostListPage({
               alt="A profile picture displaying a frog in a forest looking into the distance"
               className="rounded-full "
             />
-            <section className="ml-6 mt-2">
+            <section className="">
               <h2 className="font-display text-2xl font-black text-zinc-200 sm:text-3xl">
                 Youssef Bouzekri
               </h2>
@@ -41,9 +45,6 @@ export default function PostListPage({
               </h5>
             </section>
           </div>
-        </section>
-        <section className="mt-3 mb-5  sm:text-xl">
-          <p className="leading-relaxed"></p>
         </section>
       </div>
       <ul>
