@@ -56,6 +56,18 @@
                 "name": "Youssef Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
+        },
+        {
+            "id": "https://youssefbouzekri.vercel.app/posts/contentlayer-toc",
+            "content_html": "<p>Trying to make somethign</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/contentlayer-toc\">Keep Reading</a></strong>",
+            "url": "https://youssefbouzekri.vercel.app/posts/contentlayer-toc",
+            "title": "Making a Table of Contents with contentlayer",
+            "summary": "Trying to make somethign",
+            "date_modified": "2022-11-14T00:00:00.000Z",
+            "author": {
+                "name": "Youssef Bouzekri",
+                "url": "https://fosstodon.org/web/@spacebuffer"
+            }
         }
     ]
 }

@@ -1,0 +1,81 @@
+---
+title: "Making a Table of Contents with contentlayer"
+date: 2022-11-14
+description: "Trying to make somethign"
+toc: true
+---
+
+Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys! Here is what we'll be building today:
+
+- An Automatically Generated Table of Contents™
+- toggleable on a per-post basis by simply adding a `toc: true{:yaml}` to the frontmatter
+- Works flawlessly with Nested Headings
+
+Now that that's out of the way, let's get started.
+
+# Setup
+
+## File structure
+
+<Callout title="Intended Audience" type="info">
+  This tutorial is Intended for people who are already using contentlayer for
+  their blog, so I won't be covering how to setup one from scratch, I'll also be
+  using NextJS 12 but most of the steps are framework agnostic.
+</Callout>
+Here is the (simplified) file structure, that I'll be navigating through out this
+project
+
+```txt
+src/
+├─ content/
+│  ├─ posts/
+│  │ ├─ fancy-post.mdx
+│  │ ├─ another-cool-post.mdx
+├─ pages/
+│  ├─ blog/
+│  │  ├─ [slug].js
+├─ contentlayer.config.js
+```
+
+## Installing the Necessary Packages
+
+for this project we'll only need 2 packages, pretty cool isn't it ? we'll look into what each one does later
+
+```js
+npm install github-slugger rehype-slug
+// or...
+yarn add github-slugger rehype-slug
+```
+
+# The code
+
+## Adding id links to headings
+
+First go to your `contentlayer.config.js`, specifically the `makeSource` function, it should look something like this
+
+```js
+export default makeSource({
+  contentDirPath: "content",
+  documentTypes: [Post],
+});
+```
+
+Now create a `markdown` or `mdx` proprety inside the parameter of this function and add the following rehype plugin. in my case I'll be using mdx.
+
+```js {1,6}
+import rehypeSlug from "rehype-slug";
+export default makeSource({
+  contentDirPath: "content",
+  documentTypes: [Post],
+  mdx: {
+    rehypePlugins: [rehypeSlug],
+  },
+});
+```
+
+What `rehypeSlug` does is simply adding an id to every heading in the page, it doesn't create a link that wraps the heading though, if two headings have the same name, it will increment a number at the end (i.e `cool-heading-1`)
+
+<Img
+  src="/rehypeSlug.png"
+  alt="# cool heading --> <h1 id='cool-heading'> Cool Heading </h1>"
+/>

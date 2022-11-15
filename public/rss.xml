@@ -4,7 +4,7 @@
         <title>Youssef Bouzekri's Blog</title>
         <link>https://youssefbouzekri.vercel.app</link>
         <description>A Developer that blogs</description>
-        <lastBuildDate>Thu, 03 Nov 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 14 Nov 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <copyright>All rights reserved 2022, Youssef Bouzekri</copyright>
@@ -42,6 +42,15 @@
             <pubDate>Thu, 03 Nov 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful]]></description>
             <content:encoded><![CDATA[<p>2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/thelio-review">Keep Reading</a></strong>]]></content:encoded>
+            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
+        </item>
+        <item>
+            <title><![CDATA[Making a Table of Contents with contentlayer]]></title>
+            <link>https://youssefbouzekri.vercel.app/posts/contentlayer-toc</link>
+            <guid>https://youssefbouzekri.vercel.app/posts/contentlayer-toc</guid>
+            <pubDate>Mon, 14 Nov 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Trying to make somethign]]></description>
+            <content:encoded><![CDATA[<p>Trying to make somethign</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/contentlayer-toc">Keep Reading</a></strong>]]></content:encoded>
             <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
         </item>
     </channel>
