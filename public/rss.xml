@@ -44,14 +44,5 @@
             <content:encoded><![CDATA[<p>2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/thelio-review">Keep Reading</a></strong>]]></content:encoded>
             <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
         </item>
-        <item>
-            <title><![CDATA[Making a Table of Contents with contentlayer]]></title>
-            <link>https://youssefbouzekri.vercel.app/posts/contentlayer-toc</link>
-            <guid>https://youssefbouzekri.vercel.app/posts/contentlayer-toc</guid>
-            <pubDate>Mon, 14 Nov 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Trying to make somethign]]></description>
-            <content:encoded><![CDATA[<p>Trying to make somethign</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/contentlayer-toc">Keep Reading</a></strong>]]></content:encoded>
-            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
-        </item>
     </channel>
 </rss>
