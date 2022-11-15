@@ -3,8 +3,10 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
-      <body className="bg-zinc-900 text-zinc-100 antialiased selection:bg-yellow-400 selection:text-zinc-900">
+      <Head>
+        <link rel="shortcut icon" href="/favicon-32x32.png" />
+      </Head>
+      <body className=" bg-stone-50 text-stone-900 antialiased selection:bg-yellow-400 selection:text-stone-900">
         <Main />
         <NextScript />
       </body>

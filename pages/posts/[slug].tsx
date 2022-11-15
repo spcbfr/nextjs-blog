@@ -4,8 +4,9 @@ import { allPosts, type Post } from "contentlayer/generated";
 import { type GetStaticProps, type InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import ProfilePic from "/public/me.webp";
+import ProfilePic from "/public/profile-pic.jpg";
 import Image from "next/image";
+import Callout from "components/callout";
 import Date from "components/date";
 import Link from "next/link";
 import Img from "components/img";
@@ -36,7 +37,6 @@ export default function SinglePostPage({
 
   return (
     <Layout>
-
       <Head>
         <title>{post.title + " | Youssef Bouzekri's Blog"}</title>
         <meta property="og:title" content={post.title} />
@@ -74,18 +74,20 @@ export default function SinglePostPage({
               src={ProfilePic}
               width={80}
               height={80}
+              quality="100"
               alt=""
               className="rounded-full"
             />
           </Link>
         </div>
-        <h1 className="mt-5 font-display text-4xl font-black text-zinc-100 sm:text-5xl ">
+        <h1 className="mt-5 font-display text-4xl font-black text-stone-800 sm:text-5xl ">
           {post.title}
         </h1>
       </div>
 
       {post.toc == true ? (
-          <div className="sticky top-6 xl:!col-start-2 xl:row-span-2 xl:row-start-3 hidden space-y-2 font-display xl:block">
+        post.headings.length !== 0 ? (
+          <div className="sticky top-6 xl:!col-start-4 xl:col-span-2 xl:row-span-2 xl:row-start-3 hidden space-y-2 font-display xl:block">
             <div className="text-sm uppercase text-zinc-500">On this page</div>
             {post.headings.map((heading: any) => {
               return (
@@ -93,7 +95,7 @@ export default function SinglePostPage({
                   <a
                     href={`#${heading.slug}`}
                     data-level={heading.level}
-                    className="underline-offset-3 text-zinc-400 decoration-zinc-500 transition-all hover:text-zinc-300 hover:underline data-[level=two]:pl-4 data-[level=three]:pl-8"
+                    className="underline-offset-3 text-stone-800 decoration-stone-700 transition-all hover:text-stone-700 hover:underline data-[level=two]:pl-4 data-[level=three]:pl-8"
                   >
                     {heading.text}
                   </a>
@@ -101,14 +103,15 @@ export default function SinglePostPage({
               );
             })}
           </div>
-          ) : null}
+        ) : null
+      ) : null}
 
-      <MDXContent components={{ Img, ...components }} />
+      <MDXContent components={{ Img, ...components, Callout }} />
       <p className="font-sans text-lg ">
         if you&apos;ve enjoyed this article
         <a
           href="https://ko-fi.com/spacebuffer"
-          className="ml-1 text-yellow-500 font-bold  !no-underline"
+          className="ml-1 text-yellow-700 font-bold  !no-underline"
         >
           consider buying me a coffee!
         </a>

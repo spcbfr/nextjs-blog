@@ -1,24 +1,34 @@
 div[data-rehype-pretty-code-fragment] {
-  @apply p-4 bg-zinc-800 my-6 rounded-lg;
+  @apply overflow-hidden border-2 rounded-lg;
+}
+
+div[data-rehype-pretty-code-fragment] pre {
+  @apply overflow-x-auto px-0 text-sm leading-6 bg-stone-100;
+}
+
+div[data-rehype-pretty-code-title] {
+  @apply rounded-md bg-zinc-100/10 px-3  py-1 font-mono text-xs leading-4 text-zinc-200/70;
+}
+
+div[data-rehype-pretty-code-fragment] .line {
+  @apply px-3 py-1 border-l-4 border-l-transparent;
+}
+
+div[data-rehype-pretty-code-fragment] .line--highlighted {
+  @apply bg-stone-400/10 border-l-4 border-yellow-500;
 }
 
 div[data-rehype-pretty-code-fragment] code {
-  @apply grid;
+  @apply grid bg-stone-100 py-4 px-0;
 }
-div[data-rehype-pretty-code-title] {
-  @apply bg-zinc-700 relative top-3 left-5  text-zinc-200 w-fit p-2 font-sans   rounded-lg;
-}
+
 code[data-line-numbers] {
   counter-reset: lineNumber;
 }
-div[data-rehype-pretty-code-fragment] .line {
-  @apply py-1;
-}
 
 code[data-line-numbers] .line::before {
-  @layer {
-    counter-increment: lineNumber;
-    content: counter(lineNumbers);
-  }
-  @apply w-4 mr-3 text-right inline-block;
+  counter-increment: lineNumber;
+  content: counter(lineNumber);
+  display: inline-block;
+  text-align: right;
 }

@@ -3,7 +3,7 @@ import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Layout from "components/layout";
 import Link from "next/link";
 import Image from "next/image";
-import profilePic from "/public/me.webp";
+import profilePic from "/public/profile-pic.jpg";
 import DisplayDate from "components/date";
 import Head from "next/head";
 import { generateRssFeed } from "lib/rss";
@@ -32,15 +32,16 @@ export default function PostListPage({
             src={profilePic}
             width="80"
             height={80}
+            quality="100"
             alt=""
-            className="rounded-full "
+            className="rounded-full"
           />
           <section>
-            <h2 className="font-display text-2xl font-black text-zinc-200 sm:text-3xl">
+            <h2 className="font-display text-2xl font-black text-stone-800 sm:text-3xl">
               Youssef Bouzekri
             </h2>
-            <h5 className="text-zinc-300 sm:text-lg font-sans">
-              Developer | Content Creator
+            <h5 className="text-zinc-700 sm:text-lg font-sans">
+              Full Time Geek / CS Student
             </h5>
           </section>
         </section>
@@ -53,11 +54,11 @@ export default function PostListPage({
           >
             <Link
               href={`/posts/${post.slug}`}
-              className="text-xl font-bold text-zinc-300 sm:text-3xl"
+              className="text-xl font-bold text-stone-800 sm:text-3xl"
             >
               {post.title}
             </Link>
-            <div className=" font-sans  font-semibold text-zinc-500">
+            <div className=" font-sans  font-semibold text-stone-700">
               <DisplayDate dateString={post.date} />
             </div>
           </li>
