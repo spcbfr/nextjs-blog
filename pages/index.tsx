@@ -40,9 +40,9 @@ export default function PostListPage({
             <h2 className="font-display text-2xl font-black text-stone-800 sm:text-3xl">
               Youssef Bouzekri
             </h2>
-            <h5 className="text-zinc-700 sm:text-lg font-sans">
+            <p className="text-zinc-700 sm:text-lg font-sans">
               Full Time Geek / CS Student
-            </h5>
+            </p>
           </section>
         </section>
       </div>
@@ -58,7 +58,7 @@ export default function PostListPage({
             >
               {post.title}
             </Link>
-            <div className=" font-sans  font-semibold text-stone-700">
+            <div className=" font-sans  font-semibold shrink-0  text-stone-700">
               <DisplayDate dateString={post.date} />
             </div>
           </li>

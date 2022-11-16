@@ -15,11 +15,11 @@ div[data-rehype-pretty-code-fragment] .line {
 }
 
 div[data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-stone-400/10 border-l-4 border-yellow-500;
+  @apply bg-stone-400/10 border-l-4 border-blue-900/60;
 }
 
 div[data-rehype-pretty-code-fragment] code {
-  @apply grid bg-stone-100 py-4 px-0;
+  @apply grid bg-stone-100 text-stone-800 py-4 px-0;
 }
 
 code[data-line-numbers] {
@@ -31,4 +31,6 @@ code[data-line-numbers] .line::before {
   content: counter(lineNumber);
   display: inline-block;
   text-align: right;
+  color: rgb(188, 188, 188);
+  padding-right: 1rem;
 }

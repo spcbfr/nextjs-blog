@@ -1,0 +1,353 @@
+---
+title: "Making a Table of Contents with contentlayer"
+description: "Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys!"
+toc: true
+date: 2022-11-14
+---
+
+Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys! Here is what we'll be building today:
+
+- An Automatically Generated Table of Contents™
+- toggleable on a per-post basis by simply adding a `toc: true{:yaml}` to the frontmatter
+- Works flawlessly with Nested Headings
+
+Now that that's out of the way, let's get started.
+
+# Setup
+
+## File structure
+
+<Callout title="Intended Audience" type="info">
+  This tutorial is Intended for people who are already using contentlayer for
+  their blog, so I won't be covering how to setup one from scratch, I'll also be
+  using NextJS 12 but most of the steps are framework agnostic.
+</Callout>
+
+Here is the (simplified) file structure, that I'll be navigating through out this
+project
+
+```txt
+src/
+├─ content/
+│  ├─ posts/
+│  │ ├─ fancy-post.mdx
+│  │ ├─ another-cool-post.mdx
+├─ pages/
+│  ├─ blog/
+│  │  ├─ [slug].js
+├─ contentlayer.config.js
+```
+
+## Installing the Necessary Packages
+
+for this project we'll only need 2 packages, pretty cool isn't it ? we'll look into what each one does later
+
+```js
+npm install github-slugger rehype-slug
+// or...
+yarn add github-slugger rehype-slug
+```
+
+# The code
+
+## Adding id links to headings
+
+First go to your `contentlayer.config.js`, specifically the `makeSource` function, it should look something like this
+
+```js
+export default makeSource({
+  contentDirPath: "content",
+  documentTypes: [Post],
+});
+```
+
+Now create a `markdown` or `mdx` proprety inside the parameter of this function and add the following rehype plugin. in my case I'll be using mdx.
+
+```js {1,6}
+import rehypeSlug from "rehype-slug";
+export default makeSource({
+  contentDirPath: "content",
+  documentTypes: [Post],
+  mdx: {
+    rehypePlugins: [rehypeSlug],
+  },
+});
+```
+
+What `rehypeSlug` does is simply adding an id to every heading in the page, it doesn't create a link that wraps the heading though, if two headings have the same name, it will increment a number at the end (i.e `cool-heading-1`)
+
+<Img
+  src="/rehypeSlug.png"
+  alt="# cool heading --> <h1 id='cool-heading'> Cool Heading </h1>"
+/>
+
+## Using computed fields to fetch the headings
+
+Now find the Document Type Definition for your articles, it should be in the same `contentlayer.config.js` file as before, and add the following `headings` Computed Value.
+
+```js showLineNumbers {13-17}
+const Post = defineDocumentType(() => ({
+  name: "Post",
+  contentType: "mdx",
+  // Location of Post source files (relative to `contentDirPath`)
+  filePathPattern: `posts/*.mdx`,
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    // other fields...
+  },
+  computedFields: {
+    headings: {
+      type: "json",
+      resolve: async (doc) => {},
+    },
+// Other Document types...
+```
+
+Now inside the `resolve` method we'll write the code that will fetch every heading from the MDX file using a very <Del>simple</Del> complex regex.
+
+```js /headingsRegex/
+headings: {
+  type: "json",
+  resolve: async (doc) => {
+    const headingsRegex = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+    const headings = Array.from(doc.body.raw.matchAll(headingsRegex))
+  },
+},
+```
+
+<Callout title="Explaining the Regex 🗿">
+  In short, `Hi ## It's me{:md}` and `###nospace{:md}` won't match, but `# Hello World{:md}` will. Along with it 2 properties will be returned. `flag = "#"{:js}` and `content= "Hello World"{:js}` which we'll be using later.
+  <CalloutDetails>
+  - `\n` matches any new lines, this means that #'s in the middle of the line won't be captured
+  - `(?<flag>#{1-6})` matches any number of #'s between 1 and 6 and also stores what's matched in a **Named Control Group** called `flag`
+  - `\s+` to match one or more spaces after the hashtag symbols
+  - `(?<content>.+)` matches any thing except a line break and, and once again the result is stored in a control group called `content`
+  - finally `g` stands for global and is used to catch all the instances that match the expression and not just the first one
+  </CalloutDetails>
+</Callout>
+
+Now we'll map over the array of matches in the document and return the data that we'll need, which is derived from the regex **Named Control Groups**, notice how we used `flag.length{:js}` to count the number of hashtags in the heading thus getting the heading's level. finally let's return the data we've mapped over.
+
+```js /headings/2-3
+headings: {
+  type: "json",
+  resolve: async (doc) => {
+    const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+
+
+    const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
+        ({ groups }) => {
+          const flag = groups?.flag;
+          const content = groups?.content;
+          return {
+            level: flag.length,
+            text: content,
+          };
+        }
+      );
+      return headings;
+  },
+},
+```
+
+We also need to generate a slug from the contents of the headings, which _crucially_ needs to be the same as the one we generated earlier, that's why we'll use **github-slugger because it uses the same generation method rehype-slug**. we made sure to check whether content is empty or not to avoid getting an error if there is an empty heading somewhere.
+
+```js {1,2,15,7} /slugger/2-3
+// make sure to have this import at the top of the file
+import GithubSlugger from "github-slugger"
+headings: {
+  type: "json",
+  resolve: async (doc) => {
+    const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+    const slugger = new GithubSlugger()
+    const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
+        ({ groups }) => {
+          const flag = groups?.flag;
+          const content = groups?.content;
+          return {
+            level: flag.length,
+            text: content,
+            slug: content ? slugger.slug(content) : undefined
+          };
+        }
+      );
+      return headings;
+    },
+}
+```
+
+## Displaying the Table of Contents
+
+Now that most of the logic is done, move to your posts page, mine is `src/pages/posts/[slug].jsx`, somewhere before or after the mdx component
+
+```jsx showLineNumbers
+export const getStaticProps = () => {
+  // your post fetching logic goes here
+  return { props: { post } }
+}
+export default function singlePostPage( { post } ) {
+
+  return (
+    <div>
+      <h3>On this page<h3>
+      <div>
+        {/* leave this empty for now*/}
+      </div>
+    </div>
+
+    {/* the rest of the page goes here*/}
+  )
+}
+```
+
+Now we'll map over the headings and display the table of contents, I've intentially made the styling pretty barebones so that you have the liberty to use whatever framework you want.
+
+```jsx
+<div>
+  <h3>On this page<h3>
+  <div>
+        {post.headings.map(heading => {
+          return (
+            <div key={`#${heading.slug}`}>
+              <a href={heading.slug}>
+                {heading.text}
+              </a>
+            </div>
+          )
+        })}
+  </div>
+</div>
+```
+
+### Handling Nested Headings
+
+you might have noticed that the one thing that's missing right now, is that all the headings appear as if they are on the same level even when they're not, you could go about this programatically with nested arrays, but I found the best method was to keep it simple and conditionally add a `padding-left` depending on the heading level.
+
+so if the top-level heading, then we add no padding and if it's a second-level heading we add say `padding-left: 1rem` and so on
+
+To start let's go back to the `contentlayer.config.js` and convert the level number to words (i.e 1 -> one, 2 -> two, etc..)
+
+```js {11-13}
+headings: {
+  type: "json",
+  resolve: async (doc) => {
+    const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+    const slugger = new GithubSlugger()
+    const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
+        ({ groups }) => {
+          const flag = groups?.flag;
+          const content = groups?.content;
+          return {
+            level: flag?.length == 1 ? "one"
+            : flag?.length == 2 ? "two"
+            : "three",
+            text: content,
+            slug: content ? slugger.slug(content) : undefined
+          };
+        }
+      );
+      return headings;
+    },
+}
+```
+
+now go back to `[slug].js` and add a data-attribute to the Table of contents' `<a>{:html}` tags.
+
+```jsx /data-level={heading.level}/
+<div>
+  <h3>On this page<h3>
+  <div>
+        {post.headings.map(heading => {
+          return (
+            <div key={`#${heading.slug}`}>
+              <a data-level={heading.level} href={heading.slug}>
+                {heading.text}
+              </a>
+            </div>
+          )
+        })}
+  </div>
+</div>
+```
+
+and simply conditionally style the a tags based on the value of that data-attribute, the reason we converted the level into words is because appereantly data-attributes don't accept numbers as values.
+
+```css
+a[data-level="two"] {
+  padding-left: 2px;
+}
+
+a[data-level="three"] {
+  padding-left: 4px;
+}
+
+a[data-level="four"] {
+  padding-left: 6px;
+}
+```
+
+If you're using tailwindcss 3v, you can do the same thing pretty elegantly too
+
+```jsx
+<a
+  className="data-[level=two]:pl-2 data-[level=three]:pl-4"
+  data-level={heading.level}
+  href={heading.slug}
+>
+  {heading.text}
+</a>
+```
+
+### Adding toggleability (is that even a word lol)
+
+As a final touch let's allow ourselves to toggle the TOC on a per-post basis, once again we'll need to go back to the contentlayer config and a `toc{:.entity.name.variable}` field that's set to `false{:js}` by default
+
+```js showLineNumbers {14-18}
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    date: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+      required: true,
+    },
+    toc: {
+      type: "boolean",
+      required: false,
+      default: false,
+    },
+  },
+```
+
+then only show the TOC when the field is set to `true{:js}`
+
+```jsx
+{post.toc ? (
+<div>
+  <h3>On this page<h3>
+  <div>
+        {post.headings.map(heading => {
+          return (
+            <div key={`#${heading.slug}`}>
+              <a data-level={heading.level} href={heading.slug}>
+                {heading.text}
+              </a>
+            </div>
+          )
+        })}
+  </div>
+</div>
+): undefined }
+```
+
+# Final thoughts
+
+And that's it! I hope you got your TOC working, if you're facing any problems feel free to reach out on mastodon! this article has been soo fun to write. I'll see you again in a few weeks

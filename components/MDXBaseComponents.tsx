@@ -7,10 +7,11 @@ export const components = {
   ),
   h2: (props: any) => (
     <h3
-      className="relative  pt-10 -mt-10 font-sans font-bold xl:text-xl uppercase xl:normal-case  "
+      className="relative pt-10 -mt-10 font-sans font-bold xl:text-xl uppercase xl:normal-case  "
       {...props}
     />
   ),
+  h3: (props: any) => <h4 className="font-sans font-bold text-lg" {...props} />,
   hr: (props: any) => <hr className="mx-20 my-4 border-zinc-600" {...props} />,
   ul: (props: any) => (
     <ul
@@ -49,11 +50,11 @@ export const components = {
   ),
   code: (props: any) => (
     <code
-      className="bg-stone-200 text-sm py-[2px] px-1 rounded-md "
+      className="bg-stone-200 text-sm py-[2px] px-1 text-stone-700 rounded-md "
       {...props}
     />
   ),
-  del: (props: any) => (
-    <del className="text-stone-100/70 line-through" {...props} />
+  Del: (props: any) => (
+    <del className="text-stone-700/70 line-through" {...props} />
   ),
 };

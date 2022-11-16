@@ -6,4 +6,8 @@ export const rehypePrettyCodeOptions: Partial<Options> = {
   onVisitHighlightedLine(node) {
     node.properties.className.push("line--highlighted");
   },
+  onVisitHighlightedWord(node) {
+    node.properties.style =
+      "background-color: rgb(231 229 228); padding: 4px; border-radius: 5px";
+  },
 };

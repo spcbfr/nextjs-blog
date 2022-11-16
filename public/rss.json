@@ -56,6 +56,18 @@
                 "name": "Youssef Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
+        },
+        {
+            "id": "https://youssefbouzekri.vercel.app/posts/contentlayer-table-of-contents",
+            "content_html": "<p>Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys!</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/contentlayer-table-of-contents\">Keep Reading</a></strong>",
+            "url": "https://youssefbouzekri.vercel.app/posts/contentlayer-table-of-contents",
+            "title": "Making a Table of Contents with contentlayer",
+            "summary": "Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys!",
+            "date_modified": "2022-11-14T00:00:00.000Z",
+            "author": {
+                "name": "Youssef Bouzekri",
+                "url": "https://fosstodon.org/web/@spacebuffer"
+            }
         }
     ]
 }

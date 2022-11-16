@@ -6,7 +6,7 @@ import Head from "next/head";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import ProfilePic from "/public/profile-pic.jpg";
 import Image from "next/image";
-import Callout from "components/callout";
+import Callout, { CalloutDetails } from "components/callout";
 import Date from "components/date";
 import Link from "next/link";
 import Img from "components/img";
@@ -106,7 +106,9 @@ export default function SinglePostPage({
         ) : null
       ) : null}
 
-      <MDXContent components={{ Img, ...components, Callout }} />
+      <MDXContent
+        components={{ Img, ...components, Callout, CalloutDetails }}
+      />
       <p className="font-sans text-lg ">
         if you&apos;ve enjoyed this article
         <a

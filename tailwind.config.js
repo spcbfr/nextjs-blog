@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-karla)'],
+        sans: ["var(--font-karla)"],
         display: ["Space Grotesk"],
       },
     },
