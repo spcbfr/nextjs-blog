@@ -27,7 +27,7 @@ export default async function handler(req: any) {
 
           <h1
             style={{ fontSize: 46, fontFamily: "Space Grotesk" }}
-            tw="text-stone-100 "
+            tw="text-stone-100 text-center"
           >
             {title}
           </h1>
