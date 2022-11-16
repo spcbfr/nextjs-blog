@@ -87,7 +87,7 @@ export default function SinglePostPage({
 
       {post.toc == true ? (
         post.headings.length !== 0 ? (
-          <div className="sticky top-6 xl:!col-start-4 xl:col-span-2 xl:row-span-2 xl:row-start-3 hidden space-y-2 font-display xl:block">
+          <div className="sticky top-6 xl:!col-start-4 xl:col-span-2 xl:row-span-4 xl:row-start-3 hidden space-y-2 font-display xl:block">
             <div className="text-sm uppercase text-zinc-500">On this page</div>
             {post.headings.map((heading: any) => {
               return (
