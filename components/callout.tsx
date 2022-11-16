@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 export default function Callout(props: any) {
   return (
@@ -18,14 +17,7 @@ export function CalloutDetails(props: any) {
   const [open, setOpen] = useState(false);
   if (open) {
     return (
-      <motion.div
-        animate={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
-        className="font-sans mt-3"
-      >
+      <div className="font-sans mt-3">
         {props.children}
         <button
           onClick={() => setOpen(false)}
@@ -47,7 +39,7 @@ export function CalloutDetails(props: any) {
             />
           </svg>
         </button>
-      </motion.div>
+      </div>
     );
   }
   return (
