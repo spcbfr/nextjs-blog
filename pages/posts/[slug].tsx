@@ -116,7 +116,8 @@ export default function SinglePostPage({
           className="ml-1 text-yellow-700 font-bold  !no-underline"
         >
           consider buying me a coffee!
-        </a>
+        </a>{" "}
+        currently I am trying to reach $14 to get a good a fancy domain name!
       </p>
     </Layout>
   );

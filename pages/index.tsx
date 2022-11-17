@@ -32,7 +32,6 @@ export default function PostListPage({
             src={profilePic}
             width="80"
             height={80}
-            quality="100"
             alt=""
             className="rounded-full"
           />
