@@ -1,4 +1,4 @@
-import { allPosts, type Post } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Layout from "components/layout";
 import Link from "next/link";
@@ -8,6 +8,11 @@ import DisplayDate from "components/date";
 import Head from "next/head";
 import { generateRssFeed } from "lib/rss";
 
+type Post = {
+  title: string;
+  date: string;
+  slug: string;
+};
 export const getStaticProps: GetStaticProps<{
   posts: Post[];
 }> = () => {
@@ -15,7 +20,10 @@ export const getStaticProps: GetStaticProps<{
   const sortedPosts = allPosts.sort((a, b) => {
     return Number(new Date(b.date)) - Number(new Date(a.date));
   });
-  return { props: { posts: sortedPosts } };
+  const filteredPosts = sortedPosts.map(({ slug, title, date }) => {
+    return { slug, title, date };
+  });
+  return { props: { posts: filteredPosts } };
 };
 
 export default function PostListPage({
