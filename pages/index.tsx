@@ -3,7 +3,7 @@ import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import Layout from "components/layout";
 import Link from "next/link";
 import Image from "next/image";
-import profilePic from "/public/profile-pic.jpg";
+import profilePic from "/public/profile-pic.webp";
 import DisplayDate from "components/date";
 import Head from "next/head";
 import { generateRssFeed } from "lib/rss";
@@ -40,6 +40,7 @@ export default function PostListPage({
             src={profilePic}
             width="80"
             height={80}
+            quality="100"
             alt=""
             className="rounded-full"
           />

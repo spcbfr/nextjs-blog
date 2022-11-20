@@ -4,7 +4,7 @@ import { allPosts, type Post } from "contentlayer/generated";
 import { type GetStaticProps, type InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import ProfilePic from "/public/profile-pic.jpg";
+import ProfilePic from "/public/profile-pic.webp";
 import Image from "next/image";
 import Callout, { CalloutDetails } from "components/callout";
 import Date from "components/date";
