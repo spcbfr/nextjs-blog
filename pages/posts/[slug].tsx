@@ -109,11 +109,11 @@ export default function SinglePostPage({
       <MDXContent
         components={{ Img, ...components, Callout, CalloutDetails }}
       />
-      <p className="font-sans text-lg ">
+      <p className="font-sans text-lg bg-stone-800 text-stone-100 p-3 rounded-lg ">
         if you&apos;ve enjoyed this article
         <a
           href="https://ko-fi.com/spacebuffer"
-          className="ml-1 text-yellow-700 font-bold  !no-underline"
+          className="ml-1 text-yellow-500 font-bold  !no-underline"
         >
           consider buying me a coffee!
         </a>{" "}
