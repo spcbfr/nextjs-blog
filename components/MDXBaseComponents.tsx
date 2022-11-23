@@ -24,7 +24,7 @@ export const components = {
   ),
   a: (props: any) => (
     <a
-      className=" text-yellow-700 underline decoration-stone-200 hover:decoration-stone-300 transition-all decoration-2 underline-offset-2 font-semibold"
+      className=" text-amber-600 underline decoration-stone-200 hover:decoration-stone-300 transition-all decoration-2 underline-offset-2 font-semibold"
       {...props}
     />
   ),
@@ -37,14 +37,14 @@ export const components = {
   ),
   Table: (props: any) => (
     <table
-      className="font-sans table-auto [&>thead]:border-b-2 [&>thead]:border-b-yellow-500 [&>thead>tr>th]:p-2 [&>thead]:bg-stone-300 border-2 border-zinc-500 [&>tbody>tr>td]:p-2 [&>tbody>tr>td]:bg-stone-200 [&>thead]:rounded-t-lg rounded-lg border-separate "
+      className="font-sans table-auto [&>thead]:border-b-2 [&>thead>tr>th]:p-2 [&>thead]:bg-stone-300 border-2 border-zinc-500 [&>tbody>tr>td]:p-2 [&>tbody>tr>td]:bg-stone-200 [&>thead]:rounded-t-lg rounded-lg border-separate "
       {...props}
     />
   ),
   strong: (props: any) => <strong className="font-bold" {...props} />,
   blockquote: (props: any) => (
     <blockquote
-      className="text-xl border-l-4 font-semibold pl-4 border-l-yellow-500"
+      className="text-xl border-l-4 font-semibold pl-4 border-l-amber-500"
       {...props}
     />
   ),
