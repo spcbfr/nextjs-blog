@@ -3,6 +3,8 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { rehypePrettyCodeOptions } from "./lib/rehypePrettyCode";
 import GithubSlugger from "github-slugger";
 import rehypeSlug from "rehype-slug";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
 
 const Post = defineDocumentType(() => ({
   name: "Post",
@@ -68,6 +70,11 @@ export default makeSource({
   contentDirPath: "content",
   documentTypes: [Post],
   mdx: {
-    rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions], rehypeSlug],
+    rehypePlugins: [
+      [rehypePrettyCode, rehypePrettyCodeOptions],
+      rehypeKatex,
+      rehypeSlug,
+    ],
+    remarkPlugins: [remarkMath],
   },
 });
