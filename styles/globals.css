@@ -2,7 +2,57 @@
 @import "./syntax-highlighting.css";
 @font-face {
   font-family: "Sentient";
-  src: url("../public/fonts/Sentient-Variable.ttf");
+  src: url("../public/fonts/Sentient-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sentient";
+  src: url("../public/fonts/Sentient-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("../public/fonts/Sentient-Medium.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("../public/fonts/Sentient-Bold.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("../public/fonts/Sentient-BoldItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("../public/fonts/Sentient-MediumItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("../public/fonts/Sentient-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sentient";
+  src: url("../public/fonts/Sentient-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
 }
 @tailwind components;
 @tailwind utilities;
