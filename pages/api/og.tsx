@@ -5,7 +5,7 @@ export const config = {
 };
 
 const font = fetch(
-  new URL("../../public/fonts/SpaceGrotesk-Bold.ttf", import.meta.url)
+  new URL("../../public/fonts/Sentient-Bold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 export default async function handler(req: any) {
   try {
@@ -22,7 +22,7 @@ export default async function handler(req: any) {
       (
         <div tw="bg-stone-900 flex w-full  flex-col h-full justify-center items-center">
           <h2 style={{ fontSize: 35 }} tw="text-stone-400">
-            a Blog Post by Youssef Bouzekri
+            an article by Youssef Bouzekri
           </h2>
 
           <h1
@@ -38,7 +38,7 @@ export default async function handler(req: any) {
         height: 630,
         fonts: [
           {
-            name: "Space Grotesk",
+            name: "Sentient",
             data: fontData,
             style: "normal",
             weight: 800,
