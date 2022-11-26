@@ -24,7 +24,7 @@ export const components = {
   ),
   a: (props: any) => (
     <a
-      className=" text-amber-600 underline decoration-stone-200 hover:decoration-stone-300 transition-all decoration-2 underline-offset-2 font-semibold"
+      className=" text-amber-600 underline font-display text-[0.95rem] decoration-stone-200 hover:decoration-stone-300 transition-all decoration-2 underline-offset-2 font-semibold"
       {...props}
     />
   ),
@@ -44,7 +44,7 @@ export const components = {
   strong: (props: any) => <strong className="font-bold" {...props} />,
   blockquote: (props: any) => (
     <blockquote
-      className="text-xl border-l-4 font-semibold pl-4 border-l-amber-500"
+      className="text-xl [&>p]:font-display border-l-4 font-semibold pl-4 border-l-amber-500"
       {...props}
     />
   ),

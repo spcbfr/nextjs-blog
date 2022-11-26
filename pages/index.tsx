@@ -58,24 +58,23 @@ export default function PostListPage({
           </section>
         </section>
       </div>
-      <ul>
+      <div>
         {posts.map((post) => (
-          <li
-            className="flex items-baseline justify-between pb-5 font-display"
-            key={post.slug}
-          >
-            <Link
-              href={`/posts/${post.slug}`}
-              className="text-xl font-bold text-stone-800 sm:text-3xl"
-            >
-              {post.title}
-            </Link>
-            <div className=" font-sans  font-semibold shrink-0  text-stone-700">
-              <DisplayDate dateString={post.date} />
+          <div key={post.slug} className="pb-5 font-sans">
+            <div className="flex items-baseline justify-between font-display">
+              <Link
+                href={`/posts/${post.slug}`}
+                className="text-xl font-bold text-stone-800 sm:text-3xl"
+              >
+                {post.title}
+              </Link>
+              <div className=" font-sans  font-semibold shrink-0  text-stone-700">
+                <DisplayDate dateString={post.date} />
+              </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </Layout>
   );
 }

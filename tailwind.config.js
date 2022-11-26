@@ -27,7 +27,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-karla)"],
-        display: ["Space Grotesk"],
+        display: ["Sentient"],
       },
     },
   },
