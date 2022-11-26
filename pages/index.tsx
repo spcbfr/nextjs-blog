@@ -33,6 +33,10 @@ export default function PostListPage({
     <Layout>
       <Head>
         <title>Youssef Bouzekri&apos;s Blog</title>
+        <meta
+          name="description"
+          content="Hey, I am youssef, A computer science student and an occaisonal tech writer of interactive articles on this blog!"
+        />
       </Head>
       <div>
         <section className="flex gap-x-4 ">
