@@ -24,7 +24,7 @@ export const components = {
   ),
   a: (props: any) => (
     <a
-      className=" text-amber-600 underline font-display text-[0.95rem] decoration-stone-200 hover:decoration-stone-300 transition-all decoration-2 underline-offset-2 font-semibold"
+      className=" text-amber-600 underline decoration-stone-200 hover:decoration-stone-300 transition-all decoration-2 underline-offset-1 font-semibold"
       {...props}
     />
   ),
