@@ -1,6 +1,7 @@
 import { Feed } from "feed";
 import fs from "fs";
 import { allPosts, type Post } from "contentlayer/generated";
+import { filterProps } from "framer-motion";
 export const generateRssFeed = async () => {
   const siteURL = process.env.SITE_URL;
 
@@ -8,7 +9,9 @@ export const generateRssFeed = async () => {
     return Number(new Date(a.date)) - Number(new Date(b.date));
   });
 
-  const date = new Date(sortedPostsForRSS[sortedPostsForRSS.length - 1].date);
+  const filtredPostsForRSS = sortedPostsForRSS.filter((post) => !post.unlisted);
+
+  const date = new Date(filtredPostsForRSS[filtredPostsForRSS.length - 1].date);
 
   const author = {
     name: "Youssef Bouzekri",
@@ -42,7 +45,7 @@ export const generateRssFeed = async () => {
     author,
   });
 
-  sortedPostsForRSS.forEach((post) => {
+  filtredPostsForRSS.forEach((post) => {
     const url = `${siteURL}/posts/${post.slug}`;
 
     feed.addItem({

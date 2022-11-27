@@ -29,6 +29,11 @@ const Post = defineDocumentType(() => ({
       required: false,
       default: false,
     },
+    unlisted: {
+      type: "boolean",
+      required: false,
+      default: false,
+    },
   },
   computedFields: {
     headings: {

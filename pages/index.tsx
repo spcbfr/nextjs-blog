@@ -20,7 +20,8 @@ export const getStaticProps: GetStaticProps<{
   const sortedPosts = allPosts.sort((a, b) => {
     return Number(new Date(b.date)) - Number(new Date(a.date));
   });
-  const filteredPosts = sortedPosts.map(({ slug, title, date }) => {
+  const listedPosts = sortedPosts.filter((post) => !post.unlisted);
+  const filteredPosts = listedPosts.map(({ slug, title, date }) => {
     return { slug, title, date };
   });
   return { props: { posts: filteredPosts } };
