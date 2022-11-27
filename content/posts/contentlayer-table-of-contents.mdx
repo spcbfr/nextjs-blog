@@ -81,7 +81,7 @@ What `rehypeSlug` does is simply adding an id to every heading in the page, it d
   alt="# cool heading --> <h1 id='cool-heading'> Cool Heading </h1>"
 />
 
-## Using computed fields to fetch the headings
+## Fetching the headings
 
 Now find the Document Type Definition for your articles, it should be in the same `contentlayer.config.js` file as before, and add the following `headings` Computed Value.
 
@@ -179,7 +179,7 @@ headings: {
 }
 ```
 
-## Displaying the Table of Contents
+## Displaying the TOC
 
 Now that most of the logic is done, move to your posts page, mine is `src/pages/posts/[slug].jsx`, somewhere before or after the mdx component
 
@@ -301,7 +301,7 @@ If you're using tailwindcss 3v, you can do the same thing pretty elegantly too
 </a>
 ```
 
-### Adding toggleability (is that even a word lol)
+### Adding toggleability
 
 As a final touch let's allow ourselves to toggle the TOC on a per-post basis, once again we'll need to go back to the contentlayer config and a `toc{:.entity.name.variable}` field that's set to `false{:js}` by default
 
