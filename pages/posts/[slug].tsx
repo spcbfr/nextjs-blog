@@ -128,7 +128,7 @@ export default function SinglePostPage({
         <MDXContent
           components={{ Img, ...components, Callout, CalloutDetails }}
         />
-        <p className="font-sans text-lg bg-stone-900 text-stone-200 p-3 rounded-lg ">
+        <p className="font-sans text-lg print:hidden bg-stone-900 text-stone-200 p-3 rounded-lg ">
           if you&apos;ve enjoyed this article,
           <a
             href="https://ko-fi.com/spacebuffer"
