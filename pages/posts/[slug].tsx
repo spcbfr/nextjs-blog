@@ -73,7 +73,7 @@ export default function SinglePostPage({
             }
           ></meta>
         </Head>
-
+        <a id="top"></a>
         <div className="col-end-5">
           <div className="print:mx-auto print:w-fit">
             <Link href="/">
@@ -94,23 +94,33 @@ export default function SinglePostPage({
 
         {post.toc == true ? (
           post.headings.length !== 0 ? (
-            <div className="sticky top-6 xl:!col-start-4 xl:col-span-2 xl:row-span-4 xl:row-start-3 hidden space-y-2 font-sans xl:block">
+            <div className="sticky top-6 xl:!col-start-4 xl:row-span-4 xl:row-start-3 hidden space-y-2 font-sans xl:block">
               <div className="text-sm uppercase font-sans text-zinc-500">
                 On this page
               </div>
               {post.headings.map((heading: any) => {
                 return (
-                  <div key={heading.slug}>
+                  <div
+                    key={heading.slug}
+                    className="data-[level=two]:pl-4 data-[level=three]:pl-8"
+                    data-level={heading.level}
+                  >
                     <a
                       href={`#${heading.slug}`}
-                      data-level={heading.level}
-                      className="underline-offset-3 text-stone-800 decoration-stone-700 transition-all hover:text-stone-700 hover:underline data-[level=two]:pl-4 data-[level=three]:pl-8"
+                      className="underline-offset-3 text-stone-800 decoration-stone-700 transition-all hover:text-stone-700 hover:underline "
                     >
                       {heading.text}
                     </a>
                   </div>
                 );
               })}
+              <hr className="pb-2" />
+              <a
+                className="text-stone-400 hover:text-stone-700 transition-colors text-sm"
+                href="#top"
+              >
+                Back to top
+              </a>
             </div>
           ) : null
         ) : null}
