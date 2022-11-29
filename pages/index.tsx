@@ -33,10 +33,10 @@ export default function PostListPage({
   return (
     <Layout>
       <Head>
-        <title>Youssef Bouzekri&apos;s Blog</title>
+        <title>Yusuf Bouzekri&apos;s Blog</title>
         <meta
           name="description"
-          content="Hey, I am youssef, A computer science student and an occaisonal tech writer of interactive articles on this blog!"
+          content="Hey, I am Yusuf, A computer science student and an occaisonal tech writer of interactive articles on this blog!"
         />
       </Head>
       <div>
@@ -51,7 +51,7 @@ export default function PostListPage({
           />
           <section>
             <h2 className="font-display text-2xl font-black text-stone-800 sm:text-3xl">
-              Youssef Bouzekri
+              Yusuf Bouzekri
             </h2>
             <p className="text-zinc-700 sm:text-lg font-sans">
               Full Time Geek / CS Student

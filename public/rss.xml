@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Youssef Bouzekri's Blog</title>
+        <title>Yusuf Bouzekri's Blog</title>
         <link>https://youssefbouzekri.vercel.app</link>
         <description>A Developer that blogs</description>
         <lastBuildDate>Mon, 14 Nov 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
-        <copyright>All rights reserved 2022, Youssef Bouzekri</copyright>
+        <copyright>All rights reserved 2022, Yusuf Bouzekri</copyright>
         <item>
             <title><![CDATA[Don't seek perfection]]></title>
             <link>https://youssefbouzekri.vercel.app/posts/perfectionism</link>
@@ -15,7 +15,7 @@
             <pubDate>Thu, 06 Oct 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..]]></description>
             <content:encoded><![CDATA[<p>Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/perfectionism">Keep Reading</a></strong>]]></content:encoded>
-            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
+            <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
         </item>
         <item>
             <title><![CDATA[The Content Creation Dilemma]]></title>
@@ -24,7 +24,7 @@
             <pubDate>Sun, 09 Oct 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected]]></description>
             <content:encoded><![CDATA[<p>Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/the-content-creation-dilemma">Keep Reading</a></strong>]]></content:encoded>
-            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
+            <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
         </item>
         <item>
             <title><![CDATA[System76's Thelio Review]]></title>
@@ -33,7 +33,7 @@
             <pubDate>Thu, 03 Nov 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful]]></description>
             <content:encoded><![CDATA[<p>2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/thelio-review">Keep Reading</a></strong>]]></content:encoded>
-            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
+            <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
         </item>
         <item>
             <title><![CDATA[Making a Table of Contents with contentlayer]]></title>
@@ -42,7 +42,7 @@
             <pubDate>Mon, 14 Nov 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys!]]></description>
             <content:encoded><![CDATA[<p>Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys!</p> <br/> <strong><a href="https://youssefbouzekri.vercel.app/posts/contentlayer-table-of-contents">Keep Reading</a></strong>]]></content:encoded>
-            <author>youssefbouzekri@proton.me (Youssef Bouzekri)</author>
+            <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
         </item>
     </channel>
 </rss>

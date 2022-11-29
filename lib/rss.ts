@@ -14,7 +14,7 @@ export const generateRssFeed = async () => {
   const date = new Date(filtredPostsForRSS[filtredPostsForRSS.length - 1].date);
 
   const author = {
-    name: "Youssef Bouzekri",
+    name: "Yusuf Bouzekri",
 
     email: "youssefbouzekri@proton.me",
 
@@ -22,15 +22,15 @@ export const generateRssFeed = async () => {
   };
 
   const feed = new Feed({
-    title: "Youssef Bouzekri's Blog",
+    title: "Yusuf Bouzekri's Blog",
 
     description: "A Developer that blogs",
 
-    id: "youssefbouzekri.vercel.app",
+    id: "yusuf.fyi",
 
     link: siteURL,
 
-    copyright: `All rights reserved ${date.getFullYear()}, Youssef Bouzekri`,
+    copyright: `All rights reserved ${date.getFullYear()}, Yusuf Bouzekri`,
 
     updated: date,
 

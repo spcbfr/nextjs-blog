@@ -1,11 +1,11 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Youssef Bouzekri's Blog",
+    "title": "Yusuf Bouzekri's Blog",
     "home_page_url": "https://youssefbouzekri.vercel.app",
     "feed_url": "https://youssefbouzekri.vercel.app/rss.json",
     "description": "A Developer that blogs",
     "author": {
-        "name": "Youssef Bouzekri",
+        "name": "Yusuf Bouzekri",
         "url": "https://fosstodon.org/web/@spacebuffer"
     },
     "items": [
@@ -17,7 +17,7 @@
             "summary": "Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..",
             "date_modified": "2022-10-06T00:00:00.000Z",
             "author": {
-                "name": "Youssef Bouzekri",
+                "name": "Yusuf Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
         },
@@ -29,7 +29,7 @@
             "summary": "Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected",
             "date_modified": "2022-10-09T00:00:00.000Z",
             "author": {
-                "name": "Youssef Bouzekri",
+                "name": "Yusuf Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
         },
@@ -41,7 +41,7 @@
             "summary": "2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful",
             "date_modified": "2022-11-03T00:00:00.000Z",
             "author": {
-                "name": "Youssef Bouzekri",
+                "name": "Yusuf Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
         },
@@ -53,7 +53,7 @@
             "summary": "Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys!",
             "date_modified": "2022-11-14T00:00:00.000Z",
             "author": {
-                "name": "Youssef Bouzekri",
+                "name": "Yusuf Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
         }

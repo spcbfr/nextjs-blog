@@ -39,7 +39,7 @@ export default function SinglePostPage({
     <>
       <Layout>
         <Head>
-          <title>{post.title + " | Youssef Bouzekri's Blog"}</title>
+          <title>{post.title + " | Yusuf Bouzekri's Blog"}</title>
           <meta property="og:title" content={post.title} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta property="og:description" content={post.description} />
@@ -136,7 +136,7 @@ export default function SinglePostPage({
           >
             consider buying me a coffee
           </a>
-          , currently I am trying to reach $14 to get a fancy domain name!
+          , currently I am trying to collect $30 to buy a new SSD!
         </p>
       </Layout>
     </>
