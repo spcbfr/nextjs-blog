@@ -46,9 +46,7 @@ export default function SinglePostPage({
           <meta property="og:type" content="article" />
           <meta
             property="og:image"
-            content={
-              "https://youssefbouzekri.vercel.app/api/og?title=" + post.title
-            }
+            content={"https://yusuf.fyi/api/og?title=" + post.title}
           />
           <meta
             property="og:image:alt"
@@ -68,9 +66,7 @@ export default function SinglePostPage({
           <meta name="twitter:description" content={post.description} />
           <meta
             name="twitter:image"
-            content={
-              "https://youssefbouzekri.vercel.app/api/og?title=" + post.title
-            }
+            content={"https://yusuf.fyi/api/og?title=" + post.title}
           ></meta>
         </Head>
         <a id="top"></a>

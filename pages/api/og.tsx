@@ -22,7 +22,7 @@ export default async function handler(req: any) {
       (
         <div tw="bg-stone-900 flex w-full  flex-col h-full justify-center items-center">
           <h2 style={{ fontSize: 35 }} tw="text-stone-400">
-            an article by Youssef Bouzekri
+            an article by Yusuf Bouzekri
           </h2>
 
           <h1

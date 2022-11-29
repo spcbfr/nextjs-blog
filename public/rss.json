@@ -1,8 +1,8 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "Yusuf Bouzekri's Blog",
-    "home_page_url": "https://youssefbouzekri.vercel.app",
-    "feed_url": "https://youssefbouzekri.vercel.app/rss.json",
+    "home_page_url": "https://yusuf.fyi",
+    "feed_url": "https://yusuf.fyi/rss.json",
     "description": "A Developer that blogs",
     "author": {
         "name": "Yusuf Bouzekri",
@@ -10,9 +10,9 @@
     },
     "items": [
         {
-            "id": "https://youssefbouzekri.vercel.app/posts/perfectionism",
-            "content_html": "<p>Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/perfectionism\">Keep Reading</a></strong>",
-            "url": "https://youssefbouzekri.vercel.app/posts/perfectionism",
+            "id": "https://yusuf.fyi/posts/perfectionism",
+            "content_html": "<p>Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/perfectionism\">Keep Reading</a></strong>",
+            "url": "https://yusuf.fyi/posts/perfectionism",
             "title": "Don't seek perfection",
             "summary": "Perfectionism is often seen as a good thing, and people should try and reach it whenever they can, but that may not always be true, being a perfectionist can stop you from finishing what you started or even not start at all..",
             "date_modified": "2022-10-06T00:00:00.000Z",
@@ -22,9 +22,9 @@
             }
         },
         {
-            "id": "https://youssefbouzekri.vercel.app/posts/the-content-creation-dilemma",
-            "content_html": "<p>Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/the-content-creation-dilemma\">Keep Reading</a></strong>",
-            "url": "https://youssefbouzekri.vercel.app/posts/the-content-creation-dilemma",
+            "id": "https://yusuf.fyi/posts/the-content-creation-dilemma",
+            "content_html": "<p>Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/the-content-creation-dilemma\">Keep Reading</a></strong>",
+            "url": "https://yusuf.fyi/posts/the-content-creation-dilemma",
             "title": "The Content Creation Dilemma",
             "summary": "Every blogger needs to have a goal and an audience they are writting for in order to successed, today I shared my struggles in trying to figure out my goal and how it ended up being harder that expected",
             "date_modified": "2022-10-09T00:00:00.000Z",
@@ -34,9 +34,9 @@
             }
         },
         {
-            "id": "https://youssefbouzekri.vercel.app/posts/thelio-review",
-            "content_html": "<p>2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/thelio-review\">Keep Reading</a></strong>",
-            "url": "https://youssefbouzekri.vercel.app/posts/thelio-review",
+            "id": "https://yusuf.fyi/posts/thelio-review",
+            "content_html": "<p>2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/thelio-review\">Keep Reading</a></strong>",
+            "url": "https://yusuf.fyi/posts/thelio-review",
             "title": "System76's Thelio Review",
             "summary": "2 Months ago I got my Thelio Desktop and I have been using it daily ever since, today I wrote a review about, I hope you find it useful",
             "date_modified": "2022-11-03T00:00:00.000Z",
@@ -46,9 +46,9 @@
             }
         },
         {
-            "id": "https://youssefbouzekri.vercel.app/posts/contentlayer-table-of-contents",
-            "content_html": "<p>Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys!</p> <br/> <strong><a href=\"https://youssefbouzekri.vercel.app/posts/contentlayer-table-of-contents\">Keep Reading</a></strong>",
-            "url": "https://youssefbouzekri.vercel.app/posts/contentlayer-table-of-contents",
+            "id": "https://yusuf.fyi/posts/contentlayer-table-of-contents",
+            "content_html": "<p>Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys!</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/contentlayer-table-of-contents\">Keep Reading</a></strong>",
+            "url": "https://yusuf.fyi/posts/contentlayer-table-of-contents",
             "title": "Making a Table of Contents with contentlayer",
             "summary": "Last weekend I learned how to make a Table of Contents utilizing Contentlayer's computed fields, today I am sharing it with you guys!",
             "date_modified": "2022-11-14T00:00:00.000Z",
