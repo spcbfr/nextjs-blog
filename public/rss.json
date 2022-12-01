@@ -56,6 +56,18 @@
                 "name": "Yusuf Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
+        },
+        {
+            "id": "https://yusuf.fyi/posts/refactoring-ui-lessons",
+            "content_html": "<p>Refactoring UI is one of the best things I've read this year in terms of stuff learned, I feel like I've become a way better designer after reading every chapter, the thing I like about it is that it focuses a lot on the little things that when used together makes an average website 10x better</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/refactoring-ui-lessons\">Keep Reading</a></strong>",
+            "url": "https://yusuf.fyi/posts/refactoring-ui-lessons",
+            "title": "Important Lessons from Adam Wathan' Refactoring UI",
+            "summary": "Refactoring UI is one of the best things I've read this year in terms of stuff learned, I feel like I've become a way better designer after reading every chapter, the thing I like about it is that it focuses a lot on the little things that when used together makes an average website 10x better",
+            "date_modified": "2022-12-01T00:00:00.000Z",
+            "author": {
+                "name": "Yusuf Bouzekri",
+                "url": "https://fosstodon.org/web/@spacebuffer"
+            }
         }
     ]
 }

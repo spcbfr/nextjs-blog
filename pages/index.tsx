@@ -65,7 +65,7 @@ export default function PostListPage({
             <div className="flex items-baseline justify-between font-display">
               <Link
                 href={`/posts/${post.slug}`}
-                className="text-xl font-bold text-stone-800 sm:text-3xl"
+                className="text-xl font-semibold text-stone-800 sm:text-[1.7rem] sm:leading-8"
               >
                 {post.title}
               </Link>
