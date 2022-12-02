@@ -132,7 +132,7 @@ export default function SinglePostPage({
           >
             consider buying me a coffee
           </a>
-          , currently I am trying to collect $30 to buy a new SSD!
+          , currently My goal is $30 to buy a new SSD!
         </p>
       </Layout>
     </>
