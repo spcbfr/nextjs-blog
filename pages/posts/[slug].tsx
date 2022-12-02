@@ -126,7 +126,8 @@ export default function SinglePostPage({
           >
             consider buying me a coffee
           </a>
-          , currently My goal is $30 to buy a new SSD!
+          , currently My goal is $30 to buy a new SSD (but any amount will
+          help!)
         </p>
       </Layout>
     </>
