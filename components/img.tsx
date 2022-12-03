@@ -13,6 +13,7 @@ export default function Img(props: Props) {
           src={props.src}
           className="rounded-lg"
           alt={props.alt}
+          quality="100"
           height={500}
           width={800}
         />
