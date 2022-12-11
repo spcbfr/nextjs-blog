@@ -68,6 +68,18 @@
                 "name": "Yusuf Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
+        },
+        {
+            "id": "https://yusuf.fyi/posts/2022",
+            "content_html": "<p>sth</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/2022\">Keep Reading</a></strong>",
+            "url": "https://yusuf.fyi/posts/2022",
+            "title": "The Best Movies, Books and Podcasts I Consumed in 2022",
+            "summary": "sth",
+            "date_modified": "2022-12-10T00:00:00.000Z",
+            "author": {
+                "name": "Yusuf Bouzekri",
+                "url": "https://fosstodon.org/web/@spacebuffer"
+            }
         }
     ]
 }

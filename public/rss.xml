@@ -4,7 +4,7 @@
         <title>Yusuf Bouzekri's Blog</title>
         <link>https://yusuf.fyi</link>
         <description>A Developer that blogs</description>
-        <lastBuildDate>Thu, 01 Dec 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 10 Dec 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <copyright>All rights reserved 2022, Yusuf Bouzekri</copyright>
@@ -51,6 +51,15 @@
             <pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Refactoring UI is one of the best things I've read this year in terms of stuff learned, I feel like I've become a way better designer after reading every chapter, the thing I like about it is that it focuses a lot on the little things that when used together makes an average website 10x better]]></description>
             <content:encoded><![CDATA[<p>Refactoring UI is one of the best things I've read this year in terms of stuff learned, I feel like I've become a way better designer after reading every chapter, the thing I like about it is that it focuses a lot on the little things that when used together makes an average website 10x better</p> <br/> <strong><a href="https://yusuf.fyi/posts/refactoring-ui-lessons">Keep Reading</a></strong>]]></content:encoded>
+            <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
+        </item>
+        <item>
+            <title><![CDATA[The Best Movies, Books and Podcasts I Consumed in 2022]]></title>
+            <link>https://yusuf.fyi/posts/2022</link>
+            <guid>https://yusuf.fyi/posts/2022</guid>
+            <pubDate>Sat, 10 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[sth]]></description>
+            <content:encoded><![CDATA[<p>sth</p> <br/> <strong><a href="https://yusuf.fyi/posts/2022">Keep Reading</a></strong>]]></content:encoded>
             <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
         </item>
     </channel>
