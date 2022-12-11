@@ -38,6 +38,7 @@ export default function PostListPage({
           name="description"
           content="Hey, I am Yusuf, A computer science student and an occaisonal tech writer of interactive articles on this blog!"
         />
+        <link rel="canonical" href="https://www.yusuf.fyi" />
       </Head>
       <div>
         <section className="flex gap-x-4 ">

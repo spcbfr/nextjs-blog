@@ -42,6 +42,7 @@ export default function SinglePostPage({
           <title>{post.title + " | Yusuf Bouzekri's Blog"}</title>
           <meta property="og:title" content={post.title} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="canonical" href={"https://www.yusuf.fyi/posts/" + post.slug} />
           <meta property="og:description" content={post.description} />
           <meta property="og:type" content="article" />
           <meta
