@@ -4,7 +4,7 @@
         <title>Yusuf Bouzekri's Blog</title>
         <link>https://yusuf.fyi</link>
         <description>A Developer that blogs</description>
-        <lastBuildDate>Sat, 10 Dec 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Dec 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <copyright>All rights reserved 2022, Yusuf Bouzekri</copyright>
@@ -60,6 +60,15 @@
             <pubDate>Sat, 10 Dec 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[2022 was a good year, let's talk about it! in this post I'll share what I did/consumed this year!]]></description>
             <content:encoded><![CDATA[<p>2022 was a good year, let's talk about it! in this post I'll share what I did/consumed this year!</p> <br/> <strong><a href="https://yusuf.fyi/posts/2022">Keep Reading</a></strong>]]></content:encoded>
+            <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
+        </item>
+        <item>
+            <title><![CDATA[My impressions of nixOS]]></title>
+            <link>https://yusuf.fyi/posts/nixos-impressions</link>
+            <guid>https://yusuf.fyi/posts/nixos-impressions</guid>
+            <pubDate>Fri, 16 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Here are my thoughts on nixos after using it for a full week]]></description>
+            <content:encoded><![CDATA[<p>Here are my thoughts on nixos after using it for a full week</p> <br/> <strong><a href="https://yusuf.fyi/posts/nixos-impressions">Keep Reading</a></strong>]]></content:encoded>
             <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
         </item>
     </channel>

@@ -1,0 +1,56 @@
+---
+title: My impressions of nixOS
+date: 2022-12-16
+description: Here are my thoughts on nixOS after using it for a full week
+---
+
+So the past week has been interesting, to say the least...
+
+I got tired of ubuntu/popOS's BS and decided it was time to try something new, and instead of going with the mainstream power user options such as Arch, Debian, or even Gentoo, I went with something a little more obscure... 
+
+NixOS! I've been using it full-time for a week and a half now and I have some thoughts to share with you
+
+For those unaware, NixOS is a system based on the nix declarative package manager, declarative here means that you declare what packages you want to install (and how the system should behave in the case of nixOS) in a configuration file that you can build
+
+# The good
+
+The installer is fantastic, first of all, you get a desktop environment in the ISO which means you can follow a tutorial while you're installing on the same machine, unlike arch for example where I have to always pull up my phone to look up how to partition the drive, which is very annoying.
+
+When installing the system you can choose to either use a graphical installer, common on distros such as Ubuntu, or go the hard way and install the system by running commands (or rather editing files) in your terminal
+
+if you choose the command line route then nixOS provides a handy `nixos-generate-config` that generates a base configuration for you to edit, it makes things so much easier, it has things like `sound.enable = true{:nix}` already in there for you toy around with. almost everything you do to install nixOS (except partitioning the drives) is done in the 2 generated `.nix` files
+
+You can switch between stable and unstable packages **WITHOUT** reinstalling, so I never felt stuck on either one, this is maybe the best feature of nixOS aside from the declarative stuff. I'd like to also note that nix's package repository, `nixpkgs`, is one of the biggest out there with [just over 80k packages](https://repology.org/repositories/statistics/total), which was very surprising to me considering how uncommon it is in the Linux community 
+
+nixOS has many options for doing things other than installing packages, for example, I was able to get my ThinkPad's TrackPoint working without too much hassle by adding 3 config options in the `configuration.nix` file and rebuilding my config using `nixos-rebuild`:
+
+```nix
+{
+    hardware.trackpoint.enable = true;
+    hardware.trackpoint.emulateWheel = true;
+}
+```
+
+maybe the most commonly mentioned pro about nixOS is its reproducibility, since everything is done in a few configuration files, it's easy to deploy a copy of the system on another machine, and while I do not have multiple machines to benefit from this, It's nice to be able to backup an entire system's configuration on GitHub
+
+I also found the ability to rollback to a previous version of the config to be pretty nice, you can even do it from the GRUB menu if you broke your system completely, I never needed to use it but it's still nice to have
+
+and finally, there is the `nix-shell -p {:bash}` which creates a shell with the specified programs installed, this shell is separate from the rest system so you can install different versions of packages you already have, once you quit the shell the programs are removed from the system, and you won't believe how useful it is until you try out nixOS
+
+# The bad
+
+<Callout title="Notice ⚠️">
+    While some of the problems I encountered may be easily solved, and others not being problems at all, I still include them nonetheless because I want to share what a first-time NixOS user might go through on their first day.
+</Callout>
+
+I don't like the language, some people say it's like JSON with functions, but I disagree, usually with tools such as vim and emacs that have their own language. it's pretty easy to grasp the language just by looking at someone else's config, but that's not the case with nix, even after watching a ton of tutorials I still don't feel like I grasp the basics of the language, I think that's due to it being a functional language and I am not very familiar with this type of languages as are most other people
+
+Most of the documentation references `nix-env`, a tool that all nixOS users recommend against using due to its slowness and the problems that it causes, yet the devs haven't removed it from the documentation.
+
+there is no _good_ way to search for packages from the terminal: there is a [website](https://search.nixos.org) but most people prefer to use the terminal and unfortunately a tool to search from the terminal doesn't exist as of right now unless you're willing to enable experimental features
+
+compiling random programs from the internet is a no-no as the file system structure on nixOS is wildly different from other distros, if the program doesn't exist in the nixpkgs, then I hate to break it to you but you'll need to package the program yourself, which is pretty hard if you're not too familiar with the nix language like me
+
+# Conclusion
+
+Will I continue using nixOS? well let's say my answer is "maybe", the advantages are amazing but I have a lot going on these days. so I may go back to a more traditional, so maybe I'll come back to it in the summer when I have plenty of time, in any case, I'll keep using the nix package manager as it's available on most Linux distros as a standalone thing

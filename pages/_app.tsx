@@ -6,6 +6,7 @@ import { Karla } from "@next/font/google";
 
 const karla = Karla({
   variable: "--font-karla",
+  subsets: ["latin"]
 });
 export default function App({ Component, pageProps }: AppProps) {
   return (
