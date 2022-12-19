@@ -54,7 +54,7 @@ yarn add github-slugger rehype-slug
 
 First go to your `contentlayer.config.js`, specifically the `makeSource` function, it should look something like this
 
-```js
+```js title="contentlayer.config.js"
 export default makeSource({
   contentDirPath: "content",
   documentTypes: [Post],
@@ -63,7 +63,7 @@ export default makeSource({
 
 Now create a `markdown` or `mdx` proprety inside the parameter of this function and add the following rehype plugin. in my case I'll be using mdx.
 
-```js {1,6}
+```js {1,6} title="contentlayer.config.js"
 import rehypeSlug from "rehype-slug";
 export default makeSource({
   contentDirPath: "content",
@@ -85,7 +85,7 @@ What `rehypeSlug` does is simply adding an id to every heading in the page, it d
 
 Now find the Document Type Definition for your articles, it should be in the same `contentlayer.config.js` file as before, and add the following `headings` Computed Value.
 
-```js showLineNumbers {13-17}
+```js showLineNumbers {13-17} title="contentlayer.config.js"
 const Post = defineDocumentType(() => ({
   name: "Post",
   contentType: "mdx",
@@ -108,7 +108,7 @@ const Post = defineDocumentType(() => ({
 
 Now inside the `resolve` method we'll write the code that will fetch every heading from the MDX file using a very <Del>simple</Del> complex regex.
 
-```js /headingsRegex/
+```js /headingsRegex/ title="contentlayer.config.js"
 headings: {
   type: "json",
   resolve: async (doc) => {
@@ -131,7 +131,7 @@ headings: {
 
 Now we'll map over the array of matches in the document and return the data that we'll need, which is derived from the regex **Named Control Groups**, notice how we used `flag.length{:js}` to count the number of hashtags in the heading thus getting the heading's level. finally let's return the data we've mapped over.
 
-```js /headings/2-3
+```js /headings/2-3 title="contentlayer.config.js"
 headings: {
   type: "json",
   resolve: async (doc) => {
@@ -155,7 +155,7 @@ headings: {
 
 We also need to generate a slug from the contents of the headings, which _crucially_ needs to be the same as the one we generated earlier, that's why we'll use **github-slugger because it uses the same generation method rehype-slug**. we made sure to check whether content is empty or not to avoid getting an error if there is an empty heading somewhere.
 
-```js {1,2,15,7} /slugger/2-3
+```js {1,2,15,7} /slugger/2-3 title="contentlayer.config.js"
 // make sure to have this import at the top of the file
 import GithubSlugger from "github-slugger"
 headings: {
@@ -230,7 +230,7 @@ so if the top-level heading, then we add no padding and if it's a second-level h
 
 To start let's go back to the `contentlayer.config.js` and convert the level number to words (i.e 1 -> one, 2 -> two, etc..)
 
-```js {11-13}
+```js {11-13} title="contentlayer.config.js"
 headings: {
   type: "json",
   resolve: async (doc) => {
@@ -305,7 +305,7 @@ If you're using tailwindcss 3v, you can do the same thing pretty elegantly too
 
 As a final touch let's allow ourselves to toggle the TOC on a per-post basis, once again we'll need to go back to the contentlayer config and a `toc{:.entity.name.variable}` field that's set to `false{:js}` by default
 
-```js showLineNumbers {14-18}
+```js showLineNumbers {14-18} title="contentlayer.config.js"
   fields: {
     title: {
       type: "string",

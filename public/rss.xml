@@ -4,7 +4,7 @@
         <title>Yusuf Bouzekri's Blog</title>
         <link>https://yusuf.fyi</link>
         <description>A Developer that blogs</description>
-        <lastBuildDate>Fri, 16 Dec 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 19 Dec 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <copyright>All rights reserved 2022, Yusuf Bouzekri</copyright>
@@ -67,8 +67,17 @@
             <link>https://yusuf.fyi/posts/nixos-impressions</link>
             <guid>https://yusuf.fyi/posts/nixos-impressions</guid>
             <pubDate>Fri, 16 Dec 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[Here are my thoughts on nixos after using it for a full week]]></description>
-            <content:encoded><![CDATA[<p>Here are my thoughts on nixos after using it for a full week</p> <br/> <strong><a href="https://yusuf.fyi/posts/nixos-impressions">Keep Reading</a></strong>]]></content:encoded>
+            <description><![CDATA[Here are my thoughts on nixOS after using it for a full week]]></description>
+            <content:encoded><![CDATA[<p>Here are my thoughts on nixOS after using it for a full week</p> <br/> <strong><a href="https://yusuf.fyi/posts/nixos-impressions">Keep Reading</a></strong>]]></content:encoded>
+            <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
+        </item>
+        <item>
+            <title><![CDATA[Listening to Music from the Terminal]]></title>
+            <link>https://yusuf.fyi/posts/listening-to-music-from-the-terminal</link>
+            <guid>https://yusuf.fyi/posts/listening-to-music-from-the-terminal</guid>
+            <pubDate>Mon, 19 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article]]></description>
+            <content:encoded><![CDATA[<p>Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article</p> <br/> <strong><a href="https://yusuf.fyi/posts/listening-to-music-from-the-terminal">Keep Reading</a></strong>]]></content:encoded>
             <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
         </item>
     </channel>

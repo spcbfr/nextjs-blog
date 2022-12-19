@@ -1,0 +1,185 @@
+---
+title: Listening to Music from the Terminal
+date: 2022-12-19
+description: Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article
+toc: true
+---
+
+<Img src="/command_line_fu.png" caption="xkcd#196" alt="transcript of xkcd commic #196:     [Two men talking.]
+    Cueball: Last night I was watching videos with this girl and my monitors kept turning off - even though I had disabled power save.
+    Friend: Odd.
+    Cueball: However! I wrote a command to jiggle the mouse pointer every couple minutes to keep it from going idle.
+    Friend: Not the first hack I'd try, but see? Linux has problems, but it gives you the tools to deal with them - and save your date!
+    Cueball: Actually, I was half an hour into the pointer scripting documentation when she got dressed and left."/>
+Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article!
+
+I'd like to note that for this to work you need to have Music locally, you won't need your spotify account anymore
+
+# Configuring The Daemon
+
+first we'll need to install MPD, it's a daemon that can run in the background to play music. this means that you can play music even outside a graphical environment. so go ahead and install it, it's available in most official repos
+
+```bash
+sudo pacman -S mpd
+# or
+sudo apt install mpd
+```
+
+now create a new file `~/.config/mpd/mpd.conf` (you may also need to create the mpd directory as well), we'll configure the daemon here
+
+Begin by setting a few config variables, most importantly set the `music_directory` to where you actually have your music downloaded
+
+```conf title="mpd.conf"
+music_directory "~/Music/"
+playlist_directory "~/.config/mpd/playlists"
+db_file "~/.config/mpd/mpd.db"
+log_file "~/.config/mpd/mpd.log"
+pid_file "~/.config/mpd/mpd.pid"
+state_file "~/.config/mpd/mpdstate"
+```
+I've had some problems where MPD wouldn't create the state files automatically, so let's create them manually to kill the doubt
+
+```bash
+cd ~/.config/mpd
+touch mpd.db mpd.log mpd.pid mpdstate
+mkdir playlists
+```
+
+now go back to `mpd.conf` and add the sound configuration depending on what sound system you're using, which will be either pulseaudio or pipewire, to chekc what system you're running you can run the following command
+
+```bash
+pactl info | grep "Server Name"
+
+# On my machine I got `Server Name: PulseAudio (on PipeWire 0.3.61)`
+# which means I am running pipewire
+```
+
+then add the following to `mpd.conf`
+```conf title="mpd.conf"
+# For PulseAudio
+audio_output {
+        type            "pulse"
+        name            "pulse audio"
+}
+
+# For PipeWire
+audio_output {
+        type            "pipewire"
+        name            "PipeWire Sound Server"
+}
+```
+
+finally select the port that you want MPD to run on, make sure no other program uses this same port
+
+```conf title="mpd.conf"
+bind_to_address "127.0.0.1"
+port "6600"
+```
+
+and make MPD autostart, you can use it's systemd service to do this
+
+```bash
+systemctl enable --now --user mpd.service
+systemctl status mpd.service # run this to check for any errors
+```
+# Content structure
+here is how your music should be structured in order for MPD to recongize it properly
+
+```conf
+Music directory
+-- Band 1 - Album 1
+---- Song 1
+---- Song 2
+---- Song n
+-- Band 2 - Album 1
+---- Song 1
+---- Song 2
+---- Song n
+and so on..
+```
+# Configuring the clients
+
+Now MPD on it's own isn't very useful, that is because it wasn't made for the normal user to use, you're supposed to install a client that interfaces with MPD, there are many good clients but the two I am going to use today are:
+
+- **mpc**: it's a commandline tool, so you can use commands like `mpc next` and `mpc update` to use it, it's really useful, for configuring system keybindings to pause/go to the next or previous song
+- **ncmpcpp**: it's similar to mpc as it runs in the terminal too, but the difference is that it has an actual TUI interface (like `htop` for example)
+
+let's start by installing the two of them
+
+```bash
+sudo pacman -S ncmpcpp mpc
+#or
+sudo apt install ncmpcpp mpc
+```
+now add this to the ncmpcpp `config`
+
+```conf title=".config/ncmpcpp/config"
+[mpd]
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_music_dir = "~/Music"
+mpd_connection_timeout = "5"
+mpd_crossfade_time = "5"
+```
+we're basically telling it where it's supposed to find mpd, make sure to set the port to the same one you used for the MPD config before and set the music dirctory to the same one you used for MPD
+
+now if you run `ncmpcpp` in your terminal and press `4` to go to the music library view, you should see some content (make sure that you actually have some music downloaded)
+
+<Callout title="I am not seeing my music!">
+On your first time using ncmpcpp and whenever you add new music to your library, you may need to refresh the library, in ncmpcpp you can do this by pressing `u`
+</Callout>
+
+### Making NCMPCPP look better
+
+Now that all the hard stuff is done let's make ncmpcpp look better
+
+First we'll change how the progress bar looks, all the following should be added to ncmpcpp's config file `.config/ncmpcpp/config`
+
+```conf
+progressbar_look = "=>-"
+progressbar_color = black:b
+progressbar_elapsed_color = blue:b
+```
+and make the columns mode the default for every view
+
+```conf
+playlist_editor_display_mode = "columns"
+search_engine_display_mode = "columns"
+browser_display_mode = "columns"
+playlist_display_mode = "columns"
+```
+
+
+### Adding vim keybindings to NCMPCPP
+
+If you're a regular vim user you may find navigating the client using the arrow keys to be uncomfortable, luckily you can make it use the vim keys.
+
+Just add the contents of [this pastebin](https://pastebin.com/YBN13W1T) to a new file `~/.config/ncmpcpp/bindings` and you should be good to go.
+
+### Adding a visualizer
+
+You can have a cool music visualizer by adding this to your mpd config, don't forget to restart the systemd unit if you're using it
+
+```conf title="mpd.conf"
+audio_output {
+    type                    "fifo"
+    name                    "my_fifo"
+    path                    "/tmp/mpd.fifo"
+    format                  "44100:16:2"
+}
+```
+now going back to ncmpcpp, pressing <kbd>8</kbd> for the visualizer view you should see something like this if you have a song playing, I'd say this is pretty cool!
+
+<Img src="/ncmpcpp-vis.png" alt="The ncmpcpp visualizer" />
+
+# Using The clients
+
+As you may have noticed, we didn't configure MPC, that's because it doesn't need a configuration, as long as you use the 6600 port for MPD because that's what MPC is set to by default.
+
+You can bind MPC's commands to keys in your keyboard, for example I have set `alt+down_arrow` to `mpc toggle`, you get the idea
+
+As for ncmpcpp, it's made up of many views each one being mapped to a different number on the number pad, the ones I use most often are Queue view <kbd>1</kbd> for looking at the queue and Media Library <kbd>4</kbd> for selecting what to add to the queue by pressing <kbd>space</kbd>, going back to the Queue, if you've found a songlist you vibe with you can turn it into a playlist by pressing <kbd>S</kbd>, to see you're playlists press <kbd>2</kbd>.
+
+# Conclustion
+
+This article has been soo fun to write, if you have any problems with this setup be sure to reach out, other than that, I'll catch you in the next one!

@@ -7,7 +7,7 @@ div[data-rehype-pretty-code-fragment] pre {
 }
 
 div[data-rehype-pretty-code-title] {
-  @apply rounded-md bg-zinc-100/10 px-3  py-1 font-mono text-xs leading-4 text-zinc-200/70;
+  @apply bg-stone-200 px-3  py-1 font-semibold -ml-1 font-mono text-xs leading-4 text-stone-700;
 }
 
 div[data-rehype-pretty-code-fragment] .line {
@@ -33,4 +33,7 @@ code[data-line-numbers] .line::before {
   text-align: right;
   color: rgb(188, 188, 188);
   padding-right: 1rem;
+}
+kbd {
+  @apply bg-stone-200 px-1 !text-sm rounded-md border-stone-300 text-stone-700 border-2
 }

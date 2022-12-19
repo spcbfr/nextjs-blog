@@ -43,7 +43,7 @@ const Post = defineDocumentType(() => ({
         // https://github.com/rehypejs/rehype-slug/blob/main/package.json#L36
         const slugger = new GithubSlugger();
 
-        const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+        const regXHeader = /(?:\n\n|^\n?)(?<flag>#{1,6})[ ](?<content>[^\n]+)(?:\n\n)/gm;
 
         const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
           ({ groups }) => {

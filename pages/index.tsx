@@ -54,7 +54,7 @@ export default function PostListPage({
             <h2 className="font-display text-2xl font-black text-stone-800 sm:text-3xl">
               Yusuf Bouzekri
             </h2>
-            <p className="text-zinc-700 sm:text-lg font-sans">
+            <p className="text-stone-700 sm:text-lg font-sans">
               Full Time Geek / CS Student
             </p>
           </section>
@@ -66,11 +66,11 @@ export default function PostListPage({
             <div className="flex items-baseline justify-between font-display">
               <Link
                 href={`/posts/${post.slug}`}
-                className="text-xl font-semibold text-stone-800 sm:text-[1.7rem] sm:leading-8"
+                className="text-xl font-semibold text-stone-600 ease-in-out hover:text-stone-800 transition-all sm:text-[1.7rem] sm:leading-8"
               >
                 {post.title}
               </Link>
-              <div className=" font-sans  font-semibold shrink-0  text-stone-700">
+              <div className=" font-sans  font-semibold shrink-0  text-stone-500">
                 <DisplayDate dateString={post.date} />
               </div>
             </div>

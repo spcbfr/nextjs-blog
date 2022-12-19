@@ -11,7 +11,6 @@ export default function Img(props: Props) {
       <figure>
         <Image
           src={props.src}
-          className="rounded-lg"
           alt={props.alt}
           quality="100"
           height={500}

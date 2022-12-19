@@ -83,11 +83,23 @@
         },
         {
             "id": "https://yusuf.fyi/posts/nixos-impressions",
-            "content_html": "<p>Here are my thoughts on nixos after using it for a full week</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/nixos-impressions\">Keep Reading</a></strong>",
+            "content_html": "<p>Here are my thoughts on nixOS after using it for a full week</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/nixos-impressions\">Keep Reading</a></strong>",
             "url": "https://yusuf.fyi/posts/nixos-impressions",
             "title": "My impressions of nixOS",
-            "summary": "Here are my thoughts on nixos after using it for a full week",
+            "summary": "Here are my thoughts on nixOS after using it for a full week",
             "date_modified": "2022-12-16T00:00:00.000Z",
+            "author": {
+                "name": "Yusuf Bouzekri",
+                "url": "https://fosstodon.org/web/@spacebuffer"
+            }
+        },
+        {
+            "id": "https://yusuf.fyi/posts/listening-to-music-from-the-terminal",
+            "content_html": "<p>Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/listening-to-music-from-the-terminal\">Keep Reading</a></strong>",
+            "url": "https://yusuf.fyi/posts/listening-to-music-from-the-terminal",
+            "title": "Listening to Music from the Terminal",
+            "summary": "Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article",
+            "date_modified": "2022-12-19T00:00:00.000Z",
             "author": {
                 "name": "Yusuf Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
