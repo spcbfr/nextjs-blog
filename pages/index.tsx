@@ -60,9 +60,9 @@ export default function PostListPage({
           </section>
         </section>
       </div>
-      <div>
+      <div className="flex flex-col gap-3 sm:gap-5">
         {posts.map((post) => (
-          <div key={post.slug} className="pb-5 font-sans">
+          <div key={post.slug} className="font-sans">
             <div className="flex items-baseline justify-between font-display">
               <Link
                 href={`/posts/${post.slug}`}
