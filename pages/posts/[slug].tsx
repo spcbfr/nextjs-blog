@@ -63,8 +63,6 @@ export default function SinglePostPage({
             name="twitter:image"
             content={"https://yusuf.fyi/api/og?title=" + post.title}
           ></meta>
-          <link rel="webmention" href="https://webmention.io/yusuf.fyi/webmention" />
-          <link rel="pingback" href="https://webmention.io/yusuf.fyi/xmlrpc" />
         </Head>
         <a id="top"></a>
         <div className="col-end-5">

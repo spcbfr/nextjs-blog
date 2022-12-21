@@ -11,6 +11,9 @@ export default function Document() {
           integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC"
           crossOrigin="anonymous"
         ></link>
+        <link rel="me authn" href="https://github.com/spcbfr" />
+        <link rel="webmention" href="https://webmention.io/yusuf.fyi/webmention" />
+        <link rel="pingback" href="https://webmention.io/yusuf.fyi/xmlrpc" />
       </Head>
       <body className="bg-stone-50 text-stone-900 antialiased selection:bg-yellow-400 selection:text-stone-900">
         <Main />
