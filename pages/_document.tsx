@@ -12,8 +12,8 @@ export default function Document() {
           crossOrigin="anonymous"
         ></link>
         <link rel="me authn" href="https://github.com/spcbfr" />
-        <link rel="webmention" href="https://webmention.io/yusuf.fyi/webmention" />
-        <link rel="pingback" href="https://webmention.io/yusuf.fyi/xmlrpc" />
+        <link rel="webmention" href="https://webmention.io/www.yusuf.fyi/webmention" />
+        <link rel="pingback" href="https://webmention.io/www.yusuf.fyi/xmlrpc" />
       </Head>
       <body className="bg-stone-50 text-stone-900 antialiased selection:bg-yellow-400 selection:text-stone-900">
         <Main />
