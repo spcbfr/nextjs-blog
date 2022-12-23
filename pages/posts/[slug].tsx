@@ -170,7 +170,7 @@ export default function SinglePostPage({
                 <img src={reply.author.photo} alt={reply.author.name} className="w-7 rounded-full"/>
                 <a className="font-bold text-lg" href={reply.url}>{reply.author.name}</a>
               </div>
-              <div>{reply.content.text}</div>
+              <div className="[&>ol]:list-decimal [&>ul]:list-disc [&>ul]:list-inside" dangerouslySetInnerHTML={{__html: reply.content.html}} />
             </div>
             )}}): <div>There are no replies to be found!</div>
           }
