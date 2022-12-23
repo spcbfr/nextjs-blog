@@ -11,12 +11,7 @@ import Date from "components/date";
 import Link from "next/link";
 import Img from "components/img";
 
-export const getStaticPaths = () => {
-  return {
-    paths: allPosts.map((post) => ({ params: { slug: post.slug } })),
-    fallback: false,
-  };
-};
+
 type Replies = {
   type: string;
   name: string;
@@ -39,6 +34,13 @@ type Replies = {
     }
   }[]
 }
+
+export const getStaticPaths = () => {
+  return {
+    paths: allPosts.map((post) => ({ params: { slug: post.slug } })),
+    fallback: false,
+  };
+};
 export const getStaticProps: GetStaticProps<{
   post: Post;
   replies: Replies;
@@ -52,7 +54,10 @@ export const getStaticProps: GetStaticProps<{
     return { notFound: true };
   }
 
-  return { props: { post, replies } };
+  return {
+     props: { post, replies },
+     revalidate: 10
+  };
 };
 
 export default function SinglePostPage({
