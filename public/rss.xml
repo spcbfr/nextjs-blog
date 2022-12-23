@@ -4,7 +4,7 @@
         <title>Yusuf Bouzekri's Blog</title>
         <link>https://yusuf.fyi</link>
         <description>A Developer that blogs</description>
-        <lastBuildDate>Mon, 19 Dec 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Dec 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <copyright>All rights reserved 2022, Yusuf Bouzekri</copyright>
@@ -78,6 +78,15 @@
             <pubDate>Mon, 19 Dec 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article]]></description>
             <content:encoded><![CDATA[<p>Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article</p> <br/> <strong><a href="https://yusuf.fyi/posts/listening-to-music-from-the-terminal">Keep Reading</a></strong>]]></content:encoded>
+            <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
+        </item>
+        <item>
+            <title><![CDATA[Receiving Blog Replies from anywhere on the Web]]></title>
+            <link>https://yusuf.fyi/posts/receiving-blog-replies-from-anywhere</link>
+            <guid>https://yusuf.fyi/posts/receiving-blog-replies-from-anywhere</guid>
+            <pubDate>Fri, 23 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Today I delved into the world of indie web and I am in love!]]></description>
+            <content:encoded><![CDATA[<p>Today I delved into the world of indie web and I am in love!</p> <br/> <strong><a href="https://yusuf.fyi/posts/receiving-blog-replies-from-anywhere">Keep Reading</a></strong>]]></content:encoded>
             <author>youssefbouzekri@proton.me (Yusuf Bouzekri)</author>
         </item>
     </channel>

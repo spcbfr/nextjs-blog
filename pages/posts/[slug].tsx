@@ -17,21 +17,46 @@ export const getStaticPaths = () => {
     fallback: false,
   };
 };
-
+type Replies = {
+  type: string;
+  name: string;
+  children: {
+    'wm-id': number;
+    'wm-private': boolean;
+    'wm-source': string;
+    'wm-target': string;
+    author: {
+      name: string;
+      photo: string;
+      url: string;
+    }
+    'wm-property': "in-reply-to" | "like-of" | "repost-of" | "mention-of" | "bookmark-of" | "rsvp"
+    type: string;
+    url: string;
+    content: {
+      html: string
+      text: string
+    }
+  }[]
+}
 export const getStaticProps: GetStaticProps<{
   post: Post;
-}> = ({ params }) => {
+  replies: Replies;
+}> = async ({ params }) => {
   const post = allPosts.find((post) => post.slug === params?.slug);
+  const replies = await fetch("https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" + post?.slug)
+    .then(res => res.json())
+    
 
   if (!post) {
     return { notFound: true };
   }
 
-  return { props: { post } };
+  return { props: { post, replies } };
 };
 
 export default function SinglePostPage({
-  post,
+  post, replies
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const MDXContent = useMDXComponent(post.body.code);
 
@@ -86,7 +111,7 @@ export default function SinglePostPage({
         {post.toc == true ? (
           post.headings.length !== 0 ? (
             <div className="sticky top-6 xl:!col-start-4 xl:row-span-4 xl:row-start-3 hidden space-y-2 font-sans xl:block">
-              <div className="text-sm uppercase font-sans text-zinc-500">
+              <div className="text-sm uppercase font-sans text-stone-500">
                 On this page
               </div>
               {post.headings.map((heading: any) => {
@@ -130,6 +155,21 @@ export default function SinglePostPage({
           , currently My goal is $20 to buy a new SSD (but any amount will
           help!)
         </p>
+        <section className=" bg-zinc-100 p-3 rounded-md font-sans flex flex-col gap-4">
+        <h2 className="text-3xl font-display font-bold">Replies</h2>
+          { replies.children.length ? replies.children.map((reply, index: number) => {
+            if (reply["wm-property"] === "in-reply-to" || reply["wm-property"] === "mention-of") {
+            return (
+            <div key={index}>
+              <div className="flex items-center gap-2">
+                <img src={reply.author.photo} alt={reply.author.name} className="w-7 rounded-full"/>
+                <a className="font-bold text-lg" href={reply.url}>{reply.author.name}</a>
+              </div>
+              <div>{reply.content.text}</div>
+            </div>
+            )}}): <div>There are no replies to be found!</div>
+          }
+        </section>
       </Layout>
     </>
   );

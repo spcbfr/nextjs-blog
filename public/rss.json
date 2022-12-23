@@ -104,6 +104,18 @@
                 "name": "Yusuf Bouzekri",
                 "url": "https://fosstodon.org/web/@spacebuffer"
             }
+        },
+        {
+            "id": "https://yusuf.fyi/posts/receiving-blog-replies-from-anywhere",
+            "content_html": "<p>Today I delved into the world of indie web and I am in love!</p> <br/> <strong><a href=\"https://yusuf.fyi/posts/receiving-blog-replies-from-anywhere\">Keep Reading</a></strong>",
+            "url": "https://yusuf.fyi/posts/receiving-blog-replies-from-anywhere",
+            "title": "Receiving Blog Replies from anywhere on the Web",
+            "summary": "Today I delved into the world of indie web and I am in love!",
+            "date_modified": "2022-12-23T00:00:00.000Z",
+            "author": {
+                "name": "Yusuf Bouzekri",
+                "url": "https://fosstodon.org/web/@spacebuffer"
+            }
         }
     ]
 }

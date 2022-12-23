@@ -1,0 +1,42 @@
+---
+title: Receiving Blog Replies from anywhere on the Web
+date: 2022-12-23
+description: Today I delved into the world of indie web and I am in love!
+---
+import Enter from "../../components/enter.tsx"
+
+Throughout the years, The relationship between the blogger and the reader has always been mostly one-sided: the author publishes a new post and it gets consumed by the readers, but it's very hard for a discussion around the post to arise, some people have a comment section, but I've always found that solution to be very _flaky_, to say the least:
+
+1. As a reader: I don't want to make an account on every blog I read because I'll end up with hundreds of accounts I'll rarely use it's also pretty cumbersome to keep up with a conversation on a blog that I don't consult often
+2. As a writer: It can get pretty hard (and even expensive if you're self-hosting) to keep track of comments and filter out the spam, anyone who runs a WordPress site knows this struggle
+
+So what could be the solution?
+
+<Enter>Enter Webmentions and Brid.gy</Enter>
+
+# How Does this work ?
+[Web Mentions](https://en.wikipedia.org/wiki/Webmention) is a feature of the IndieWeb that allows bloggers to communicate directly through, I could write a post and send it to my friend as a webmention, that he can do whatever he wants with, some people prefer to keep them to themselves, others display them at the end of every article as a **new kind of comment system**. that being said, most people who'd want to discuss your post probably won't have a blog to send the webmention from, that's where [brid.gy](https://brid.gy) comes in
+
+brid.gy is a service that connects to your various social media account and collects replies to your posts that link back to articles on your site, and then sends those as webmentions to your site
+
+with this setup, I was able to provide my readers with a pretty cool **platform-agnostic** way of discussing my posts with minimal hassle on both ends.
+
+here is how it looks like on my website, as you can see some of those comments came from Reddit, while others came from Twitter and Mastodon
+
+<Img src="/indieweb-comments.png" alt="What the replies section on my website looks like" />
+
+# How do I try it out ?
+
+Currently, you can get your comment shown here by doing one of these things:
+
+- Reply to this tweet
+- Make a tweet that includes the URL of this post that you're reading now
+- Reply to this mastodon post
+
+if you do one of these things you're comment should appear in the replies section below, keep in mind that it may take 30 minutes to an hour for your comment to show up (that's due to the nature of how brid.gy works)
+    
+---
+
+So that's pretty much it, this setup has its problems, for instance, moderation is lacking and it can take some time for a comment to show up but I like it so for the time being I'll continue using it!
+
+if enough people are interested in the technical details of setting this up, than I'll write a post about it, but other than that I'll see you in the next one
