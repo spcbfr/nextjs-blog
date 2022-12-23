@@ -1,17 +1,5 @@
 {
   "github": {
     "silent": true
-  },
-  "redirects": [
-    {
-      "source": "/.well-known/host-meta",
-      "destination": "https://fed.brid.gy/.well-known/host-meta:splat",
-      "statusCode": 302
-    },
-    {
-      "source": "/.well-known/webfinger:id",
-      "destination": "https://fed.brid.gy/.well-known/webfinger",
-      "statusCode": 302
-    }
-  ]
+  }
 }
