@@ -46,9 +46,9 @@ export const getStaticProps: GetStaticProps<{
   replies: Replies;
 }> = async ({ params }) => {
   const post = allPosts.find((post) => post.slug === params?.slug);
-  const replies = await fetch("https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" + post?.slug)
-    .then(res => res.json())
-    
+
+  const res = await fetch("https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" + post?.slug)
+  const replies = await res.json()
 
   if (!post) {
     return { notFound: true };
