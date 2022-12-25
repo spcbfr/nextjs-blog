@@ -164,13 +164,15 @@ export default function SinglePostPage({
         <h2 className="text-3xl font-display font-bold">Replies</h2>
           { replies.children.length ? replies.children.map((reply, index: number) => {
             if (reply["wm-property"] === "in-reply-to" || reply["wm-property"] === "mention-of") {
+              console.log(reply.content)
             return (
             <div key={index}>
               <div className="flex items-center gap-2">
+                {/* eslint-disable-next-line @next/next/no-img-element*/}
                 <img src={reply.author.photo} alt={reply.author.name} className="w-7 rounded-full"/>
                 <a className="font-bold text-lg" href={reply.url}>{reply.author.name}</a>
               </div>
-              <div className="[&>ol]:list-decimal [&>ul]:list-disc [&>ul]:list-inside" dangerouslySetInnerHTML={{__html: reply.content.html}} />
+              {(reply.content ? <div className="[&>ol]:list-decimal [&>ul]:list-disc [&>ul]:list-inside" dangerouslySetInnerHTML={{__html: reply.content.html}} /> : null)}
             </div>
             )}}): <div>There are no replies to be found!</div>
           }
