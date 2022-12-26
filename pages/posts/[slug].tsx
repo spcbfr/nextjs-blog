@@ -135,7 +135,7 @@ export default function SinglePostPage({
                   </div>
                 );
               })}
-              <hr className="pb-2" />
+              <hr className="pb-2 w-7" />
               <a
                 className="text-stone-400 hover:text-stone-700 transition-colors text-sm"
                 href="#top"
@@ -153,7 +153,7 @@ export default function SinglePostPage({
           if you&apos;ve enjoyed this article,
           <a
             href="https://ko-fi.com/spacebuffer"
-            className="ml-1 text-amber-500 font-bold  !no-underline"
+            className="ml-1 text-emerald-500 font-bold  !no-underline"
           >
             consider buying me a coffee
           </a>
@@ -164,15 +164,18 @@ export default function SinglePostPage({
         <h2 className="text-3xl font-display font-bold">Replies</h2>
           { replies.children.length ? replies.children.map((reply, index: number) => {
             if (reply["wm-property"] === "in-reply-to" || reply["wm-property"] === "mention-of") {
-              console.log(reply.content)
+              console.log(reply)
             return (
+
             <div key={index}>
-              <div className="flex items-center gap-2">
+              <div className="flex items-start gap-2">
                 {/* eslint-disable-next-line @next/next/no-img-element*/}
-                <img src={reply.author.photo} alt={reply.author.name} className="w-7 rounded-full"/>
-                <a className="font-bold text-lg" href={reply.url}>{reply.author.name}</a>
+                <img src={reply.author.photo} alt={reply.author.name} className="w-10 rounded-full"/>
+                <div>
+                  <a className="font-bold text-lg" href={reply.url}>{reply.author.name}</a>
+                  {(reply.content ? <div className="[&>ol]:list-decimal [&>ul]:list-disc [&>ul]:list-inside" dangerouslySetInnerHTML={{__html: reply.content.html}} /> : null)}
+                </div>
               </div>
-              {(reply.content ? <div className="[&>ol]:list-decimal [&>ul]:list-disc [&>ul]:list-inside" dangerouslySetInnerHTML={{__html: reply.content.html}} /> : null)}
             </div>
             )}}): <div>There are no replies to be found!</div>
           }
