@@ -12,8 +12,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/.well-known/webfinger/:slug*',
-        destination: 'https://fed.brid.gy/.well-known/webfinger/:slug*', // Matched parameters can be used in the destination
+        source: '/.well-known/webfinger:slug*',
+        destination: 'https://fed.brid.gy/.well-known/webfinger:slug*', // Matched parameters can be used in the destination
         permanent: true,
       },
     ]
