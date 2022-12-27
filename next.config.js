@@ -13,7 +13,7 @@ const nextConfig = {
       },
       {
         source: '/.well-known/webfinger/:slug*',
-        destination: 'https://fed.brid.gy/webfinger/:slug*', // Matched parameters can be used in the destination
+        destination: 'https://fed.brid.gy/.well-known/webfinger/:slug*', // Matched parameters can be used in the destination
         permanent: true,
       },
     ]
