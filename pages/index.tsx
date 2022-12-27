@@ -41,7 +41,7 @@ export default function PostListPage({
         <link rel="canonical" href="https://www.yusuf.fyi" />
       </Head>
       <span className=" hidden h-card">
-        <Link rel="me" href="/">Yusuf Bouzekri</Link>
+        <Link rel="me" className="u-url" href="/">Yusuf Bouzekri</Link>
         <Image className="u-photo hidden" alt="" width={20} height={20} hidden={true} src="/profile-pic.webp" />
       </span>
       <div>
