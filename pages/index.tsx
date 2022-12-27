@@ -43,7 +43,7 @@ export default function PostListPage({
       <span className=" hidden h-card">
         <Link rel="me" className="u-url" href="/">Yusuf Bouzekri</Link>
         <Image className="u-photo hidden" alt="" width={600} height={600} hidden={true} src="/profile-pic.webp" />
-        <Image className="u-featured hidden" alt="" fill src="/banner.jpeg"/>
+        <Image className="u-featured hidden" alt="" fill src="/banner.jpg"/>
       </span>
       <div>
         <section className="flex gap-x-4 ">
