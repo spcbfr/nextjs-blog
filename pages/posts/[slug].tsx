@@ -157,7 +157,7 @@ export default function SinglePostPage({
           >
             consider buying me a coffee
           </a>
-          , currently My goal is $20 to buy a new SSD (but any amount will
+          , currently I am saving up an extra $20 to get a blue yeti mic (but any amount will
           help!)
         </p>
         <section className=" bg-zinc-100 p-3 rounded-md font-sans flex flex-col gap-4">
