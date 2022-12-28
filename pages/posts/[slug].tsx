@@ -157,8 +157,7 @@ export default function SinglePostPage({
           >
             consider buying me a coffee
           </a>
-          , it supports me so that I can keep making awesome content!
-          help!)
+          , it supports this site and caffeinates me so that I can keep producing awesome content!
         </p>
         <section className=" bg-zinc-100 p-3 rounded-md font-sans flex flex-col gap-4">
         <h2 className="text-3xl font-display font-bold">Replies</h2>
