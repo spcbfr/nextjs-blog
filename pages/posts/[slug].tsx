@@ -163,9 +163,7 @@ export default function SinglePostPage({
         <h2 className="text-3xl font-display font-bold">Replies</h2>
           { replies.children.length ? replies.children.map((reply, index: number) => {
             if (reply["wm-property"] === "in-reply-to" || reply["wm-property"] === "mention-of") {
-              console.log(reply)
             return (
-
             <div key={index}>
               <div className="flex items-start gap-2">
                 {/* eslint-disable-next-line @next/next/no-img-element*/}
