@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps<{
 }> = async ({ params }) => {
   const post = allPosts.find((post) => post.slug === params?.slug);
 
-  const res = await fetch("https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" + post?.slug)
+  const res = await fetch("https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" + post?.slug + "&sort-by=published")
   const replies = await res.json()
 
   if (!post) {
