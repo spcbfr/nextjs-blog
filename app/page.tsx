@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import profilePic from "../public/profile-pic.webp"
 export const metadata: Metadata = {
-    title: "Home"
+    title: "Yusuf's Home",
 }
 
 export default function Page(){

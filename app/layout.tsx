@@ -12,16 +12,22 @@ const karla = Karla({
 export const metadata: Metadata = {
     metadataBase: new URL('https://yusuf.fyi'), // allows to use `/` later to reference this URL
     title: {
+        template: '%s | Yusuf Bouzekri',
         default: 'a Thingy by Yusuf Bouzekri', 
-        template: '%s | Yusuf Bouzekri'
     },
     creator: 'Yusuf Bouzekri',
-    publisher: 'Yusuf Bouzekri',
+    publisher: 'Bouzekri inc.',
     description: 'A personal blog about tech, life and movies',
     themeColor: '#FAFAF9', // bg-stone-50 from tailwindCSS
     category: 'Technology',
+    keywords: ['Next.js', 'Programming', 'Web development', 'Productivity', 'Movies', 'TV Shows'],
     alternates: {
       canonical: '/'
+    },
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: true,
     },
     verification: {
       google: 'google'

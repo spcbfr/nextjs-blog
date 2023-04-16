@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProfilePic from "../../../public/profile-pic.webp"
 
-const getPost = async ({params}: any) => allPosts.find((post) => post.slug == params?.slug) 
+  
 export const dynamicParams = false // Dynamic segments not included in generateStaticParams will return a 404
 export async function generateStaticParams(){
     return allPosts.map((post) => ({
@@ -14,7 +14,7 @@ export async function generateStaticParams(){
     }))
 }
 export async function generateMetadata({params}: any): Promise<Metadata> {
-    const post = await getPost(params)
+    const post = allPosts.find((post) => post.slug == params?.slug) 
     return {
         title: post?.title,
         openGraph: {
@@ -25,13 +25,12 @@ export async function generateMetadata({params}: any): Promise<Metadata> {
             locale: 'en-US',
             authors: ['Yusuf Bouzekri'],
         }
-        
     }
 
 }
 export default async function Page({params}: any){
     
-    const post = await getPost(params)
+    const post = allPosts.find((post) => post.slug == params?.slug) 
     if (!post) return notFound()
     return (
        <>
