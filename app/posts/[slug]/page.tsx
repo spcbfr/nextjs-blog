@@ -20,12 +20,34 @@ export async function generateMetadata({params}: any): Promise<Metadata> {
     return {
         title: post?.title,
         openGraph: {
-            type: 'article',
             title: post?.title,
             description: post?.description,
-            url: '/posts/' + post?.slug,
+            url: 'https://yusuf.fyi/posts/' + post?.slug,
             locale: 'en-US',
             authors: ['Yusuf Bouzekri'],
+            images: [
+              {
+                url: 'https://yusuf.fyi/api/og?title='+ post?.title,
+                alt: "The article's cover photo",
+                height: 1200,
+                width: 630,
+              }
+            ]
+        },
+
+        twitter: {
+            title: post?.title,
+            description: post?.description,
+            creator: "@spacebuffer",
+            site: '@spacebuffer',
+            images: [
+              {
+                url: 'https://yusuf.fyi/api/og?title='+ post?.title,
+                alt: "The article's cover photo",
+                height: 1200,
+                width: 630,
+              }
+            ]
         }
     }
 
