@@ -80,7 +80,7 @@ export default async function Page({params}: any){
 
         {post.toc == true ? (
           post.headings.length !== 0 ? (
-            <div className="sticky top-6 xl:!col-start-4 xl:row-span-4 xl:row-start-3 hidden space-y-2 font-sans xl:block">
+            <div className="sticky top-6 xl:!col-start-4 xl:row-span-4 xl:row-start-2 hidden space-y-2 font-sans xl:block">
               <div className="text-sm uppercase font-sans text-stone-500">
                 On this page
               </div>
