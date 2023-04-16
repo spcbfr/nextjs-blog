@@ -47,7 +47,7 @@ export default function RootLayout({
               {children}
               <Analytics/>
               <footer className="font-display print:hidden text-center mt-2 [&>a]:text-green-700  [&>a]:font-bold">
-                Subscribe to <Link href="/rss.xml">RSS</Link> • Follow me on{" "}
+                Subscribe to <a href="https://yusuf.fyi/rss.xml">RSS</a> • Follow me on{" "}
                 <a rel="me" href="https://fosstodon.org/@spacebuffer">
                   Mastodon
                 </a>
