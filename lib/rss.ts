@@ -1,7 +1,6 @@
 import { Feed } from "feed";
 import fs from "fs";
 import { allPosts, type Post } from "contentlayer/generated";
-import { filterProps } from "framer-motion";
 export const generateRssFeed = async () => {
   const siteURL = process.env.SITE_URL;
 

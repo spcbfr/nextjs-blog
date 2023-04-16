@@ -1,5 +1,6 @@
 import MDX from "components/MDX";
 import { allPosts } from "contentlayer/generated";
+import { generateRssFeed } from "lib/rss";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,7 +30,7 @@ export async function generateMetadata({params}: any): Promise<Metadata> {
 
 }
 export default async function Page({params}: any){
-    
+    generateRssFeed() 
     const post = allPosts.find((post) => post.slug == params?.slug) 
     if (!post) return notFound()
     return (
