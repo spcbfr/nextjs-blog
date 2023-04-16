@@ -13,7 +13,7 @@ export async function generateStaticParams(){
         slug: post.slug
     }))
 }
-export async function GenerateMetadata({params}: any): Promise<Metadata> {
+export async function generateMetadata({params}: any): Promise<Metadata> {
     const post = await getPost(params)
     return {
         title: post?.title,
@@ -24,7 +24,6 @@ export async function GenerateMetadata({params}: any): Promise<Metadata> {
             url: '/posts/' + post?.slug,
             locale: 'en-US',
             authors: ['Yusuf Bouzekri'],
-            images: []
         }
         
     }
