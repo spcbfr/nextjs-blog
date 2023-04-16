@@ -1,4 +1,5 @@
 import MDX from "components/MDX";
+import ScrollUp from "components/scrollup";
 import { allPosts } from "contentlayer/generated";
 import { generateRssFeed } from "lib/rss";
 import { Metadata } from "next";
@@ -29,13 +30,13 @@ export async function generateMetadata({params}: any): Promise<Metadata> {
     }
 
 }
+
 export default async function Page({params}: any){
     generateRssFeed() 
     const post = allPosts.find((post) => post.slug == params?.slug) 
     if (!post) return notFound()
     return (
        <>
-        <a id="top"></a>
         <div className="col-end-5">
           <div className="print:mx-auto print:w-fit">
             <Link href="/">
@@ -77,12 +78,7 @@ export default async function Page({params}: any){
                 );
               })}
               <hr className="pb-2 w-7" />
-              <a
-                className="text-stone-400 hover:text-stone-700 transition-colors text-sm"
-                href="#top"
-              >
-                Back to top
-              </a>
+              <ScrollUp/>
             </div>
           ) : null
         ) : null}
