@@ -6,10 +6,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProfilePic from "../../../public/profile-pic.webp"
 
-const getPost = async ({params}: any) => allPosts.find((post) => post.slug.substring(9) == params?.slug) 
+const getPost = async ({params}: any) => allPosts.find((post) => post.slug == params?.slug) 
 export const dynamicParams = false // Dynamic segments not included in generateStaticParams will return a 404
 export async function generateStaticParams(){
-    allPosts.map((post) => ({
+    return allPosts.map((post) => ({
         slug: post.slug
     }))
 }
