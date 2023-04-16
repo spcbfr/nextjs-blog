@@ -36,6 +36,7 @@ export async function generateMetadata({params}: any): Promise<Metadata> {
         },
 
         twitter: {
+            card: 'summary_large_image',
             title: post?.title,
             description: post?.description,
             creator: "@spacebuffer",
