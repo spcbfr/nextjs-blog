@@ -11,11 +11,12 @@ export default function Footer() {
         <a
           href="https://twitter.com/spacebuffer"
           className="hover:text-zinc-950"
-          rel="me"
         >
           <TwitterLogo size={32} />
         </a>
       </section>
+      <a href="https://github.com/spacebuffer" rel="me authn"></a>
+
     </footer>
   );
 }
