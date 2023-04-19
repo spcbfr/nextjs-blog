@@ -23,6 +23,19 @@ const nextConfig = {
   },
   reactStrictMode: true,
   swcMinify: true,
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Link',
+            value: '<https://webmention.io/username/webmention>; rel="webmention',
+          },
+        ],
+      },
+    ]
+  },
 };
 
 module.exports = withContentlayer(nextConfig);

@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Karla } from "next/font/google";
 import Link from "next/link";
+import Footer from "components/footer";
 
 const karla = Karla({
   variable: "--font-karla",
@@ -45,13 +46,8 @@ export default function RootLayout({
         <body className="bg-stone-50 text-stone-900 antialiased selection:bg-yellow-400 selection:text-stone-900">
             <main className="relative z-10 mb-5 mt-12 sm:mx-2 md:mx-0 grid grid-cols-[1fr,min(640px,100%),1fr] xl:gap-x-10 gap-y-5  px-7 sm:mt-32 sm:px-0 xl:grid-cols-[1fr,minmax(auto,240px),min(640px,100%),minmax(auto,240px),1fr] [&>*]:col-start-2 xl:[&>*]:col-start-3">
               {children}
+              <Footer/>
               <Analytics/>
-              <footer className="font-display print:hidden text-center mt-2 [&>a]:text-green-700  [&>a]:font-bold">
-                Subscribe to <a href="https://yusuf.fyi/rss.xml">RSS</a> • Follow me on{" "}
-                <a rel="me" href="https://fosstodon.org/@spacebuffer">
-                  Mastodon
-                </a>
-              </footer>
             </main>
         </body>
       </html>
