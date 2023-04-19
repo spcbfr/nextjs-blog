@@ -15,7 +15,7 @@ export default function Footer() {
           <TwitterLogo size={32} />
         </a>
       </section>
-      <a href="https://github.com/spacebuffer" rel="me authn"></a>
+      <a href="https://github.com/spcbfr" rel="me authn"></a>
 
     </footer>
   );
