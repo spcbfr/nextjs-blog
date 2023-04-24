@@ -1,9 +1,8 @@
-export default function Comments({ source }) {
+export default function Comments({ source }: {source: any}) {
   return (
-
     <section className=" bg-zinc-100 p-3 rounded-md font-sans flex flex-col gap-4">
       <h2 className="text-3xl font-display font-bold">Replies</h2>
-      {source.children.length ? source.children.map((comment, index: number) => {
+      {source.children.length ? source.children.map((comment: any, index: number) => {
         if (comment["wm-property"] === "in-reply-to" || comment["wm-property"] === "mention-of") {
           return (
             <div key={index}>
