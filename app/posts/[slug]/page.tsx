@@ -54,13 +54,38 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   }
 
 }
-
+export type webmentionEntry = {
+  type: "entry",
+  url: string,
+  published: string,
+  author: {
+    type: string,
+    name: string,
+    photo: string,
+    url: string,
+  },
+  'wm-received': string,
+  'wm-target': string,
+  'wm-property': "in-reply-to" | "mention-of" | "like-of"
+  'wm-id': Number
+  content: {
+    text: string,
+    html: string,
+  },
+  'wm-private': boolean
+}
+export type webmentionFeed = {
+  type: "feed",
+  name: "webmentions",
+  children: webmentionEntry[ ]
+}
 export default async function Page({ params }: any) {
   generateRssFeed()
   const post = allPosts.find((post) => post.slug == params?.slug)
   if (!post) return notFound()
   const res = await fetch("https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" + post?.slug + "&sort-by=published", { next: { revalidate: 20 } })
-  const sourceComments = await res.json()
+  const jsonRes: webmentionFeed = await res.json()
+  const sourceComments = jsonRes.children.filter((child: webmentionEntry) => child["wm-property"] == "in-reply-to" || child["wm-property"] == "mention-of")
   return (
     <>
       <div className="col-end-5">
