@@ -1,9 +1,5 @@
-interface Props {
-  dateString: string;
-}
-
-export default function DisplayDate({ dateString }: Props) {
-  const splittedDate = dateString.split("-");
+export default function DisplayDate(props: any) {
+  const splittedDate = props.dateString.split("-");
   const months = [
     "Jan",
     "Feb",
@@ -20,5 +16,5 @@ export default function DisplayDate({ dateString }: Props) {
   ];
   const date = splittedDate[2] + " " + months[parseInt(splittedDate[1]) - 1];
 
-  return <time dateTime={dateString}>{date}</time>;
+  return <time dateTime={props.dateString} {...props}>{date}</time>;
 }

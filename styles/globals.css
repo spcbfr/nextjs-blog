@@ -1,5 +1,7 @@
 @tailwind base;
 @import "./syntax-highlighting.css";
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @font-face {
   font-family: "Sentient";
   src: url("../public/fonts/Sentient-Light.woff2") format("woff2");
@@ -22,10 +24,9 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Sentient";
-  src: url("../public/fonts/Sentient-Bold.woff2") format("woff2");
+  src: url("../public/fonts/Sentient-Bold.ttf") format("ttf");
   font-weight: 900;
   font-style: normal;
   font-display: swap;

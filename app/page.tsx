@@ -20,41 +20,35 @@ export default function Page(){
     });
     return (
     <>
-      <div>
-        <section className="flex gap-x-4 ">
-          <Image
-            src={profilePic}
-            width="80"
-            height={80}
-            quality="100"
-            alt=""
-            className="rounded-full"
-          />
-          <section>
-            <h2 className="font-display text-2xl font-black text-stone-800 sm:text-3xl">
-              Yusuf Bouzekri
-            </h2>
-            <p className="text-stone-700 sm:text-lg font-sans">
-              Full Time Geek / CS Student
-            </p>
-          </section>
+      <section className="flex gap-x-4">
+        <Image
+          src={profilePic}
+          width="80"
+          height={80}
+          quality="100"
+          alt=""
+          className="rounded-full"
+        />
+        <section className="font-display">
+          <h2 className="text-2xl font-black text-stone-800 sm:text-3xl font-display">
+            Yusuf Bouzekri
+          </h2>
+          <p className="text-stone-700 sm:text-lg ">
+            Full Time Geek / CS Student
+          </p>
         </section>
-      </div>
+      </section>
       <div className="flex flex-col gap-3 sm:gap-5">
         {posts.map((post) => (
-          <div key={post.slug} className="font-sans">
-            <div className="flex items-baseline justify-between font-display">
+            <div key={post.slug} className="flex items-baseline justify-between font-display">
               <Link
                 href={`/posts/${post.slug}`}
                 className="text-xl font-semibold text-stone-600 ease-in-out hover:text-stone-800 transition-all sm:text-[1.7rem] sm:leading-8"
               >
                 {post.title}
               </Link>
-              <div className=" font-sans  font-semibold shrink-0  text-stone-500">
-                <DisplayDate dateString={post.date} />
-              </div>
+              <DisplayDate className="font-sans  font-semibold shrink-0  text-stone-500" dateString={post.date} />
             </div>
-          </div>
         ))}
       </div>
     </>
