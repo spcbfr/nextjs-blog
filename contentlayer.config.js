@@ -22,7 +22,7 @@ const Post = defineDocumentType(() => ({
     },
     description: {
       type: "string",
-      required: true,
+      required: false,
     },
     toc: {
       type: "boolean",

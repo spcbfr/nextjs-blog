@@ -120,13 +120,11 @@ headings: {
 
 <Callout title="Explaining the Regex 🗿">
   In short, `Hi ## It's me{:md}` and `###nospace{:md}` won't match, but `# Hello World{:md}` will. Along with it 2 properties will be returned. `flag = "#"{:js}` and `content= "Hello World"{:js}` which we'll be using later.
-  <CalloutDetails>
   - `\n` matches any new lines, this means that #'s in the middle of the line won't be captured
   - `(?<flag>#{1-6})` matches any number of #'s between 1 and 6 and also stores what's matched in a **Named Control Group** called `flag`
   - `\s+` to match one or more spaces after the hashtag symbols
   - `(?<content>.+)` matches any thing except a line break and, and once again the result is stored in a control group called `content`
   - finally `g` stands for global and is used to catch all the instances that match the expression and not just the first one
-  </CalloutDetails>
 </Callout>
 
 Now we'll map over the array of matches in the document and return the data that we'll need, which is derived from the regex **Named Control Groups**, notice how we used `flag.length{:js}` to count the number of hashtags in the heading thus getting the heading's level. finally let's return the data we've mapped over.

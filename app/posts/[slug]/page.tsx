@@ -133,7 +133,7 @@ export default async function Page({ params }: any) {
           </div>
         ) : null
       ) : null}
-      <MDX code={post.body.code} />
+      <MDX code={post.body.code}/>
       <p className="font-sans text-lg print:hidden bg-stone-900 text-stone-200 p-3 rounded-lg ">
         if you&apos;ve enjoyed this article,
         <a

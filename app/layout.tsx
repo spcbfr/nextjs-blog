@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Karla } from "next/font/google";
-import Link from "next/link";
 import Footer from "components/footer";
 
 const karla = Karla({
