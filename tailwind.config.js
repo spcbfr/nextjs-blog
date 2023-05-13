@@ -26,8 +26,8 @@ module.exports = {
         grower: "growAndShrink 600ms ease-in-out forwards",
       },
       fontFamily: {
-        sans: ["Karla"],
-        display: ["Sentient"],
+        sans: ["var(--font-karla)"],
+        display: ["var(--font-sentient)"],
       },
     },
   },
