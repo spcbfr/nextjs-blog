@@ -80,7 +80,6 @@ export type webmentionFeed = {
   children: webmentionEntry[ ]
 }
 export default async function Page({ params }: any) {
-  generateRssFeed()
   const post = allPosts.find((post) => post.slug == params?.slug)
   if (!post) return notFound()
   const res = await fetch("https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" + post?.slug + "&sort-by=published", { next: { revalidate: 20 } })

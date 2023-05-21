@@ -52,7 +52,7 @@ export const generateRssFeed = async () => {
       id: url,
       link: url,
       date: new Date(post.date),
-      description: post.description,
+      description: post.description ? post.description : "No Description",
       content: `<p>${post.description}</p> <br/> <strong><a href="${url}">Keep Reading</a></strong>`,
       author: [author],
       contributor: [author],
