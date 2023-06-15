@@ -9,7 +9,7 @@ export default function Footer() {
           <Rss size={28} />
         </a>
         <a
-          href="https://twitter.com/spacebuffer"
+          href="https://twitter.com/spacehiker_"
           className="transition text-zinc-600 hover:text-zinc-950"
         >
           <TwitterLogo size={28} />
