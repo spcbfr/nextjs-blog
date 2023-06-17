@@ -10,7 +10,8 @@ import ProfilePic from "../../../public/profile-pic.webp"
 import Comments from "components/comments";
 
 
-export const dynamicParams = false // Dynamic segments not included in generateStaticParams will return a 404
+const dynamicParams = false;
+export { dynamicParams };
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
     slug: post.slug
@@ -26,14 +27,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       url: 'https://yusuf.fyi/posts/' + post?.slug,
       locale: 'en-US',
       authors: ['Yusuf Bouzekri'],
-      images: [
-        {
-          url: 'https://yusuf.fyi/api/og?title=' + post?.title,
-          alt: "The article's cover photo",
-          height: 1200,
-          width: 630,
-        }
-      ]
     },
 
     twitter: {
@@ -42,14 +35,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       description: post?.description,
       creator: "@spacebuffer",
       site: '@spacebuffer',
-      images: [
-        {
-          url: 'https://yusuf.fyi/api/og?title=' + post?.title,
-          alt: "The article's cover photo",
-          height: 1200,
-          width: 630,
-        }
-      ]
     }
   }
 

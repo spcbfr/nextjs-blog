@@ -3,8 +3,8 @@ import { Rss, TwitterLogo } from "@phosphor-icons/react";
 
 export default function Footer() {
   return (
-    <footer className="font-display print:hidden text-center mt-2 font-sans flex [&>a]:text-green-700  [&>a]:font-bold">
-      <section className="flex gap-x-2 items-center flex flex-row">
+    <footer className="font-display print:hidden text-center mt-2 flex [&>a]:text-green-700  [&>a]:font-bold">
+      <section className="gap-x-2 items-center flex flex-row">
         <a href="https://yusuf.fyi/rss.xml" className="transition text-zinc-600 hover:text-zinc-950">
           <Rss size={28} />
         </a>
