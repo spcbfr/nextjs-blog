@@ -14,7 +14,7 @@ export default async function Image({params}) {
     const post = allPosts.find((post) => post.slug == params?.slug)
     return new ImageResponse(
       (
-        <div tw="bg-stone-900 flex w-full flex-col h-full justify-center items-center">
+        <div tw="bg-stone-900 px-3 flex w-full flex-col h-full justify-center items-center">
           <h2 style={{ fontSize: 35 }} tw="text-stone-400">
             Yusuf Productions Presents
           </h2>
