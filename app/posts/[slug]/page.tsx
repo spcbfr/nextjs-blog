@@ -135,11 +135,11 @@ export default async function Page({ params }: any) {
 
       <h2 className="text-3xl font-display font-bold">Likes & Reposts</h2>
       <div className="inline-flex flex-row-reverse mt-4">
-      {sourceLikes.map((like) => {
+      {sourceLikes.map((like, i) => {
         if( like.author.photo){
         return (
           
-            <span className="relative border-2 border-solid border-zinc-100 rounded-full [&:not(:last-child)]:-ml-7">
+            <span key={i} className="relative border-2 border-solid border-zinc-100 rounded-full [&:not(:last-child)]:-ml-7">
               <img src={like.author.photo} className="w-16 rounded-full" alt={`the profile picture of ${like.author.name}`}/>
             </span>
         )
