@@ -1,3 +1,4 @@
+"use client"
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Callout, { CalloutDetails } from "components/callout";
 import Img from "components/img";
