@@ -9,9 +9,6 @@ export const size = {
   height: 630
 }
 
-const sentientBold = fetch(
-  new URL('./Sentient-Bold.ttf', import.meta.url)
-).then((res) => res.arrayBuffer())
 
 export default async function Image({params}) {
     const post = allPosts.find((post) => post.slug == params?.slug)
@@ -32,14 +29,6 @@ export default async function Image({params}) {
       ),
       {
         ...size,
-        fonts: [
-          {
-            name: "Sentient",
-            data: await sentientBold,
-            style: "normal",
-            weight: 800,
-          },
-        ],
       }
     )
 }
