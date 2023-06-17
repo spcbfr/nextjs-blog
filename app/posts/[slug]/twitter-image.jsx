@@ -1,14 +1,19 @@
 import { allPosts } from "contentlayer/generated";
 import { ImageResponse } from "next/server";
 
-export const runtime = "edge"
+export const runtime = 'edge'
+export const alt = 'An article on the website yusuf.fyi'
+export const contentType = 'image/png'
+export const size = {
+  width: 1200,
+  height: 630
+}
 
-const font = fetch(
-   new URL("./Sentient-Bold.ttf", import.meta.url)
- ).then((res) => res.arrayBuffer());
+const sentientBold = fetch(
+  new URL('./Sentient-Bold.ttf', import.meta.url)
+).then((res) => res.arrayBuffer())
 
-// bg-stone-900 flex w-full  flex-col h-full justify-center items-center
-export default async function Image({params}: { params: { slug: string }}) {
+export default async function Image({params}) {
     const post = allPosts.find((post) => post.slug == params?.slug)
     return new ImageResponse(
       (
@@ -26,12 +31,11 @@ export default async function Image({params}: { params: { slug: string }}) {
         </div>
       ),
       {
-        width: 1200,
-        height: 630,
+        ...size,
         fonts: [
           {
             name: "Sentient",
-            data: await font,
+            data: await sentientBold,
             style: "normal",
             weight: 800,
           },

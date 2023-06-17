@@ -13,7 +13,7 @@ const sentientBold = fetch(
   new URL('./Sentient-Bold.ttf', import.meta.url)
 ).then((res) => res.arrayBuffer())
 
-export default async function Image({params}: { params: { slug: string }}) {
+export default async function Image({params}) {
     const post = allPosts.find((post) => post.slug == params?.slug)
     return new ImageResponse(
       (
