@@ -51,7 +51,7 @@ export type webmentionEntry = {
   },
   'wm-received': string,
   'wm-target': string,
-  'wm-property': "in-reply-to" | "mention-of" | "like-of"
+  'wm-property': "in-reply-to" | "mention-of" | "like-of" | "repost-of"
   'wm-id': Number
   content: {
     text: string,
@@ -70,6 +70,7 @@ export default async function Page({ params }: any) {
   const res = await fetch("https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" + post?.slug + "&sort-by=published", { next: { revalidate: 20 } })
   const jsonRes: webmentionFeed = await res.json()
   const sourceComments = jsonRes.children.filter((child: webmentionEntry) => child["wm-property"] == "in-reply-to" || child["wm-property"] == "mention-of")
+  const sourceLikes = jsonRes.children.filter((child: webmentionEntry) => child["wm-property"] == "like-of" || child["wm-property"] == "repost-of")
   return (
     <>
       <div className="col-end-5">
@@ -128,7 +129,27 @@ export default async function Page({ params }: any) {
         </a>
         , it supports this site and caffeinates me so that I can keep producing awesome content!
       </p>
+      <div>
+</div>
+    <section className=" bg-zinc-100 p-2 rounded-md font-sans ">
+
+      <h2 className="text-3xl font-display font-bold">Likes & Reposts</h2>
+      <div className="inline-flex flex-row-reverse mt-4">
+      {sourceLikes.map((like) => {
+        if( like.author.photo){
+        return (
+          
+            <span className="relative border-2 border-solid border-zinc-100 rounded-full [&:not(:last-child)]:-ml-7">
+              <img src={like.author.photo} className="w-16 rounded-full" alt={`the profile picture of ${like.author.name}`}/>
+            </span>
+        )
+      }})}</div>
+
+
+      <div className="flex flex-col gap-4">
       <Comments source={sourceComments}/>
+      </div>
+    </section>
     </>
   )
 }
