@@ -5,6 +5,7 @@ import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import profilePic from "../public/profile-pic.webp"
+import { Balancer } from "react-wrap-balancer"
 export const metadata: Metadata = {
     title: "Yusuf's Home",
 }
@@ -27,7 +28,7 @@ export default function Page(){
           height={80}
           quality="100"
           alt=""
-          className="rounded-full"
+          className="rounded-full  relative bottom-[10px]"
         />
         <section className="font-display">
           <h2 className="text-2xl font-black text-stone-800 sm:text-3xl font-display">
@@ -41,12 +42,15 @@ export default function Page(){
       <div className="flex flex-col gap-3 sm:gap-5">
         {posts.map((post) => (
             <div key={post.slug} className="flex items-baseline justify-between font-display">
+
+            <Balancer>
               <Link
                 href={`/posts/${post.slug}`}
                 className="text-xl font-semibold text-stone-600 ease-in-out hover:text-stone-800 transition-all sm:text-[1.7rem] sm:leading-8"
               >
-                {post.title}
+                  {post.title}
               </Link>
+            </Balancer>
               <DisplayDate className="font-sans  font-semibold shrink-0  text-stone-500" dateString={post.date} />
             </div>
         ))}

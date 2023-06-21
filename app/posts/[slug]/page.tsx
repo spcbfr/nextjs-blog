@@ -8,6 +8,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProfilePic from "../../../public/profile-pic.webp"
 import Comments from "components/comments";
+import { Balancer } from "react-wrap-balancer";
 
 
 const dynamicParams = false;
@@ -74,7 +75,7 @@ export default async function Page({ params }: any) {
   return (
     <>
       <div className="col-end-5">
-        <div className="print:mx-auto print:w-fit">
+        <div className="print:mx-auto print:w-fit relative bottom-[10px]">
           <Link href="/">
             <Image
               src={ProfilePic}
@@ -86,9 +87,11 @@ export default async function Page({ params }: any) {
             />
           </Link>
         </div>
-        <h1 className="mt-5 font-display text-4xl font-black text-stone-800 sm:text-5xl ">
-          {post.title}
-        </h1>
+        <Balancer>
+          <h1 className="mt-5 font-display text-4xl font-black text-stone-800 sm:text-5xl ">
+            {post.title}
+          </h1>
+        </Balancer>
       </div>
 
       {post.toc == true ? (
