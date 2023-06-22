@@ -142,7 +142,7 @@ export default async function Page({ params }: any) {
         if( like.author.photo){
         return (
           
-            <span key={i} className="relative border-2 border-solid border-zinc-100 rounded-full [&:not(:last-child)]:-ml-7">
+            <span key={i} className="relative border-[3px] border-solid border-zinc-100 rounded-full [&:not(:last-child)]:-ml-7">
               <img src={like.author.photo} className="w-16 rounded-full" alt={`the profile picture of ${like.author.name}`}/>
             </span>
         )

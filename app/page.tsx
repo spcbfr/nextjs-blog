@@ -43,14 +43,12 @@ export default function Page(){
         {posts.map((post) => (
             <div key={post.slug} className="flex items-baseline justify-between font-display">
 
-            <Balancer>
               <Link
                 href={`/posts/${post.slug}`}
                 className="text-xl font-semibold text-stone-600 ease-in-out hover:text-stone-800 transition-all sm:text-[1.7rem] sm:leading-8"
               >
                   {post.title}
               </Link>
-            </Balancer>
               <DisplayDate className="font-sans  font-semibold shrink-0  text-stone-500" dateString={post.date} />
             </div>
         ))}
