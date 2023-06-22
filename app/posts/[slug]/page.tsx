@@ -87,11 +87,11 @@ export default async function Page({ params }: any) {
             />
           </Link>
         </div>
-        <Balancer>
           <h1 className="mt-5 font-display text-4xl font-black text-stone-800 sm:text-5xl ">
-            {post.title}
+            <Balancer>
+              {post.title}
+            </Balancer>
           </h1>
-        </Balancer>
       </div>
 
       {post.toc == true ? (

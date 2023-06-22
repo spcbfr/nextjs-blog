@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import profilePic from "../public/profile-pic.webp"
 import { Balancer } from "react-wrap-balancer"
+import Spotify from "components/spotify-playing"
 export const metadata: Metadata = {
     title: "Yusuf's Home",
 }

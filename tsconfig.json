@@ -35,8 +35,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".contentlayer/generated",
-    ".next/types/**/*.ts"
-, "app/posts/[slug]/opengraph-image.jsx", "app/posts/[slug]/twitter-image.jsx"  ],
+    ".next/types/**/*.ts"],
   "exclude": [
     "node_modules"
   ]
