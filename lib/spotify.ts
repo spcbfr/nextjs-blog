@@ -5,7 +5,6 @@ const getAccessToken = async () => {
   const response = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
 
-    cache: 'no-store',
     headers: {
       Authorization: `Basic ${Buffer.from(
         `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
@@ -24,7 +23,6 @@ export const currentlyPlayingSong = async () => {
   const { access_token } = await getAccessToken();
 
   return fetch("https://api.spotify.com/v1/me/player/currently-playing", {
-    cache: 'no-store',
     headers: {
       Authorization: `Bearer ${access_token}`,
     },

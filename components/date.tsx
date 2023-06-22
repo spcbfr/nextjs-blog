@@ -1,5 +1,5 @@
 export default function DisplayDate(props: any) {
-  const splittedDate = props.dateString.split("-");
+  const splittedDate = props.datestring.split("-");
   const months = [
     "Jan",
     "Feb",

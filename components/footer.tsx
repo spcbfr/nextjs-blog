@@ -1,5 +1,6 @@
 "use client";
 import { Rss, TwitterLogo } from "@phosphor-icons/react";
+import Spotify from "./spotify-playing";
 
 export default function Footer() {
   return (
@@ -14,7 +15,7 @@ export default function Footer() {
         >
           <TwitterLogo size={28} />
         </a>
-        <div className="p-1 text-zinc-900">thanks for reading!</div>
+      <Spotify/>
       </section>
       <a href="https://github.com/spcbfr" rel="me authn"></a>
 
