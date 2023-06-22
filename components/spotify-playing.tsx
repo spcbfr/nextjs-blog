@@ -1,4 +1,5 @@
 "use client"
+import { ReactNode } from "react";
 import useSWR from "swr"
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 type swr = {
@@ -10,8 +11,10 @@ type swr = {
     songUrl: string;
     title: string;
   },
+  isLoading: any,
+  error: any
 };
-function SpotifyWrapper({children}){
+function SpotifyWrapper({children}: {children: ReactNode}){
   return (
     <div className="bg-emerald-900 hover:bg-emerald-800 transition-all text-emerald-100 p-2 w-fit rounded-md flex flex-row">{children}</div>
   )
