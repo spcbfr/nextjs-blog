@@ -16,7 +16,7 @@ type swr = {
 };
 function SpotifyWrapper({children}: {children: ReactNode}){
   return (
-    <div className="bg-emerald-900 hover:bg-emerald-800 transition-all text-emerald-100 p-2 w-fit rounded-md flex flex-row">{children}</div>
+    <div className="bg-emerald-900 hover:bg-emerald-800 transition-all items-center text-emerald-100 p-2 w-fit rounded-md flex flex-row">{children}</div>
   )
 }
 export default function Spotify(){
@@ -26,10 +26,10 @@ export default function Spotify(){
     if(data.isPlaying){
       return (
           <SpotifyWrapper >
-            <div style={{backgroundImage: `url(${data.albumImageUrl})`}}  className="w-12 h-12 bg-cover rounded-md" />
+            <div style={{backgroundImage: `url(${data.albumImageUrl})`}}  className="md:w-12 md:h-12 h-10 w-10 bg-cover rounded-md" />
             <div className="inline ms-2">
-              <h1><a href={data.songUrl} target="_blank">{data.title}</a></h1>
-              <h2 className="text-left font-medium">{data.artist}</h2>
+              <h1><a href={data.songUrl} className="" target="_blank">{data.title}</a></h1>
+              <h2 className="text-left font-medium sm:text-base text-sm">{data.artist}</h2>
             </div>
           </SpotifyWrapper>
       )
