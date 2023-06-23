@@ -16,7 +16,13 @@ export async function GET(request: NextRequest) {
   }
 
   const isPlaying = song.is_playing;
-  const title = song.item.name;
+
+  let title = song.item.name;
+  // Remove the remastered notice at the end of the title if it exists
+  if (title.includes("- Remastered")) {
+    title = title.slice(0, title.indexOf("- Remastered") - 1)
+  }
+
   const artist = song.item.artists.slice(0,2).map((_artist : {name: string}) => _artist.name).join(", ");
   const album = song.item.album.name;
   const albumImageUrl = song.item.album.images[0].url;
