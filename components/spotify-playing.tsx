@@ -59,7 +59,7 @@ export default function Spotify(){
             <div style={{backgroundImage: "url('/spotify.jpg')"}} className="md:w-12 md:h-12 h-10 w-10 bg-cover rounded-lg" />
             <div className="inline ms-2">
               <h1 className="text-left">Not Listening</h1>
-              <h2 className="text-left font-medium sm:text-base text-sm">Yusuf's Spotify</h2>
+              <h2 className="text-left font-medium sm:text-base text-sm">Yusuf&apos;s Spotify</h2>
             </div>
           </SpotifyWrapper>)
     }
