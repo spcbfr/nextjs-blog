@@ -1,5 +1,6 @@
 import type { webmentionEntry } from "app/posts/[slug]/page"
 import Icon from "./sourceSiteIcon";
+import Image from "next/image";
 export default function Comments({ source }: {source: webmentionEntry[]}) {
   const regex = /^(?:https?:\/\/)?(?:www\.)?([a-zA-Z0-9-]+)\.[a-zA-Z]{2,}/;
 
@@ -12,7 +13,7 @@ export default function Comments({ source }: {source: webmentionEntry[]}) {
             <div key={index}>
               <div className="flex items-start flex-col gap-2">
                 <div className="space-x-2">
-                  <img src={comment.author.photo} alt={comment.author.name} className="w-10 rounded-full inline" />
+                  <Image src={comment.author.photo} alt={comment.author.name} height={40} width={40} className="rounded-full inline" />
                   <div className="inline"><a className="font-bold text-lg" href={comment.url}>{comment.author.name}</a> from <span className="[&>svg]:inline relative bottom-[2px]"><Icon site={sourceSite ? sourceSite[1] : "random"} size={22} /></span></div>
                 </div>
                 <p className="[&>ol]:list-decimal [&>ul]:list-disc [&>ul]:list-inside">{comment.content.text}</p> 

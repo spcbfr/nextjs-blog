@@ -1,10 +1,10 @@
 "use client";
 import { Rss, TwitterLogo } from "@phosphor-icons/react";
-import Spotify from "./spotify-playing";
+import Spotify from "./SpotifyWidget";
 
 export default function Footer() {
   return (
-    <footer className=" font-semibold print:hidden text-center mt-2 flex [&>a]:text-green-700  [&>a]:font-bold">
+    <footer className="font-semibold print:hidden mt-2 flex">
       <section className="gap-x-2 items-center flex flex-row">
         <a href="https://yusuf.fyi/rss.xml" className="transition text-zinc-600 hover:text-zinc-950">
           <Rss size={28} />

@@ -19,6 +19,7 @@ const nextConfig = {
     ]
   },
   reactStrictMode: true,
+  images: { domains: ["i.scdn.co", "webmention.io"] },
   swcMinify: true,
   async headers() {
     return [

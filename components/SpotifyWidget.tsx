@@ -1,6 +1,10 @@
 "use client"
+import Image from "next/image";
 import { ReactNode } from "react";
 import useSWR from "swr"
+import SpotifyLogo from "../public/spotify.jpg"
+
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 type swr = {
   data: {
@@ -11,8 +15,8 @@ type swr = {
     songUrl: string;
     title: string;
   },
-  isLoading: any,
-  error: any
+  error: any,
+  isLoading: boolean,
 };
 function SpotifyWrapper({children}: {children: ReactNode}){
   return (
@@ -26,8 +30,8 @@ export default function Spotify(){
           <SpotifyWrapper >
             <div style={{backgroundImage: "url('/spotify.jpg')"}} className="md:w-12 md:h-12 h-10 w-10 bg-cover rounded-lg" />
             <div className="inline ms-2">
-              <h1 className="text-left">Failed to load</h1>
-              <h2 className="text-left font-medium sm:text-base text-sm">Something went wrong</h2>
+              <h1 className="">Failed to load</h1>
+              <h2 className="font-medium sm:text-base text-sm">Something went wrong</h2>
             </div>
           </SpotifyWrapper>)
     }
@@ -45,8 +49,10 @@ export default function Spotify(){
     if(data.isPlaying){
       return (
           <SpotifyWrapper >
-            <div style={{backgroundImage: `url(${data.albumImageUrl})`}}  className="md:w-12 md:h-12 h-10 w-10 bg-cover rounded-lg" />
-            <div className="inline text-left ms-2">
+            <div className="md:w-12 relative md:h-12 h-10 w-10 rounded-lg">
+              <Image src={data.albumImageUrl} fill alt="Spotify" className="object-cover rounded-lg"/>
+            </div>
+            <div className="inline ms-2">
               <h1><a href={data.songUrl} className="" target="_blank">{data.title}</a></h1>
               <h2 className="font-medium sm:text-base text-sm">{data.artist}</h2>
             </div>
@@ -56,10 +62,12 @@ export default function Spotify(){
     } else {
       return (
           <SpotifyWrapper >
-            <div style={{backgroundImage: "url('/spotify.jpg')"}} className="md:w-12 md:h-12 h-10 w-10 bg-cover rounded-lg" />
+            <div className="md:w-12 md:h-12 h-10 w-10 rounded-lg">
+              <Image src={SpotifyLogo} alt="Spotify" className="object-cover rounded-lg"/>
+            </div>
             <div className="inline ms-2">
-              <h1 className="text-left">Not Listening</h1>
-              <h2 className="text-left font-medium sm:text-base text-sm">Yusuf&apos;s Spotify</h2>
+              <h1>Not Listening</h1>
+              <h2 className="font-medium sm:text-base text-sm">Yusuf&apos;s Spotify</h2>
             </div>
           </SpotifyWrapper>)
     }

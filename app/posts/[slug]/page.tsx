@@ -134,7 +134,7 @@ export default async function Page({ params }: any) {
       </p>
       <div>
 </div>
-    <section className=" bg-zinc-100 p-2 rounded-md font-sans ">
+    <section className=" bg-zinc-100 p-2 rounded-md font-sans print:hidden ">
 
       <h2 className="text-3xl font-display font-bold">Likes & Reposts</h2>
       <div className="inline-flex flex-row-reverse mt-4">
@@ -143,7 +143,7 @@ export default async function Page({ params }: any) {
         return (
           
             <span key={i} className="relative border-[3px] border-solid border-zinc-100 rounded-full [&:not(:last-child)]:-ml-7">
-              <img src={like.author.photo} className="w-16 rounded-full" alt={`the profile picture of ${like.author.name}`}/>
+              <Image src={like.author.photo} width={64} height={64} className=" rounded-full" alt={`the profile picture of ${like.author.name}`}/>
             </span>
         )
       }})}</div>
