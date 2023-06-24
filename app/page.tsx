@@ -1,24 +1,24 @@
-import DisplayDate from "components/date"
-import { allPosts } from "contentlayer/generated"
-import { generateRssFeed } from "lib/rss"
-import { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import profilePic from "../public/profile-pic.webp"
+import DisplayDate from "components/date";
+import { allPosts } from "contentlayer/generated";
+import { generateRssFeed } from "lib/rss";
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import profilePic from "../public/profile-pic.webp";
 export const metadata: Metadata = {
-    title: "Yusuf's Home",
-}
+  title: "Yusuf's Home",
+};
 
-export default async function Page(){
-    generateRssFeed()
-    const sortedPosts = allPosts.sort((a, b) => {
-      return Number(new Date(b.date)) - Number(new Date(a.date));
-    });
-    const listedPosts = sortedPosts.filter((post) => !post.unlisted);
-    const posts = listedPosts.map(({ slug, title, date }) => {
-      return { slug, title, date };
-    });
-    return (
+export default async function Page() {
+  generateRssFeed();
+  const sortedPosts = allPosts.sort((a, b) => {
+    return Number(new Date(b.date)) - Number(new Date(a.date));
+  });
+  const listedPosts = sortedPosts.filter((post) => !post.unlisted);
+  const posts = listedPosts.map(({ slug, title, date }) => {
+    return { slug, title, date };
+  });
+  return (
     <>
       <section className="flex gap-x-4">
         <Image
@@ -40,19 +40,23 @@ export default async function Page(){
       </section>
       <div className="flex flex-col gap-3 sm:gap-5">
         {posts.map((post) => (
-            <div key={post.slug} className="flex items-baseline justify-between font-display">
-
-              <Link
-                href={`/posts/${post.slug}`}
-                className="text-xl font-semibold text-stone-600 ease-in-out hover:text-stone-800 transition-all sm:text-[1.7rem] sm:leading-8"
-              >
-                  {post.title}
-              </Link>
-              <DisplayDate className="font-sans  font-semibold shrink-0  text-stone-500" datestring={post.date} />
-            </div>
+          <div
+            key={post.slug}
+            className="flex items-baseline justify-between font-display"
+          >
+            <Link
+              href={`/posts/${post.slug}`}
+              className="text-xl font-semibold text-stone-600 ease-in-out hover:text-stone-800 transition-all sm:text-[1.7rem] sm:leading-8"
+            >
+              {post.title}
+            </Link>
+            <DisplayDate
+              className="font-sans  font-semibold shrink-0  text-stone-500"
+              datestring={post.date}
+            />
+          </div>
         ))}
       </div>
-
     </>
-  )
+  );
 }

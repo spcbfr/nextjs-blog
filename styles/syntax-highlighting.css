@@ -35,12 +35,12 @@ code[data-line-numbers] .line::before {
   padding-right: 1rem;
 }
 kbd {
-  @apply bg-stone-200 px-1 !text-sm rounded-md border-stone-300 text-stone-700 border-2
+  @apply bg-stone-200 px-1 !text-sm rounded-md border-stone-300 text-stone-700 border-2;
 }
 
 a {
-  @apply underline decoration-1
+  @apply underline decoration-1;
 }
 code {
-  @apply bg-stone-200 text-sm py-[1px] px-1 text-stone-700 rounded-md 
+  @apply bg-stone-200 text-sm py-[1px] px-1 text-stone-700 rounded-md;
 }

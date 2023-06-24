@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 
 export default function Callout(props: any) {
@@ -18,9 +18,7 @@ export function CalloutDetails(props: any) {
   const [open, setOpen] = useState(false);
   if (open) {
     return (
-      <div
-        className="font-sans mt-3"
-      >
+      <div className="font-sans mt-3">
         {props.children}
         <button
           onClick={() => setOpen(false)}

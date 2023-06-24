@@ -12,7 +12,9 @@ export const components = {
     />
   ),
   h3: (props: any) => <h4 className="font-sans font-bold text-lg" {...props} />,
-  hr: (props: any) => <hr className="mx-20 my-4 border-stone-300 border-2" {...props} />,
+  hr: (props: any) => (
+    <hr className="mx-20 my-4 border-stone-300 border-2" {...props} />
+  ),
   ul: (props: any) => (
     <ul
       className="space-y-3 font-sans text-lg [li>&]:mt-3 [&>li]:relative [&>li]:pl-7 before:[&>li]:absolute before:[&>li]:left-1 before:[&>li]:top-3 before:[&>li]:h-1.5 before:[&>li]:w-1.5 before:[&>li]:rounded-full before:[&>li]:bg-stone-900/20"

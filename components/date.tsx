@@ -16,5 +16,9 @@ export default function DisplayDate(props: any) {
   ];
   const date = splittedDate[2] + " " + months[parseInt(splittedDate[1]) - 1];
 
-  return <time dateTime={props.dateString} {...props}>{date}</time>;
+  return (
+    <time dateTime={props.dateString} {...props}>
+      {date}
+    </time>
+  );
 }

@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -16,9 +12,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ]
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "baseUrl": ".",
     "isolatedModules": true,
@@ -35,8 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".contentlayer/generated",
-    ".next/types/**/*.ts"],
-  "exclude": [
-    "node_modules"
-  ]
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
 }

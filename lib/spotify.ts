@@ -1,6 +1,7 @@
 const getAccessToken = async () => {
-  const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN ? process.env.SPOTIFY_REFRESH_TOKEN : "No refresh Token";
-
+  const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN
+    ? process.env.SPOTIFY_REFRESH_TOKEN
+    : "No refresh Token";
 
   const response = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
@@ -28,4 +29,4 @@ export const currentlyPlayingSong = async () => {
     },
   });
 };
-export default getAccessToken
+export default getAccessToken;
