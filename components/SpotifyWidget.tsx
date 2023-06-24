@@ -1,7 +1,6 @@
 "use client";
 import useSWR from "swr";
 import { ReactNode } from "react";
-import SpotifyLogo from "../public/spotify.jpg";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 type swr = {
@@ -77,7 +76,7 @@ export default function Spotify() {
       <SpotifyWrapper>
         <div className="md:w-12 md:h-12 h-10 w-10 rounded-lg">
           <img
-            src={SpotifyLogo}
+            src="/spotify.jpg"
             alt="Spotify"
             className="object-cover rounded-lg"
           />
