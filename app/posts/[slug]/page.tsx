@@ -6,72 +6,83 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ProfilePic from "../../../public/profile-pic.webp"
+import ProfilePic from "../../../public/profile-pic.webp";
 import Comments from "components/comments";
 import { Balancer } from "react-wrap-balancer";
-
 
 const dynamicParams = false;
 export { dynamicParams };
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
-    slug: post.slug
-  }))
+    slug: post.slug,
+  }));
 }
+
 export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const post = allPosts.find((post) => post.slug == params?.slug)
+  const post = allPosts.find((post) => post.slug == params?.slug);
   return {
     title: post?.title,
     openGraph: {
       title: post?.title,
       description: post?.description,
-      url: 'https://yusuf.fyi/posts/' + post?.slug,
-      locale: 'en-US',
-      authors: ['Yusuf Bouzekri'],
+      url: "https://yusuf.fyi/posts/" + post?.slug,
+      locale: "en-US",
+      authors: ["Yusuf Bouzekri"],
     },
 
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: post?.title,
       description: post?.description,
       creator: "@spacebuffer",
-      site: '@spacebuffer',
-    }
-  }
-
+      site: "@spacebuffer",
+    },
+  };
 }
 export type webmentionEntry = {
-  type: "entry",
-  url: string,
-  published: string,
+  type: "entry";
+  url: string;
+  published: string;
   author: {
-    type: string,
-    name: string,
-    photo: string,
-    url: string,
-  },
-  'wm-received': string,
-  'wm-target': string,
-  'wm-property': "in-reply-to" | "mention-of" | "like-of" | "repost-of"
-  'wm-id': Number
+    type: string;
+    name: string;
+    photo: string;
+    url: string;
+  };
+  "wm-received": string;
+  "wm-target": string;
+  "wm-property": "in-reply-to" | "mention-of" | "like-of" | "repost-of";
+  "wm-id": Number;
   content: {
-    text: string,
-    html: string,
-  },
-  'wm-private': boolean
-}
+    text: string;
+    html: string;
+  };
+  "wm-private": boolean;
+};
 export type webmentionFeed = {
-  type: "feed",
-  name: "webmentions",
-  children: webmentionEntry[ ]
-}
+  type: "feed";
+  name: "webmentions";
+  children: webmentionEntry[];
+};
 export default async function Page({ params }: any) {
-  const post = allPosts.find((post) => post.slug == params?.slug)
-  if (!post) return notFound()
-  const res = await fetch("https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" + post?.slug + "&sort-by=published", { next: { revalidate: 20 } })
-  const jsonRes: webmentionFeed = await res.json()
-  const sourceComments = jsonRes.children.filter((child: webmentionEntry) => child["wm-property"] == "in-reply-to" || child["wm-property"] == "mention-of")
-  const sourceLikes = jsonRes.children.filter((child: webmentionEntry) => child["wm-property"] == "like-of" || child["wm-property"] == "repost-of")
+  const post = allPosts.find((post) => post.slug == params?.slug);
+  if (!post) return notFound();
+  const res = await fetch(
+    "https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" +
+      post?.slug +
+      "&sort-by=published",
+    { next: { revalidate: 20 } }
+  );
+  const jsonRes: webmentionFeed = await res.json();
+  const sourceComments = jsonRes.children.filter(
+    (child: webmentionEntry) =>
+      child["wm-property"] == "in-reply-to" ||
+      child["wm-property"] == "mention-of"
+  );
+  const sourceLikes = jsonRes.children.filter(
+    (child: webmentionEntry) =>
+      child["wm-property"] == "like-of" || child["wm-property"] == "repost-of"
+  );
   return (
     <>
       <div className="col-end-5">
@@ -87,11 +98,9 @@ export default async function Page({ params }: any) {
             />
           </Link>
         </div>
-          <h1 className="mt-5 font-display text-4xl font-black text-stone-800 sm:text-5xl ">
-            <Balancer>
-              {post.title}
-            </Balancer>
-          </h1>
+        <h1 className="mt-5 font-display text-4xl font-black text-stone-800 sm:text-5xl ">
+          <Balancer>{post.title}</Balancer>
+        </h1>
       </div>
 
       {post.toc == true ? (
@@ -121,7 +130,7 @@ export default async function Page({ params }: any) {
           </div>
         ) : null
       ) : null}
-      <MDX code={post.body.code}/>
+      <MDX code={post.body.code} />
       <p className="font-sans text-lg print:hidden bg-stone-900 text-stone-200 p-3 rounded-lg ">
         if you&apos;ve enjoyed this article,
         <a
@@ -130,29 +139,35 @@ export default async function Page({ params }: any) {
         >
           consider buying me a coffee
         </a>
-        , it supports this site and caffeinates me so that I can keep producing awesome content!
+        , it supports this site and caffeinates me so that I can keep producing
+        awesome content!
       </p>
-      <div>
-</div>
-    <section className=" bg-zinc-100 p-2 rounded-md font-sans print:hidden ">
+      <div></div>
+      <section className=" bg-zinc-100 p-2 rounded-md font-sans print:hidden ">
+        <h2 className="text-3xl font-display font-bold">Likes & Reposts</h2>
+        <div className="inline-flex flex-row-reverse mt-4">
+          {sourceLikes.map((like, i) => {
+            if (like.author.photo) {
+              return (
+                <span
+                  key={i}
+                  className="relative border-[3px] border-solid border-zinc-100 rounded-full [&:not(:last-child)]:-ml-7"
+                >
+                  <img
+                    src={like.author.photo}
+                    className="h-16 w-16 rounded-full"
+                    alt={`the profile picture of ${like.author.name}`}
+                  />
+                </span>
+              );
+            }
+          })}
+        </div>
 
-      <h2 className="text-3xl font-display font-bold">Likes & Reposts</h2>
-      <div className="inline-flex flex-row-reverse mt-4">
-      {sourceLikes.map((like, i) => {
-        if( like.author.photo){
-        return (
-          
-            <span key={i} className="relative border-[3px] border-solid border-zinc-100 rounded-full [&:not(:last-child)]:-ml-7">
-              <Image src={like.author.photo} width={64} height={64} className=" rounded-full" alt={`the profile picture of ${like.author.name}`}/>
-            </span>
-        )
-      }})}</div>
-
-
-      <div className="flex flex-col gap-4">
-      <Comments source={sourceComments}/>
-      </div>
-    </section>
+        <div className="flex flex-col gap-4">
+          <Comments source={sourceComments} />
+        </div>
+      </section>
     </>
-  )
+  );
 }
