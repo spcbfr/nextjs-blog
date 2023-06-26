@@ -16,6 +16,21 @@ const nextConfig = {
         destination: "https://fed.brid.gy/.well-known/webfinger:slug*", // Matched parameters can be used in the destination
         permanent: true,
       },
+      {
+        source: "/twitter",
+        destination: "https://twitter.com/floatnotreal",
+        permanent: true,
+      },
+      {
+        source: "/instagram",
+        destination: "https://instagram.com/floatnotreal",
+        permanent: true,
+      },
+      {
+        source: "/linkedin",
+        destination: "https://linkedin.com/in/yusuf-bouzekri",
+        permanent: true,
+      },
     ];
   },
   reactStrictMode: true,
