@@ -1,7 +1,6 @@
 import MDX from "components/MDX";
 import ScrollUp from "components/scrollup";
 import { allPosts } from "contentlayer/generated";
-import { generateRssFeed } from "lib/rss";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,9 +8,13 @@ import { notFound } from "next/navigation";
 import ProfilePic from "../../../public/profile-pic.webp";
 import Comments from "components/comments";
 import { Balancer } from "react-wrap-balancer";
+import Likes from "components/likes";
+import { webmentionEntry, webmentionFeed } from "./webmention-types";
+import DonationCard from "components/donationCard";
 
 const dynamicParams = false;
 export { dynamicParams };
+
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
     slug: post.slug,
@@ -39,31 +42,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     },
   };
 }
-export type webmentionEntry = {
-  type: "entry";
-  url: string;
-  published: string;
-  author: {
-    type: string;
-    name: string;
-    photo: string;
-    url: string;
-  };
-  "wm-received": string;
-  "wm-target": string;
-  "wm-property": "in-reply-to" | "mention-of" | "like-of" | "repost-of";
-  "wm-id": Number;
-  content: {
-    text: string;
-    html: string;
-  };
-  "wm-private": boolean;
-};
-export type webmentionFeed = {
-  type: "feed";
-  name: "webmentions";
-  children: webmentionEntry[];
-};
 export default async function Page({ params }: any) {
   const post = allPosts.find((post) => post.slug == params?.slug);
   if (!post) return notFound();
@@ -83,6 +61,7 @@ export default async function Page({ params }: any) {
     (child: webmentionEntry) =>
       child["wm-property"] == "like-of" || child["wm-property"] == "repost-of"
   );
+  const activity = sourceLikes.length > 0 || sourceComments.length > 0;
   return (
     <>
       <div className="col-end-5">
@@ -131,43 +110,13 @@ export default async function Page({ params }: any) {
         ) : null
       ) : null}
       <MDX code={post.body.code} />
-      <p className="font-sans text-lg print:hidden bg-stone-900 text-stone-200 p-3 rounded-lg ">
-        if you&apos;ve enjoyed this article,
-        <a
-          href="https://ko-fi.com/spacebuffer"
-          className="ml-1 text-emerald-500 font-bold  !no-underline"
-        >
-          consider buying me a coffee
-        </a>
-        , it supports this site and caffeinates me so that I can keep producing
-        awesome content!
-      </p>
-      <div></div>
-      <section className=" bg-zinc-100 p-2 rounded-md font-sans print:hidden ">
-        <h2 className="text-3xl font-display font-bold">Likes & Reposts</h2>
-        <div className="inline-flex flex-row-reverse mt-4">
-          {sourceLikes.map((like, i) => {
-            if (like.author.photo) {
-              return (
-                <span
-                  key={i}
-                  className="relative border-[3px] border-solid border-zinc-100 rounded-full [&:not(:last-child)]:-ml-7"
-                >
-                  <img
-                    src={like.author.photo}
-                    className="h-16 w-16 rounded-full"
-                    alt={`the profile picture of ${like.author.name}`}
-                  />
-                </span>
-              );
-            }
-          })}
-        </div>
-
-        <div className="flex flex-col gap-4">
+      <DonationCard />
+      {activity ? (
+        <section className=" bg-zinc-100 p-2 rounded-md font-sans print:hidden ">
           <Comments source={sourceComments} />
-        </div>
-      </section>
+          <Likes source={sourceLikes} />
+        </section>
+      ) : null}
     </>
   );
 }
