@@ -1,0 +1,32 @@
+---
+title: You Should Set Up Redirects from your domain to social media accounts
+date: 2023-06-26
+---
+
+I change my social media handles quite often for various reasons, if you do that too, you also need to remember to update links to your accounts on various articles, youtube video descriptions and that gets annoying pretty damn quickly.
+
+instead of doing that, you could simply setup a redirect from say `<yourdomain>.com/social/twitter` to `twitter.com/<yourhandle>` and from now you on reference the redirect in your articles and business cards
+
+here is how to set it up in Next.JS, it should be trivial to setup in other frameworks or servers too.
+
+```ts title="next.config.js"
+const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/twitter",
+        destination: "https://twitter.com/floatnotreal",
+        permanent: true,
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;
+```
+
+A problem you may notice, is that when setting up redirects you lose the metadata and more importantly opengraph images the social media site provides, I've yet to find a good solution for that, if you've got any idea, reach out!
+
+That's pretty much it for now, I've just got back into blogging so I am starting with a smaller article, I'll leave you with this fun xkcd for now!
+
+<Img src="/names.png" alt="xkcd #302" caption="xkcd #302" />

@@ -113,8 +113,8 @@ export default async function Page({ params }: any) {
       <DonationCard />
       {activity ? (
         <section className=" bg-zinc-100 p-2 rounded-md font-sans print:hidden ">
-          <Comments source={sourceComments} />
           <Likes source={sourceLikes} />
+          <Comments source={sourceComments} />
         </section>
       ) : null}
     </>
