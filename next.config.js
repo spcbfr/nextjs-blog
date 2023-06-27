@@ -31,6 +31,11 @@ const nextConfig = {
         destination: "https://linkedin.com/in/yusuf-bouzekri",
         permanent: true,
       },
+      {
+        source: "/mastodon",
+        destination: "https://fosstodon.org/@spacebuffer",
+        permanent: true,
+      },
     ];
   },
   reactStrictMode: true,
