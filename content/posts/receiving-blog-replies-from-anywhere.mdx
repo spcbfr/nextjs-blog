@@ -3,7 +3,8 @@ title: Receiving Blog Replies from anywhere on the Web
 date: 2022-12-23
 description: Today I delved into the world of indie web and I am in love!
 ---
-import Enter from "../../components/enter.tsx"
+
+import Enter from "../../components/enter.tsx";
 
 Throughout the years, The relationship between the blogger and the reader has always been mostly one-sided: the author publishes a new post and it gets consumed by the readers, but it's very hard for a discussion around the post to arise, some people have a comment section, but I've always found that solution to be very _flaky_, to say the least:
 
@@ -15,6 +16,7 @@ So what could be the solution?
 <Enter>✶ Enter Webmentions and Brid.gy ✶</Enter>
 
 # How Does this work ?
+
 [Web Mentions](https://en.wikipedia.org/wiki/Webmention) is a feature of the IndieWeb that allows bloggers to communicate directly through their respective blogs, I could write a post and send it to my friend as a webmention, that he can do whatever he wants with, some people prefer to keep them to themselves, others display them at the end of every article as a **new kind of comment system**. that being said, most people who'd want to discuss your post probably won't have a blog to send the webmention from, that's where [brid.gy](https://brid.gy) comes in
 
 brid.gy is a service that connects to your various social media account and collects replies to your posts that link back to articles on your site, and then sends those as webmentions to your site.
@@ -25,21 +27,26 @@ with this setup, I was able to provide my readers with a pretty cool **platform-
 
 here is how it looks like on my website, as you can see some of those comments came from Reddit, while others came from Twitter and Mastodon
 
-<Img src="/indieweb-comments.png" alt="What the replies section on my website looks like" />
+<Img
+  src="/indieweb-comments.png"
+  alt="What the replies section on my website looks like"
+/>
 
 # How do I try it out ?
 
 Currently, you can get your comment shown under this very post by doing one of these things:
 
-- Make a tweet that includes the URL of this post that you're reading now
+- <Del>
+    Make a tweet that includes the URL of this post that you're reading now
+  </Del> Update: this no longer works since Twitter's API changes
 - Reply to [this mastodon post](https://fosstodon.org/@spacebuffer/109564738532624537)
 - <Del>Reply to this tweet</Del> I've stopped using twitter long ago
-- reddit comments to posts that link to one of the articles are also fetched but I won't share my reddit account on here 
+- reddit comments to posts that link to one of the articles are also fetched but I won't share my reddit account on here
 
 if you do one of these things you're comment should appear in the replies section below, keep in mind that it may take 30 minutes to an hour for your comment to show up (that's due to the nature of how brid.gy works)
-    
+
 The one thing I feel is missing is hacker news, but [that's being worked](https://github.com/snarfed/bridgy/issues/693) on currently
-    
+
 ---
 
 So that's pretty much it, this setup has its problems, for instance, moderation is lacking and it can take some time for a comment to show up but I like it so for the time being I'll continue using it!
