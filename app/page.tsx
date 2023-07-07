@@ -31,7 +31,7 @@ export default async function Page() {
         />
         <div className="font-display">
           <h2 className="text-2xl font-black text-stone-800 sm:text-3xl font-display">
-            Joe Bowie
+            Yusuf Bouzekri
           </h2>
           <p className="text-stone-700 sm:text-lg ">
             Full Time Geek / CS Student
