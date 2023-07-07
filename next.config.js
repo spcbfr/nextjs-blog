@@ -18,7 +18,7 @@ const nextConfig = {
       },
       {
         source: "/twitter",
-        destination: "https://twitter.com/floatnotreal",
+        destination: "https://twitter.com/joebowie_",
         permanent: true,
       },
       {
