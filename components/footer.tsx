@@ -18,6 +18,12 @@ export default function Footer() {
         >
           <TwitterLogo size={28} />
         </a>
+        <a
+          className="transition text-blue-600 font-lg hover:text-blue-950 underline"
+          href="https://www.threads.net/@floatnotreal"
+        >
+          Threads
+        </a>
         <Spotify />
       </section>
       <a href="https://github.com/spcbfr" rel="me authn"></a>
