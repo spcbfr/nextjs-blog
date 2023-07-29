@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "components/footer";
+import { Anek_Latin, Bai_Jamjuree } from "next/font/google";
 
 const karla = localFont({
   src: [
@@ -46,6 +47,11 @@ const sentient = localFont({
   ],
   variable: "--font-sentient",
 });
+const Bai = Bai_Jamjuree({
+  weight: ["700", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-bai",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yusuf.fyi"), // allows to use `/` later to reference this URL
@@ -86,9 +92,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${karla.variable} ${sentient.variable}`}>
-      <body className="bg-stone-50 font-sans text-stone-900 antialiased selection:bg-yellow-400 selection:text-stone-900">
-        <main className="relative z-10 mb-5 mt-12 sm:mx-2 md:mx-0 grid grid-cols-[1fr,min(640px,100%),1fr] xl:gap-x-10 gap-y-5  px-7 sm:mt-32 sm:px-0 xl:grid-cols-[1fr,minmax(auto,240px),min(640px,100%),minmax(auto,240px),1fr] [&>*]:col-start-2 xl:[&>*]:col-start-3">
+    <html
+      lang="en"
+      className={`${karla.variable} ${sentient.variable} ${Bai.variable}`}
+    >
+      <body className="  font-sans text-stone-900 antialiased selection:bg-yellow-400 selection:text-stone-900">
+        <main className="relative z-10 mb-5 mt-12 sm:mx-2 md:mx-0 grid grid-cols-[1fr,min(640px,100%),1fr] xl:gap-x-10 gap-y-5  px-7 sm:mt-12 sm:px-0 xl:grid-cols-[1fr,minmax(auto,240px),min(640px,100%),minmax(auto,240px),1fr] [&>*]:col-start-2 xl:[&>*]:col-start-3">
           {children}
           <Footer />
           <Analytics />
