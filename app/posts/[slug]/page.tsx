@@ -1,16 +1,19 @@
-import MDX from "components/MDX";
-import ScrollUp from "components/scrollup";
+// MDX
 import { allPosts } from "contentlayer/generated";
+import MDX from "components/MDX";
+// NextJS
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ProfilePic from "../../../public/profile-pic.webp";
+// Components
 import Comments from "components/comments";
 import { Balancer } from "react-wrap-balancer";
 import Likes from "components/likes";
-import { webmentionEntry, webmentionFeed } from "./webmention-types";
 import DonationCard from "components/donationCard";
+import TableOfContents from "components/toc";
+// Types
+import { webmentionEntry, webmentionFeed } from "./webmention-types";
 
 const dynamicParams = false;
 export { dynamicParams };
@@ -64,50 +67,25 @@ export default async function Page({ params }: any) {
   const activity = sourceLikes.length > 0 || sourceComments.length > 0;
   return (
     <>
+      <div className="print:mx-auto print:w-fit place-self-start relative bottom-[10px]">
+        <Link href="/">
+          <Image
+            src="/profile-pic.webp"
+            width={80}
+            height={80}
+            quality="100"
+            className="rounded-full"
+            alt="My profile Picture"
+          />
+        </Link>
+      </div>
       <div className="col-end-5">
-        <div className="print:mx-auto print:w-fit relative bottom-[10px]">
-          <Link href="/">
-            <Image
-              src={ProfilePic}
-              width={80}
-              height={80}
-              quality="100"
-              className="rounded-full"
-              alt="My profile Picture"
-            />
-          </Link>
-        </div>
         <h1 className="mt-5 font-display text-4xl font-black text-stone-800 sm:text-5xl ">
           <Balancer>{post.title}</Balancer>
         </h1>
       </div>
-
-      {post.toc == true ? (
-        post.headings.length !== 0 ? (
-          <div className="sticky top-6 xl:!col-start-4 xl:row-span-6 xl:row-start-2 hidden space-y-2 font-sans xl:block">
-            <div className="text-sm uppercase font-sans text-stone-500">
-              On this page
-            </div>
-            {post.headings.map((heading: any) => {
-              return (
-                <div
-                  key={heading.slug}
-                  className="data-[level=two]:pl-4 data-[level=three]:pl-8"
-                  data-level={heading.level}
-                >
-                  <a
-                    href={`#${heading.slug}`}
-                    className="underline-offset-3 text-stone-800 decoration-stone-700 transition-all hover:text-stone-700 hover:underline "
-                  >
-                    {heading.text}
-                  </a>
-                </div>
-              );
-            })}
-            <hr className="pb-2 w-7" />
-            <ScrollUp />
-          </div>
-        ) : null
+      {post.toc == true && post.headings.length !== 0 ? (
+        <TableOfContents headings={post.headings} />
       ) : null}
       <MDX code={post.body.code} />
       <DonationCard />
