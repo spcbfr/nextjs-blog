@@ -16,7 +16,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
   return new ImageResponse(
     (
       <div tw="bg-[#042f2e] text-teal-200 px-40 flex w-full flex-col h-full justify-center items-center">
-        <div tw="text-xl rounded-lg">Written by yusuf.fyi</div>
+        <div tw="text-xl rounded-lg">Written by yusuf</div>
         <h1 style={{ fontSize: 46 }} tw=" text-center text-teal-100 mx-2">
           {post ? post.title : "A nameless article"}
         </h1>
