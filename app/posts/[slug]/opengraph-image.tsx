@@ -10,9 +10,9 @@ export const size = {
 
 export default async function Image({ params }: { params: { slug: string } }) {
   const post = allPosts.find((post) => post.slug == params?.slug);
-  // const fontData = await fetch(
-  //   new URL("app/posts/[slug]/Sentient-Bold.ttf", import.meta.url)
-  // ).then((res) => res.arrayBuffer());
+  const fontData = await fetch(
+    new URL("app/posts/[slug]/Sentient-Bold.ttf", import.meta.url)
+  ).then((res) => res.arrayBuffer());
   return new ImageResponse(
     (
       <div tw="bg-[#042f2e] text-teal-200 px-40 flex w-full flex-col h-full justify-center items-center">
@@ -24,13 +24,13 @@ export default async function Image({ params }: { params: { slug: string } }) {
     ),
     {
       ...size,
-      // fonts: [
-      //   {
-      //     name: "Sentient",
-      //     data: fontData,
-      //     style: "normal",
-      //   },
-      // ],
+      fonts: [
+        {
+          name: "Sentient",
+          data: fontData,
+          style: "normal",
+        },
+      ],
     }
   );
 }
