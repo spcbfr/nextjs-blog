@@ -22,6 +22,12 @@ export const metadata: Metadata = {
       "I am a software engineer and I write articles about cool stuff",
     site: "@yusufbouzekri",
   },
+  openGraph: {
+    title: "Yusuf's Website",
+    type: "website",
+    description:
+      "I am a software engineer and I write articles about cool stuff",
+  },
 };
 
 export default async function Page() {
