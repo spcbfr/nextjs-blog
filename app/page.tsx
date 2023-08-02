@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Yusuf's Website",
     type: "website",
+    url: "/",
     description:
       "I am a software engineer and I write articles about cool stuff",
   },
