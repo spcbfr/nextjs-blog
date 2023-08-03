@@ -3,7 +3,7 @@ import "../styles/globals.css";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "components/footer";
-import { Anek_Latin, Bai_Jamjuree } from "next/font/google";
+import { Nabla } from "next/font/google";
 
 const karla = localFont({
   src: [
@@ -47,10 +47,9 @@ const sentient = localFont({
   ],
   variable: "--font-sentient",
 });
-const Bai = Bai_Jamjuree({
-  weight: ["700", "500", "600"],
+const nabla = Nabla({
   subsets: ["latin"],
-  variable: "--font-bai",
+  variable: "--font-nabla",
 });
 
 export const metadata: Metadata = {
@@ -94,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${karla.variable} ${sentient.variable} ${Bai.variable}`}
+      className={`${karla.variable} ${sentient.variable} ${nabla.variable}`}
     >
       <body className="  font-sans text-stone-900 antialiased selection:bg-yellow-400 selection:text-stone-900">
         <main className="relative z-10 mb-5 mt-12 sm:mx-2 md:mx-0 grid grid-cols-[1fr,min(640px,100%),1fr] xl:gap-x-10 gap-y-5  px-7 sm:mt-12 sm:px-0 xl:grid-cols-[1fr,minmax(auto,240px),min(640px,100%),minmax(auto,240px),1fr] [&>*]:col-start-2 xl:[&>*]:col-start-3">

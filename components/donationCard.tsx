@@ -8,8 +8,7 @@ export default function DonationCard() {
       >
         consider buying me a coffee
       </a>
-      , it supports this site and caffeinates me so that I can keep producing
-      awesome content!
+      . currently I am saving up for a professional microphone!
     </p>
   );
 }

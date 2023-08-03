@@ -3,6 +3,7 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
+  plugins: [require("@tailwindcss/forms")],
   content: [
     "./app/**/*.{ts,tsx}",
     "./pages/**/*.{ts,tsx}",
@@ -28,6 +29,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-karla)"],
         display: ["var(--font-sentient)"],
+        nabla: ["var(--font-nabla)"],
       },
     },
   },
