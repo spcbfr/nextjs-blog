@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     title: post?.title,
     openGraph: {
       title: post?.title,
-      description: post?.description,
+      description: post?.description || "An article by Yusuf",
       url: "https://yusuf.fyi/posts/" + post?.slug,
       locale: "en-US",
       authors: ["Yusuf Bouzekri"],
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: post?.title,
-      description: post?.description,
+      description: post?.description || "An article by Yusuf",
       creator: "@spacebuffer",
       site: "@spacebuffer",
     },
