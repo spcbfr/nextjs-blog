@@ -47,9 +47,30 @@ const sentient = localFont({
   ],
   variable: "--font-sentient",
 });
-const nabla = Nabla({
-  subsets: ["latin"],
-  variable: "--font-nabla",
+const komet = localFont({
+  src: [
+    {
+      path: "../public/fonts/KometPro-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/KometPro-RegularItalic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/KometPro-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/KometPro-BoldItalic.woff2",
+      weight: "700",
+      style: "bold",
+    },
+  ],
+  variable: "--font-komet",
 });
 
 export const metadata: Metadata = {
@@ -93,7 +114,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${karla.variable} ${sentient.variable} ${nabla.variable}`}
+      className={`${karla.variable} ${sentient.variable} ${komet.variable}`}
     >
       <body className="  font-sans text-stone-900 antialiased selection:bg-yellow-400 selection:text-stone-900">
         <main className="relative z-10 mb-5 mt-12 sm:mx-2 md:mx-0 grid grid-cols-[1fr,min(640px,100%),1fr] xl:gap-x-10 gap-y-5  px-7 sm:mt-12 sm:px-0 xl:grid-cols-[1fr,minmax(auto,240px),min(640px,100%),minmax(auto,240px),1fr] [&>*]:col-start-2 xl:[&>*]:col-start-3">
