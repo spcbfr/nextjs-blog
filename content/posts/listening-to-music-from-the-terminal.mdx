@@ -1,17 +1,22 @@
 ---
-title: Listening to Music from the Terminal
+title: Listening to music from the terminal
 date: 2022-12-19
 description: Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article
 toc: true
 ---
 
-<Img src="/command_line_fu.png" caption="xkcd#196" alt="transcript of xkcd commic #196:     [Two men talking.]
+<Img
+  src="/command_line_fu.png"
+  caption="xkcd#196"
+  alt="transcript of xkcd commic #196:     [Two men talking.]
     Cueball: Last night I was watching videos with this girl and my monitors kept turning off - even though I had disabled power save.
     Friend: Odd.
     Cueball: However! I wrote a command to jiggle the mouse pointer every couple minutes to keep it from going idle.
     Friend: Not the first hack I'd try, but see? Linux has problems, but it gives you the tools to deal with them - and save your date!
-    Cueball: Actually, I was half an hour into the pointer scripting documentation when she got dressed and left."/>
-Have you ever wanted to listen to music without leaving your terminal? well, probably no but I am still gonna show you how to do it in this article!
+    Cueball: Actually, I was half an hour into the pointer scripting documentation when she got dressed and left."
+/>
+Have you ever wanted to listen to music without leaving your terminal? well, probably
+no but I am still gonna show you how to do it in this article!
 
 I'd like to note that for this to work you need to have Music locally, you won't need your spotify account anymore
 
@@ -37,6 +42,7 @@ log_file "~/.config/mpd/mpd.log"
 pid_file "~/.config/mpd/mpd.pid"
 state_file "~/.config/mpd/mpdstate"
 ```
+
 I've had some problems where MPD wouldn't create the state files automatically, so let's create them manually to kill the doubt
 
 ```bash
@@ -55,6 +61,7 @@ pactl info | grep "Server Name"
 ```
 
 then add the following to `mpd.conf`
+
 ```conf title="mpd.conf"
 # For PulseAudio
 audio_output {
@@ -82,7 +89,9 @@ and make MPD autostart, you can use it's systemd service to do this
 systemctl enable --now --user mpd.service
 systemctl status mpd.service # run this to check for any errors
 ```
+
 # Content structure
+
 here is how your music should be structured in order for MPD to recongize it properly
 
 ```conf
@@ -97,6 +106,7 @@ Music directory
 ---- Song n
 and so on..
 ```
+
 # Configuring the clients
 
 Now MPD on it's own isn't very useful, that is because it wasn't made for the normal user to use, you're supposed to install a client that interfaces with MPD, there are many good clients but the two I am going to use today are:
@@ -111,6 +121,7 @@ sudo pacman -S ncmpcpp mpc
 #or
 sudo apt install ncmpcpp mpc
 ```
+
 now add this to the ncmpcpp `config`
 
 ```conf title=".config/ncmpcpp/config"
@@ -121,12 +132,15 @@ mpd_music_dir = "~/Music"
 mpd_connection_timeout = "5"
 mpd_crossfade_time = "5"
 ```
+
 we're basically telling it where it's supposed to find mpd, make sure to set the port to the same one you used for the MPD config before and set the music dirctory to the same one you used for MPD
 
 now if you run `ncmpcpp` in your terminal and press `4` to go to the music library view, you should see some content (make sure that you actually have some music downloaded)
 
 <Callout title="I am not seeing my music!">
-On your first time using ncmpcpp and whenever you add new music to your library, you may need to refresh the library, in ncmpcpp you can do this by pressing `u`
+  On your first time using ncmpcpp and whenever you add new music to your
+  library, you may need to refresh the library, in ncmpcpp you can do this by
+  pressing `u`
 </Callout>
 
 ### Making NCMPCPP look better
@@ -140,6 +154,7 @@ progressbar_look = "=>-"
 progressbar_color = black:b
 progressbar_elapsed_color = blue:b
 ```
+
 and make the columns mode the default for every view
 
 ```conf
@@ -148,7 +163,6 @@ search_engine_display_mode = "columns"
 browser_display_mode = "columns"
 playlist_display_mode = "columns"
 ```
-
 
 ### Adding vim keybindings to NCMPCPP
 
@@ -168,6 +182,7 @@ audio_output {
     format                  "44100:16:2"
 }
 ```
+
 now going back to ncmpcpp, pressing <kbd>8</kbd> for the visualizer view you should see something like this if you have a song playing, I'd say this is pretty cool!
 
 <Img src="/ncmpcpp-vis.png" alt="The ncmpcpp visualizer" />
