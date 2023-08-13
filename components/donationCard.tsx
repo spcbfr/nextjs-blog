@@ -8,7 +8,7 @@ export default function DonationCard() {
       >
         consider buying me a coffee
       </a>
-      . currently I am saving up for a professional microphone!
+      . currently I am saving up for a better microphone!
     </p>
   );
 }

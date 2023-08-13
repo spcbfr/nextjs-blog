@@ -1,0 +1,22 @@
+---
+title: The human body is just a PHP server
+date: 2023-08-14
+---
+
+This is an epiphany I had today. it was interesting enough to expand on it in this write-up:
+
+**The human body is just a PHP web app.**
+
+I realized this when thinking about the way we know we are full and can't eat anymore.
+
+as you are eating, there are nerve endings in your stomach that detect when food is entering the stomach and when the stomach is full. think of these as listeners on your frontend
+
+Then when you are full, the nerve endings say to the brain "Uhm, we are full now, no more food please", this is basically a `GET` request to the server (brain)
+
+The brain then signals to you that you can't eat anymore and starts the process of food processing as a separate `POST` request to the stomach.
+
+Maybe we can also think of the heart as a deployment server. It links your frontend and backend together. makes sure everything is running smoothly. And in case it gets `DDOS`-ed (i.e. working-out) it handles everything like a boss (sweating)
+
+It sounds obvious in hindsight but maybe some people will find this interesting.
+
+I think this is how I'll explain the server and client relationship to new learners from now on.
