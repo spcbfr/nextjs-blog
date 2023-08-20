@@ -48,7 +48,7 @@ const nextConfig = {
           {
             key: "Link",
             value:
-              '<https://webmention.io/username/webmention>; rel="webmention',
+              '<https://webmention.io/www.yusuf.fyi/webmention>; rel="webmention',
           },
         ],
       },
