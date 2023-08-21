@@ -16,7 +16,8 @@ import TableOfContents from "components/toc";
 import { webmentionEntry, webmentionFeed } from "./webmention-types";
 
 const dynamicParams = false;
-export { dynamicParams };
+const revalidate = 60
+export { dynamicParams, revalidate};
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -51,8 +52,7 @@ export default async function Page({ params }: any) {
   const res = await fetch(
     "https://webmention.io/api/mentions.jf2?target=https://www.yusuf.fyi/posts/" +
       post?.slug +
-      "&sort-by=published",
-    { next: { revalidate: 20 } }
+      "&sort-by=published"
   );
   const jsonRes: webmentionFeed = await res.json();
   const sourceComments = jsonRes.children.filter(
