@@ -28,6 +28,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# content editing tool
+.obsidian
+
 # vercel
 .vercel
 
