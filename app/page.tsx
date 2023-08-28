@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  generateRssFeed();
+  generateRssFeed()
   const sortedPosts = allPosts.sort((a, b) => {
     return Number(new Date(b.date)) - Number(new Date(a.date));
   });

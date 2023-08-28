@@ -1,0 +1,46 @@
+---
+title: Quality of life improvements for your Linux system
+date: 2023-08-28
+---
+
+This is a collection of my preferred small improvements to make using Linux more comfortable.
+
+# Remapping the Caps Lock key
+
+We don't use caps locks that much these days, so I tend to remap it to something more useful. in this case, I set it to the super (Windows) key when it's held, and to the escape key when it's pressed once.
+
+Setting it to the super key makes some keybindings easier to type. for example, I've mapped `Super+d` to open my app launcher rofi, Traditionally `Super+r` would be a bit hard on your hands but `capslock+d` is much more convenient to press.
+
+I also set it to `escape` when pressed once because I use escape regularly as a Vim user.
+
+You can add this script to the top of your shell profile or in your `.xsession` if that's what you use, but you need to have `setxkbmap`, `xmodmap`, `xset`, and `xcape` installed
+
+```bash title=".zshrc"
+# Map the caps lock key to super...
+setxkbmap -option caps:super
+# But when it is pressed only once, treat it as escape.
+killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
+# Map the menu button to right super as well.
+xmodmap -e 'keycode 135 = Super_R'
+# Turn off the caps lock if on since there is no longer a key for it.
+xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
+```
+
+# Use sudoedit to edit protected files
+
+When trying to edit files files that require elevated privileges, you will at some point run into one of these problems
+
+- You forget to run your editor with `sudo` and are thus unable to save your changes
+- In case you run your editor with sudo, you use your editor with its default configuration rather than your precious config that you perfected to oblivion. gross.
+
+Both problems can be solved with `sudoedit`, simply run `sudoedit /etc/your-protected-file.sh` and it will open the file in your preferred `$EDITOR` with your config.
+
+In case, it opens in `nano` then you likely didn't set up your `$EDITOR` correctly, add the following line to your shell config and `source` it to fix the issue.
+
+```bash title=".zshrc"
+export EDITOR="nvim" # or any other editor
+```
+
+I was going to include "setting up simple window manager" into the list but I realized that it's a much larger challenge than the rest of these small changes, if you want to improve your life, look into setting up an i3 or something similar
+
+So that's pretty much it, I hope you enjoyed the article and I'll see you in the next one!
