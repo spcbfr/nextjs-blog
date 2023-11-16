@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://yusuf.fyi"),
   title: "Yusuf's Home",
   description: "I am a software engineer and I write articles about cool stuff",
+  themeColor: "#bae6fd",
   category: "technology",
   alternates: {
     canonical: "/",

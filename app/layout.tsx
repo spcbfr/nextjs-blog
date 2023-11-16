@@ -82,6 +82,7 @@ export const metadata: Metadata = {
   creator: "Yusuf Bouzekri",
   publisher: "Bouzekri inc.",
   description: "A personal blog about tech, life and movies",
+  themeColor: "#FAFAF9", // bg-stone-50 from tailwindCSS
   category: "Technology",
   keywords: [
     "Next.js",
