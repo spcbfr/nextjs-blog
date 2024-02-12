@@ -16,8 +16,8 @@ import TableOfContents from "components/toc";
 import { webmentionEntry, webmentionFeed } from "./webmention-types";
 
 const dynamicParams = false;
-const revalidate = 60
-export { dynamicParams, revalidate};
+const revalidate = 60;
+export { dynamicParams, revalidate };
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -54,7 +54,15 @@ export default async function Page({ params }: any) {
       post?.slug +
       "&sort-by=published"
   );
-  const jsonRes: webmentionFeed = await res.json();
+
+  const nonWwwRes = await fetch(
+    "https://webmention.io/api/mentions.jf2?target=https://yusuf.fyi/posts/" +
+      post?.slug +
+      "&sort-by=published"
+  );
+  const jsonNonWwwRes: webmentionFeed = await nonWwwRes.json();
+  let jsonRes: webmentionFeed = await res.json();
+  jsonRes = Object.assign({}, jsonRes, jsonNonWwwRes);
   const sourceComments = jsonRes.children.filter(
     (child: webmentionEntry) =>
       child["wm-property"] == "in-reply-to" ||
